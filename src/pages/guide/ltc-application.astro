@@ -1,0 +1,198 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '高雄長照申請懶人包｜長照2.0申請流程',
+  description: '高雄長照2.0申請流程懶人包。長照2.0介紹、申請資格、申請流程5步驟、失能等級與給付額度、準備文件與常見問題。',
+  image: 'https://www.yuhan-homecare.com.tw/images/guide-ltc.jpg',
+  datePublished: '2025-01-01T08:00:00+08:00',
+  author: { '@type': 'Organization', name: '宇涵居家照護' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/guide/ltc-application' },
+};
+---
+
+<MainLayout
+  title="高雄長照申請懶人包｜長照2.0/3.0申請流程｜宇涵"
+  description="高雄長照2.0申請流程懶人包：長照2.0介紹、4類申請對象、5步驟申請流程、失能等級與給付額度、需要準備的文件與常見問題。"
+  keywords="高雄長照申請,長照2.0,長照申請流程,長照申請資格,失能等級,長照給付額度,長照申請文件,長照3.0"
+  schema={schema}
+>
+  <article>
+    <section class="relative bg-[#2b221c] py-16 lg:py-24">
+      <div class="absolute inset-0 opacity-15">
+        <img src="/images/guide-ltc.jpg" alt="長照申請指南" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="麵包屑" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
+            <li><a href="/" class="hover:text-[#8b621f]">首頁</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li><a href="/guide" class="hover:text-[#8b621f]">指南</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li class="text-[#fcfaf6]">長照申請</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fcfaf6] mb-4">高雄長照2.0申請流程懶人包</h1>
+        <p class="text-lg text-[#efe5d5] max-w-2xl">從申請到使用，一步一步帶您完成長照申請</p>
+      </div>
+    </section>
+
+    <div class="bg-[#fcfaf6] py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-[#6d5d50] leading-relaxed mb-8">
+            長期照顧服務2.0（簡稱長照2.0）是政府為了幫助失能長者與身心障礙者而設立的社會福利制度。透過長照2.0，符合資格的民眾可以獲得居家服務、日間照顧、專業服務、交通接送、輔具服務、喘息服務等多項補助。本文將以簡單易懂的方式，帶您一步步完成長照申請。
+          </p>
+
+          <!-- 長照2.0介紹 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">長照2.0是什麼</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            長照2.0是台灣政府於2017年全面推動的長期照顧服務體系，整合了原有的長照服務，並擴大了服務對象與項目。長照2.0的核心理念是「在地老化」，希望讓失能者能夠在熟悉的家中與社區中接受照顧。
+          </p>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">長照2.0提供的服務俗稱「四包錢」：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-1">
+            <li><strong class="text-[#2b221c]">第一包：照顧及專業服務</strong>（居家服務、日間照顧、專業服務）</li>
+            <li><strong class="text-[#2b221c]">第二包：交通接送服務</strong></li>
+            <li><strong class="text-[#2b221c]">第三包：輔具及居家無障礙環境改善服務</strong></li>
+            <li><strong class="text-[#2b221c]">第四包：喘息服務</strong></li>
+          </ul>
+
+          <!-- 申請資格 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">申請資格（4類對象）</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mb-2 font-bold">1</div>
+              <h4 class="font-bold text-[#2b221c] mb-1">65歲以上失能老人</h4>
+              <p class="text-sm text-[#6d5d50]">經評估為失能，日常生活活動能力（ADL）有依賴</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mb-2 font-bold">2</div>
+              <h4 class="font-bold text-[#2b221c] mb-1">55歲以上失能原住民</h4>
+              <p class="text-sm text-[#6d5d50]">年齡放寬至55歲以上，經評估為失能</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mb-2 font-bold">3</div>
+              <h4 class="font-bold text-[#2b221c] mb-1">50歲以上失智者</h4>
+              <p class="text-sm text-[#6d5d50]">經醫師確診為失智症，不限失能程度</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mb-2 font-bold">4</div>
+              <h4 class="font-bold text-[#2b221c] mb-1">身心障礙者</h4>
+              <p class="text-sm text-[#6d5d50]">領有身心障礙手冊/證明，且經評估為失能</p>
+            </div>
+          </div>
+
+          <!-- 申請流程 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">申請流程（5步驟）</h2>
+
+          <div class="space-y-6 mb-8">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
+              <div>
+                <h3 class="text-xl font-bold text-[#2b221c] mb-2">提出申請</h3>
+                <p class="text-[#6d5d50] leading-relaxed">撥打1966長照服務專線，或親自前往各區公所的長期照顧管理專區提出申請。也可委託他人代為申請。準備好被照顧者的身分證、戶口名簿等基本文件。</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div>
+              <div>
+                <h3 class="text-xl font-bold text-[#2b221c] mb-2">到府評估</h3>
+                <p class="text-[#6d5d50] leading-relaxed">照管專員會到家中進行失能評估，主要使用巴氏量表（Barthel Index）評估被照顧者的生活自理能力。評估內容包括進食、移位、個人衛生、如廁、洗澡、行走、上下樓梯等項目。評估過程約需30-60分鐘。</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">3</div>
+              <div>
+                <h3 class="text-xl font-bold text-[#2b221c] mb-2">確認失能等級</h3>
+                <p class="text-[#6d5d50] leading-relaxed">評估後約1-2週，會收到失能等級通知。失能等級分為1-8級，第2級以上可獲得長照服務補助。等級越高，每月的補助額度也越高。如果不滿意評估結果，可以在收到通知後30天內申請複評。</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">4</div>
+              <div>
+                <h3 class="text-xl font-bold text-[#2b221c] mb-2">擬定照顧計畫</h3>
+                <p class="text-[#6d5d50] leading-relaxed">照管專員會與您一起擬定照顧計畫（Care Plan），選擇您需要的服務項目與時數。您可以根據被照顧者的需求，選擇居家服務、日間照顧、喘息服務等。照管專員也會推薦合適的特約服務單位。</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">5</div>
+              <div>
+                <h3 class="text-xl font-bold text-[#2b221c] mb-2">開始使用服務</h3>
+                <p class="text-[#6d5d50] leading-relaxed">聯繫照管專員推薦的特約服務單位，預約服務時間。服務單位會派專業人員到府提供服務。每月使用服務後，只需支付部分負擔費用，其餘由政府補助。照顧計畫每半年需重新評估一次。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 失能等級與給付 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">失能等級與給付額度</h2>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-[#8b621f] text-white">
+                <th class="text-left p-3 rounded-tl-lg">失能等級</th>
+                <th class="text-left p-3">每月服務額度</th>
+                <th class="text-left p-3 rounded-tr-lg">說明</th>
+              </tr></thead>
+              <tbody class="text-[#6d5d50]">
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第1級</td><td class="p-3">無補助</td><td class="p-3">給予建議，不列入補助</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第2級</td><td class="p-3">約10,020元</td><td class="p-3">輕度失能</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第3級</td><td class="p-3">約15,460元</td><td class="p-3">輕度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第4級</td><td class="p-3">約18,580元</td><td class="p-3">中度失能</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第5級</td><td class="p-3">約24,080元</td><td class="p-3">中度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第6級</td><td class="p-3">約28,070元</td><td class="p-3">重度失能</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第7級</td><td class="p-3">約32,070元</td><td class="p-3">重度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20"><td class="p-3 font-semibold rounded-bl-lg">第8級</td><td class="p-3">約36,180元</td><td class="p-3 rounded-br-lg">重度失能</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[#6d5d50] leading-relaxed mb-6 text-sm">註：實際給付額度依各縣市規定可能略有差異。</p>
+
+          <!-- 準備文件 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">需要準備的文件</h2>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-1">
+            <li>被照顧者的身分證正本或戶口名簿</li>
+            <li>申請人的身分證正本</li>
+            <li>身心障礙手冊/證明（如有）</li>
+            <li>失智症診斷證明（失智症患者需提供）</li>
+            <li>低/中低收入戶證明（如有，可享有更多補助）</li>
+            <li>委託書（如委託他人代為申請）</li>
+          </ul>
+
+          <!-- 常見問題 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">常見問題</h2>
+          <div class="space-y-4 mb-8">
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">申請長照需要費用嗎？</h4>
+              <p class="text-sm text-[#6d5d50]">申請長照服務本身不需要費用。使用服務時需支付部分負擔，一般戶約16%，中低收入戶約5%，低收入戶全免。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">評估後多久可以開始使用服務？</h4>
+              <p class="text-sm text-[#6d5d50]">一般來說，從申請到開始使用服務約需1-2週的時間。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">可以同時申請外籍看護和長照服務嗎？</h4>
+              <p class="text-sm text-[#6d5d50]">可以。聘有外籍看護的家庭仍然可以申請部分長照服務，如喘息服務、專業服務、輔具服務等。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">失能等級會改變嗎？</h4>
+              <p class="text-sm text-[#6d5d50]">會。照顧計畫每半年需重新評估一次，失能等級可能會隨著身體狀況改變而調整。</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="bg-[#8b621f]/10 rounded-xl p-6 mb-10 border border-[#8b621f]/20">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">需要長照申請協助？</h3>
+            <p class="text-[#6d5d50] mb-4">宇涵居家照護可以協助您了解長照申請流程，並提供專業的居家照護服務。</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:0978788886" class="inline-flex items-center justify-center px-6 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                0978-788-886
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#8b621f] text-[#8b621f] font-semibold rounded-lg hover:bg-[#8b621f]/10 transition-colors">免費諮詢表單</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

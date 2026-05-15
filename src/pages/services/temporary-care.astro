@@ -1,0 +1,119 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "高雄臨時看護派遣｜短期急需求看護";
+const description = "宇涵提供彈性臨時看護派遣服務，快速媒合專業看護到府，適合家屬臨時有事、看護休假或急需求的情境。";
+const canonicalURL = new URL("/services/temporary-care/", Astro.site);
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "高雄臨時看護派遣",
+      "description": "彈性臨時看護派遣，快速媒合專業看護到府，適合短期急需求情境",
+      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
+      "areaServed": {"@type": "City", "name": "高雄市"},
+      "serviceType": "臨時看護派遣",
+      "url": "https://yuhanhomecare.com/services/temporary-care/"
+    }
+  </script>
+
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li><a href="/services/" class="hover:text-[#8b621f] transition-colors">服務項目</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">臨時看護</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">高雄臨時看護派遣</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">彈性臨時人力支援，緊急需求也能快速到位</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <img src="/images/service-temporary.jpg" alt="高雄臨時看護派遣服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是臨時看護派遣？</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">臨時看護派遣是一種彈性的看護人力支援服務，針對家庭臨時性的照護需求，快速提供專業看護人員到府服務。不同於長期的居家看護合約，臨時看護的服務時間更具彈性，可以是一次性的服務、短期的替補，或是按小時計費的臨時支援。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在現實生活中，許多照護情境是突發且無法預期的。原本照顧長者的家屬臨時需要出差、原生看護人員請假休班、長者臨時需要人陪同就醫、或是突然需要有人在家陪伴長者幾個小時——這些都是臨時看護服務最常見的需求情境。宇涵的臨時看護派遣服務，就是為了在這些緊急時刻提供即時的專業支援。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵擁有龐大的專業看護人力資料庫，能夠在高雄市各地快速媒合適合的人選。我們了解臨時需求的急迫性，因此建立了高效的派遣機制，從接到需求到看護人員到府，最快可以在數小時內完成安排。無論是半天的臨時協助，或是數天的短期替補，宇涵都能迅速為您找到合適的人選。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-10">臨時看護派遣服務的彈性特質，讓它成為許多家庭在面對照護人力缺口時的優質選擇。不需要簽訂長期合約，依照實際使用時數付費，讓家庭可以更靈活地運用照護資源，同時確保長者在任何時候都能得到專業的照顧。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">適合使用臨時看護的情境</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">以下是常見需要臨時看護支援的情境：</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div><h3 class="font-bold text-[#2b221c]">原看護請假</h3></div><p class="text-sm text-[#6d5d50]">長期聘僱的看護人員因請假、休假或臨時無法到班，需要短期替補人選。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div><h3 class="font-bold text-[#2b221c]">家屬臨時外出</h3></div><p class="text-sm text-[#6d5d50]">主要照顧者需要外出處理事務、參加活動或短暫休息，需要臨時人手陪伴長者。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div><h3 class="font-bold text-[#2b221c]">緊急就醫陪同</h3></div><p class="text-sm text-[#6d5d50]">長者臨時需要前往醫院急診或門診，家屬無法即時趕到，需要人手緊急陪同。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">夜間臨時需求</h3></div><p class="text-sm text-[#6d5d50]">長者夜間需要照顧但白天有人照顧，只需夜間時段的臨時支援。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">節慶假日臨時支援</h3></div><p class="text-sm text-[#6d5d50]">春節、中秋等連假期間，原看護返鄉或家屬需要外出拜年走動。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl border border-[#efe5d5]"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></div><h3 class="font-bold text-[#2b221c]">試用期評估</h3></div><p class="text-sm text-[#6d5d50]">家庭考慮長期聘僱看護，先透過臨時服務評估需求與適合人選。</p></div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">臨時看護派遣流程</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的臨時看護派遣流程簡便快速，讓您在緊急時刻也能迅速獲得專業支援：</p>
+          <div class="space-y-4 mb-10">
+            <div class="flex gap-4 items-start"><div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div><div><h3 class="font-bold text-[#2b221c] mb-1">來電提出需求</h3><p class="text-sm text-[#6d5d50]">撥打0935-803-258，告知服務地點、時間、被照護者狀況與需求。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div><div><h3 class="font-bold text-[#2b221c] mb-1">快速評估媒合</h3><p class="text-sm text-[#6d5d50]">我們的派遣專員根據需求快速評估，從人力資料庫中媒合適合的人選。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">3</div><div><h3 class="font-bold text-[#2b221c] mb-1">確認派遣</h3><p class="text-sm text-[#6d5d50]">確認看護人員資料、報到時間與費用，簽訂臨時服務協議。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-12 h-12 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">4</div><div><h3 class="font-bold text-[#2b221c] mb-1">看護到府服務</h3><p class="text-sm text-[#6d5d50]">看護人員準時到府開始服務，提供專業照護。</p></div></div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">費用說明</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">臨時看護的費用依照服務時段與時數計算，以下是參考費用：</p>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-[#2b221c] text-[#fcfaf6]"><th class="px-6 py-4 font-semibold">服務時段</th><th class="px-6 py-4 font-semibold">計費方式</th><th class="px-6 py-4 font-semibold">參考費用</th></tr></thead>
+              <tbody class="divide-y divide-[#efe5d5]">
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">單次臨時（4小時起）</td><td class="px-6 py-4 text-[#6d5d50]">每小時計費</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$200 - $250 /時</td></tr>
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">日間臨時（8小時）</td><td class="px-6 py-4 text-[#6d5d50]">日費制</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$1,800 - $2,200 /日</td></tr>
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">連續多日臨時</td><td class="px-6 py-4 text-[#6d5d50]">日費制</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$2,000 - $2,400 /日</td></tr>
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">夜間臨時（8-10小時）</td><td class="px-6 py-4 text-[#6d5d50]">日費制</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$2,200 - $2,600 /日</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-[#6d5d50]">* 臨時派遣服務最低以4小時起計。連續服務3日以上另有優惠。急單（2小時內到場）可能產生額外費用。</p>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="bg-[#fcfaf6] rounded-2xl p-6 sticky top-8">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">其他服務項目</h3>
+            <ul class="space-y-3 mb-8">
+              <li><a href="/services/home-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 居家看護</a></li>
+              <li><a href="/services/hospital-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 醫院看護</a></li>
+              <li><a href="/services/elderly-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 長者陪伴</a></li>
+              <li><a href="/services/dementia-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 失智照護</a></li>
+              <li><a href="/services/post-surgery/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 術後照顧</a></li>
+            </ul>
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">快速聯絡</h3>
+            <a href="tel:0935803258" class="block w-full text-center bg-[#8b621f] text-white py-4 rounded-full font-semibold hover:bg-[#6d4a18] transition-colors mb-3"><span class="text-sm block opacity-80">24小時服務專線</span><span class="text-lg">0935-803-258</span></a>
+            <a href="/contact/" class="block w-full text-center border-2 border-[#8b621f] text-[#8b621f] py-3 rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors">線上諮詢表單</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-4">臨時需求？宇涵隨時為您準備</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">一通電話，快速派遣專業看護。24小時服務專線隨時為您開通。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">撥打 0935-803-258</a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors">填寫諮詢表單</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

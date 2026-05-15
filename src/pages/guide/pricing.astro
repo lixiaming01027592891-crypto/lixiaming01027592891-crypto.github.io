@@ -1,0 +1,190 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const faqQuestions = [
+  {
+    q: '居家看護的費用是如何計算的？',
+    a: '居家看護的費用主要依據服務時數（12小時或24小時）、被照顧者的照護難度（一般照護或重症照護）、以及是否需要特殊技能（如管灌飲食協助、排泄照護協助管護理）來計算。部分費用可以透過長照2.0申請補助。',
+  },
+  {
+    q: '12小時和24小時看護有什麼差別？',
+    a: '12小時看護通常分為日班（早上8點至晚上8點）或夜班（晚上8點至早上8點），適合白天或夜間需要照顧，但另一時段有家人可以照顧的情況。24小時看護則提供全天候的照護服務，適合需要持續監督或完全無法自理的被照顧者。',
+  },
+  {
+    q: '長照補助可以降低多少費用？',
+    a: '長照2.0的照顧服務補助依失能等級而定，失能等級越高，補助額度越高。補助可以用於支付居家看護的部分費用。一般戶需自行負擔約16%的費用，中低收入戶約5%，低收入戶則全額補助。',
+  },
+  {
+    q: '外籍看護和居家看護哪個比較划算？',
+    a: '從長期來看，外籍看護的月薪較低（約20,000元/月），但需支付仲介費、健康檢查費、食宿費等額外費用，且需有足夠空間提供住宿。居家看護雖然時薪較高，但不需要提供食宿，也不需要負擔仲介費，且可以彈性調整服務時間與內容。選擇哪種方式應根據家庭的需求與條件來決定。',
+  },
+  {
+    q: '臨時看護的費用比較高嗎？',
+    a: '臨時看護因為需要即時調度人力，費用通常略高於預約的長期看護。宇涵居家照護提供彈性的臨時看護服務，歡迎來電洽詢詳細費用。',
+  },
+  {
+    q: '看護費用可以報稅抵減嗎？',
+    a: '根據所得稅法規定，為照顧直系親屬所支付的看護費用，可以在申報綜合所得稅時列舉扣除，每年每人最高扣除額為12萬元。需要保留相關收據與證明文件。',
+  },
+  {
+    q: '如何申請長照補助？',
+    a: '撥打1966長照服務專線或至各區公所長期照顧管理專區申請。照管專員會到府評估失能等級，確認後即可擬定照顧計畫並開始使用補助。',
+  },
+  {
+    q: '看護費用是否可以議價？',
+    a: '宇涵居家照護的費用公開透明，長期配合或特殊需求可與我們洽談。我們致力於提供合理的價格與優質的服務。歡迎來電免費諮詢。',
+  },
+];
+
+const schemaArticle = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '高雄居家看護費用完整指南｜2025年',
+  description: '高雄居家看護費用完整指南。影響費用的因素、費用區間表格、長照補助說明、外籍看護費用比較、常見收費QA。',
+  datePublished: '2025-01-01T08:00:00+08:00',
+  author: { '@type': 'Organization', name: '宇涵居家照護' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護' },
+};
+
+const schemaFAQ = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqQuestions.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const schema = [schemaArticle, schemaFAQ];
+---
+
+<MainLayout
+  title="高雄居家看護費用｜2025年完整價格指南｜宇涵"
+  description="高雄居家看護費用完整指南：影響費用的因素、12小時/24小時費用區間、長照補助說明、外籍看護費用比較、常見收費QA。"
+  keywords="高雄居家看護費用,看護費用,居家看護價格,24小時看護費用,12小時看護費用,長照補助,看護價格,高雄看護費用"
+  schema={schema}
+>
+  <article>
+    <section class="relative bg-[#2b221c] py-16 lg:py-24">
+      <div class="absolute inset-0 opacity-15">
+        <img src="/images/guide-pricing.jpg" alt="居家看護費用指南" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="麵包屑" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
+            <li><a href="/" class="hover:text-[#8b621f]">首頁</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li><a href="/guide" class="hover:text-[#8b621f]">指南</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li class="text-[#fcfaf6]">費用說明</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fcfaf6] mb-4">高雄居家看護費用完整指南</h1>
+        <p class="text-lg text-[#efe5d5] max-w-2xl">2025年最新價格資訊，透明公開，讓您安心選擇</p>
+      </div>
+    </section>
+
+    <div class="bg-[#fcfaf6] py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-[#6d5d50] leading-relaxed mb-8">
+            選擇居家看護服務時，費用是許多家庭關心的重要問題。本文將詳細說明影響居家看護費用的各種因素、2025年高雄地區的費用區間、長照補助的申請方式，以及與外籍看護的費用比較，幫助您做出明智的決定。
+          </p>
+
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">影響費用的因素</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">居家看護的費用會受到以下因素影響：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-2">
+            <li><strong class="text-[#2b221c]">服務時數</strong>：12小時或24小時，時數越長單日費用越高</li>
+            <li><strong class="text-[#2b221c]">照護難度</strong>：一般照護（生活協助）vs 重症照護（插管、氣切、管灌飲食協助等）</li>
+            <li><strong class="text-[#2b221c]">特殊技能需求</strong>：傷口觀察與清潔照護、復健協助、失智症照護等專業技能</li>
+            <li><strong class="text-[#2b221c]">服務地區</strong>：不同地區的費用略有差異</li>
+            <li><strong class="text-[#2b221c]">服務期間</strong>：長期配合通常可獲得較優惠的價格</li>
+          </ul>
+
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">費用區間參考</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">以下為2025年高雄地區居家看護的費用區間參考（實際費用依個案需求而異）：</p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-[#8b621f] text-white">
+                <th class="text-left p-3 rounded-tl-lg">服務類型</th>
+                <th class="text-left p-3">一般照護</th>
+                <th class="text-left p-3 rounded-tr-lg">重症照護</th>
+              </tr></thead>
+              <tbody class="text-[#6d5d50]">
+                <tr class="bg-white border-b border-[#efe5d5]">
+                  <td class="p-3 font-semibold">12小時看護</td>
+                  <td class="p-3">2,500-3,200元/天</td>
+                  <td class="p-3">3,000-4,000元/天</td>
+                </tr>
+                <tr class="bg-[#efe5d5]/20">
+                  <td class="p-3 font-semibold rounded-bl-lg">24小時看護</td>
+                  <td class="p-3">4,000-5,500元/天</td>
+                  <td class="p-3">5,000-7,000元/天</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[#6d5d50] leading-relaxed mb-6 text-sm">註：以上費用為參考區間，實際費用會依個案狀況調整。歡迎來電免費諮詢詳細報價。</p>
+
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">長照補助說明</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            長照2.0提供居家服務補助，可以用來支付部分居家看護費用。補助額度依失能等級而定（第2級至第8級），失能等級越高，補助額度越高。
+          </p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-2">
+            <li>一般戶：政府補助約84%，自行負擔約16%</li>
+            <li>中低收入戶：政府補助約95%，自行負擔約5%</li>
+            <li>低收入戶：政府全額補助</li>
+          </ul>
+
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">外籍看護與居家看護費用比較</h2>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-[#8b621f] text-white">
+                <th class="text-left p-3 rounded-tl-lg">費用項目</th>
+                <th class="text-left p-3">外籍看護</th>
+                <th class="text-left p-3 rounded-tr-lg">居家看護</th>
+              </tr></thead>
+              <tbody class="text-[#6d5d50]">
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">月薪/月費</td><td class="p-3">約20,000元</td><td class="p-3">約75,000-150,000元</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">仲介費</td><td class="p-3">約30,000-60,000元</td><td class="p-3">無</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">食宿費</td><td class="p-3">需額外負擔</td><td class="p-3">無需負擔</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">年節禮金</td><td class="p-3">通常有</td><td class="p-3">無</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold rounded-bl-lg">空窗期替代</td><td class="p-3">需另外安排</td><td class="p-3 rounded-br-lg">可彈性調整</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[#6d5d50] leading-relaxed mb-8">
+            從單純的費用比較來看，外籍看護的確較為經濟。但居家看護有其不可替代的優勢：彈性排班、專業醫療技能、語言溝通無障礙、不需要提供食宿空間等。許多家庭會選擇以外籍看護為主、居家看護為輔（例如在外籍看護休假時聘請臨時看護）的方式，達到最佳的照護效果。
+          </p>
+
+          <!-- FAQ -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">常見問題</h2>
+          <div class="space-y-4 mb-10">
+            {faqQuestions.map((item, index) => (
+              <div class="bg-white rounded-xl border border-[#efe5d5] overflow-hidden">
+                <button class="w-full text-left p-4 flex justify-between items-center hover:bg-[#efe5d5]/20 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                  <span class="font-bold text-[#2b221c]">{item.q}</span>
+                  <svg class="w-5 h-5 text-[#8b621f] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="hidden px-4 pb-4 text-[#6d5d50]">{item.a}</div>
+              </div>
+            ))}
+          </div>
+
+          <!-- CTA -->
+          <div class="bg-[#8b621f]/10 rounded-xl p-6 mb-10 border border-[#8b621f]/20">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">需要詳細報價？</h3>
+            <p class="text-[#6d5d50] mb-4">宇涵居家照護提供免費諮詢，根據您的需求提供詳細的費用說明。</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:0978788886" class="inline-flex items-center justify-center px-6 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                0978-788-886
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#8b621f] text-[#8b621f] font-semibold rounded-lg hover:bg-[#8b621f]/10 transition-colors">免費諮詢表單</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

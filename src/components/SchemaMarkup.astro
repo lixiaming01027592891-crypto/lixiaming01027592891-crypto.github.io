@@ -1,0 +1,206 @@
+---
+export interface Props {
+  type: 'LocalBusiness' | 'WebSite' | 'BreadcrumbList' | 'Article' | 'FAQPage' | 'Service';
+  data?: Record<string, any>;
+}
+
+const { type, data = {} } = Astro.props;
+
+// 品牌預設資訊
+const BRAND = {
+  name: '宇涵居家照護',
+  telephone: '+886-935-803-258',
+  phoneDisplay: '0935-803-258',
+  address: {
+    street: '五福一路72號7樓',
+    city: '高雄市',
+    district: '新興區',
+    full: '高雄市新興區五福一路72號7樓',
+  },
+  url: 'https://www.yuhan-homecare.com',
+  logo: 'https://www.yuhan-homecare.com/images/logo.png',
+  image: 'https://www.yuhan-homecare.com/images/og-image.jpg',
+  description: '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。24小時全年無休，用心守護您的家人。',
+  priceRange: '$$',
+  geo: {
+    latitude: 22.6252,
+    longitude: 120.3082,
+  },
+  openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59',
+  areaServed: ['高雄市新興區', '高雄市苓雅區', '高雄市左營區', '高雄市鼓山區', '高雄市三民區', '高雄市前鎮區', '高雄市楠梓區', '高雄市小港區'],
+  sameAs: [],
+};
+
+// 預設 LocalBusiness schema
+const defaultLocalBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: BRAND.name,
+  description: BRAND.description,
+  url: BRAND.url,
+  logo: BRAND.logo,
+  image: BRAND.image,
+  telephone: BRAND.telephone,
+  priceRange: BRAND.priceRange,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: BRAND.address.street,
+    addressLocality: BRAND.address.district,
+    addressRegion: BRAND.address.city,
+    addressCountry: 'TW',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: BRAND.geo.latitude,
+    longitude: BRAND.geo.longitude,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  areaServed: BRAND.areaServed.map(area => ({
+    '@type': 'City',
+    name: area,
+  })),
+  sameAs: BRAND.sameAs,
+};
+
+// 預設 WebSite schema
+const defaultWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: `${BRAND.name}｜高雄居家看護推薦`,
+  url: BRAND.url,
+  description: BRAND.description,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${BRAND.url}/search?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+// 預設 BreadcrumbList schema
+const defaultBreadcrumbList = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: '首頁',
+      item: BRAND.url,
+    },
+  ],
+};
+
+// 預設 FAQPage schema
+const defaultFAQPage = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [],
+};
+
+// 預設 Service schema
+const defaultService = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: '居家照護服務',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: BRAND.name,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: '高雄市',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: '居家照護服務項目',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '長者陪伴照護' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '日常生活協助' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '居家安全觀察' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '復健與回診陪同' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '家庭照護溝通' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '短期與彈性支援' } },
+    ],
+  },
+};
+
+// 預設 Article schema
+const defaultArticle = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '',
+  description: '',
+  image: '',
+  datePublished: '',
+  dateModified: '',
+  author: {
+    '@type': 'Organization',
+    name: BRAND.name,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: BRAND.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: BRAND.logo,
+    },
+  },
+};
+
+// 根據 type 選擇對應的 schema
+function getSchema() {
+  switch (type) {
+    case 'LocalBusiness':
+      return { ...defaultLocalBusiness, ...data };
+    case 'WebSite':
+      return { ...defaultWebSite, ...data };
+    case 'BreadcrumbList':
+      if (data.items) {
+        return {
+          ...defaultBreadcrumbList,
+          itemListElement: data.items.map((item: any, index: number) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+          })),
+        };
+      }
+      return { ...defaultBreadcrumbList, ...data };
+    case 'FAQPage':
+      if (data.questions) {
+        return {
+          ...defaultFAQPage,
+          mainEntity: data.questions.map((q: any) => ({
+            '@type': 'Question',
+            name: q.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: q.answer,
+            },
+          })),
+        };
+      }
+      return { ...defaultFAQPage, ...data };
+    case 'Article':
+      return { ...defaultArticle, ...data };
+    case 'Service':
+      return { ...defaultService, ...data };
+    default:
+      return defaultLocalBusiness;
+  }
+}
+
+const schema = getSchema();
+const schemaJSON = JSON.stringify(schema, null, 0);
+---
+
+<script type="application/ld+json" set:html={schemaJSON} />

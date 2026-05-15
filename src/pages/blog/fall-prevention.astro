@@ -1,0 +1,211 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '長者居家防跌改造｜無障礙環境建議',
+  description: '長者居家防跌與無障礙改造完整指南。介紹跌倒風險因素、居家環境評估方法，以及浴室、樓梯、照明等空間的具體改造建議與輔具介紹。',
+  image: 'https://www.yuhan-homecare.com.tw/images/blog-fall.jpg',
+  datePublished: '2024-12-15T08:00:00+08:00',
+  author: { '@type': 'Organization', name: '宇涵居家照護' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://www.yuhan-homecare.com.tw/images/logo.png' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/blog/fall-prevention' },
+};
+---
+
+<MainLayout
+  title="長者居家防跌改造｜無障礙環境建議｜宇涵"
+  description="長者居家防跌與無障礙改造指南：跌倒風險因素、居家環境評估、浴室樓梯照明改造建議、輔具介紹。打造安全的長者居住環境。"
+  keywords="長者防跌,居家防跌,防跌改造,無障礙環境,長者居家安全,浴室防滑,樓梯扶手,防跌輔具"
+  schema={schema}
+>
+  <article>
+    <section class="relative bg-[#2b221c] py-16 lg:py-24">
+      <div class="absolute inset-0 opacity-15">
+        <img src="/images/blog-fall.jpg" alt="長者居家防跌改造" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="麵包屑" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
+            <li><a href="/" class="hover:text-[#8b621f]">首頁</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li><a href="/blog" class="hover:text-[#8b621f]">照護知識</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li class="text-[#fcfaf6]">防跌改造</li>
+          </ol>
+        </nav>
+        <span class="inline-block bg-[#8b621f] text-white text-xs px-3 py-1 rounded-full mb-4">居家安全</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fcfaf6] mb-4 leading-tight">長者居家防跌與無障礙改造</h1>
+        <div class="flex items-center text-[#efe5d5] text-sm space-x-4">
+          <span>2024-12-15</span><span>10 分鐘閱讀</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-[#fcfaf6] py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-[#6d5d50] leading-relaxed mb-8">
+            跌倒是65歲以上長者意外傷害死亡的首要原因。根據衛生福利部統計，每年約有三分之一以上的長者曾經跌倒，其中約有十分之一的跌倒事件會造成嚴重傷害（如骨折、腦傷）。好消息是，大部分的跌倒都是可以預防的。透過適當的居家環境改造與輔具使用，可以大幅降低長者跌倒的風險。本文將提供完整的防跌改造建議，幫助您打造安全的無障礙居家環境。
+          </p>
+
+          <!-- 跌倒風險因素 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">長者跌倒的風險因素</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">跌倒的原因通常是多方面的，包括個人因素與環境因素：</p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">個人因素</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li><strong class="text-[#2b221c]">生理退化</strong>：視力減退、聽力下降、肌肉力量減弱、平衡感變差</li>
+            <li><strong class="text-[#2b221c]">慢性疾病</strong>：高血壓、糖尿病、心臟病、關節炎、帕金森氏症等</li>
+            <li><strong class="text-[#2b221c]">藥物影響</strong>：安眠藥、降血壓藥、利尿劑等可能影響平衡感與意識</li>
+            <li><strong class="text-[#2b221c]">認知功能下降</strong>：失智症患者對危險的判斷力降低</li>
+            <li><strong class="text-[#2b221c]">過往跌倒史</strong>：曾經跌倒過的長者再次跌倒的風險更高</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">環境因素</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-1">
+            <li>地面濕滑或不平整</li>
+            <li>光線不足</li>
+            <li>樓梯缺少扶手</li>
+            <li>電線或雜物絆腳</li>
+            <li>家具擺放不當</li>
+            <li>浴室缺乏防滑措施</li>
+          </ul>
+
+          <!-- 居家評估 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">居家環境評估</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">在開始改造之前，先進行一次全面的居家環境評估：</p>
+          <ol class="list-decimal list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-2">
+            <li>從大門開始，模擬長者日常行動的路線</li>
+            <li>檢查每個房間的地面是否平整、乾燥、防滑</li>
+            <li>確認光線是否充足，尤其是夜間照明</li>
+            <li>檢查樓梯、浴室等高危險區域的安全措施</li>
+            <li>清除走道上的雜物、電線、地毯等絆腳物</li>
+            <li>確認家具高度是否適合長者使用</li>
+          </ol>
+
+          <!-- 改造建議 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">居家防跌改造建議</h2>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">浴室改造</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-2">浴室是跌倒風險最高的地方，務必優先改造：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li>在浴缸或淋浴區安裝<strong class="text-[#2b221c]">防滑墊或貼條</strong></li>
+            <li>在馬桶旁與淋浴區安裝<strong class="text-[#2b221c]">扶手</strong>（L型或一字型）</li>
+            <li>加裝<strong class="text-[#2b221c]">洗澡椅或淋浴椅</strong>，讓長者坐著洗澡</li>
+            <li>將浴缸改為無門檻淋浴間（乾濕分離）</li>
+            <li>保持浴室地面乾燥</li>
+            <li>安裝暖燈或暖風機，避免溫差導致頭暈</li>
+            <li>水龍頭加裝溫度控制裝置，防止燙傷</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">樓梯與走道改造</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li>在樓梯兩側安裝<strong class="text-[#2b221c]">穩固的扶手</strong></li>
+            <li>在樓梯踏階邊緣貼上<strong class="text-[#2b221c]">防滑條</strong>與<strong class="text-[#2b221c]">螢光貼紙</strong>，增加辨識度</li>
+            <li>確保走道寬敞，移除障礙物</li>
+            <li>將電線固定在牆面或使用線槽</li>
+            <li>移除或固定鬆動的地毯與地墊</li>
+            <li>在轉角處安裝感應式夜燈</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">照明改善</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li>在臥室、浴室、走道安裝<strong class="text-[#2b221c]">感應式夜燈</strong></li>
+            <li>確保主要活動空間光線充足且均勻</li>
+            <li>在樓梯與轉角處加強照明</li>
+            <li>床頭放置<strong class="text-[#2b221c]">觸控式床頭燈</strong>，方便夜間使用</li>
+            <li>避免使用會產生眩光的燈具</li>
+            <li>定期清潔燈罩，保持亮度</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">臥室安全</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li>床的高度應讓長者坐下時雙腳可以平放地面</li>
+            <li>床邊安裝<strong class="text-[#2b221c]">床邊扶手</strong>，協助起身</li>
+            <li>床頭放置電話或緊急呼叫鈴</li>
+            <li>夜間前往浴室的路徑保持暢通並有照明</li>
+            <li>避免使用過高的枕頭</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">客廳與廚房</h3>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-6 space-y-1">
+            <li>家具擺放整齊，保留足夠的行走空間</li>
+            <li>沙發與椅子高度適中，有扶手為佳</li>
+            <li>將常用物品放在與腰部同高的位置</li>
+            <li>廚房使用感應式水龍頭</li>
+            <li>在廚房與工作區使用防滑地墊</li>
+            <li>避免使用蠟燭或明火</li>
+          </ul>
+
+          <!-- 輔具介紹 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">防跌輔具介紹</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">行動輔具</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-1">
+                <li>• 單手拐杖、四腳拐杖</li>
+                <li>• 助行器（有輪/無輪）</li>
+                <li>• 輪椅</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">浴室輔具</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-1">
+                <li>• 洗澡椅/淋浴椅</li>
+                <li>• 防滑墊/貼條</li>
+                <li>• 馬桶扶手架</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">居家安全輔具</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-1">
+                <li>• 感應式夜燈</li>
+                <li>• 床邊扶手</li>
+                <li>• 緊急呼叫鈴</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-2">鞋襪輔具</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-1">
+                <li>• 防滑拖鞋（包跟款）</li>
+                <li>• 防滑襪（底部有膠粒）</li>
+                <li>• 合腳的運動鞋</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 補助 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">長照輔具補助</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-8">
+            長照2.0的第三包錢（輔具服務）提供輔具購買或租借的補助。符合資格的失能長者可以向各縣市長期照顧管理中心申請。補助項目包括輪椅、助行器、洗澡椅、氣墊床等，補助金額依輔具種類與失能等級而定。
+          </p>
+
+          <!-- CTA -->
+          <div class="bg-[#8b621f]/10 rounded-xl p-6 mb-10 border border-[#8b621f]/20">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">需要居家防跌評估建議？</h3>
+            <p class="text-[#6d5d50] mb-4">宇涵居家照護的專業團隊可以提供居家環境安全評估與防跌建議。</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:0978788886" class="inline-flex items-center justify-center px-6 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                0978-788-886
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#8b621f] text-[#8b621f] font-semibold rounded-lg hover:bg-[#8b621f]/10 transition-colors">免費諮詢表單</a>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <a href="/blog/ltc-4-packages" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-packages.jpg" alt="長照四包錢" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">長照四包錢說明</h4><p class="text-sm text-[#6d5d50]">輔具補助申請...</p></div>
+            </a>
+            <a href="/blog/post-surgery-care" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-postsurgery.jpg" alt="術後照護" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">術後居家照護指南</h4><p class="text-sm text-[#6d5d50]">出院後注意事項...</p></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

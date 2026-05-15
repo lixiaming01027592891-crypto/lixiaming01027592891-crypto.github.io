@@ -1,0 +1,148 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "高雄醫院看護｜24小時病房照護派遣｜宇涵";
+const description = "宇涵提供高雄地區醫院看護派遣服務，24小時病房陪伴、術後照護、急診陪伴，專業看護讓家屬安心。";
+const canonicalURL = new URL("/services/hospital-care/", Astro.site);
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "高雄醫院看護服務",
+      "description": "24小時醫院病房看護派遣，陪伴住院病患、協助就醫流程、照顧日常生活需求",
+      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
+      "areaServed": {"@type": "City", "name": "高雄市"},
+      "serviceType": "醫院看護",
+      "url": "https://yuhanhomecare.com/services/hospital-care/"
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li><a href="/services/" class="hover:text-[#8b621f] transition-colors">服務項目</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">醫院看護</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">高雄醫院看護服務</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">專業病房陪伴照護，減輕家屬負擔，讓病患獲得悉心照顧</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <img src="/images/service-rehab.jpg" alt="高雄醫院看護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是醫院看護服務？</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">醫院看護服務是指在病患住院期間，由專業看護人員前往醫院病房，全天候陪伴與照顧病患的服務。當家人因為工作、家庭或其他因素無法長時間待在醫院陪伴時，醫院看護就成為最可靠的選擇。宇涵提供的醫院看護派遣服務，能讓病患在住院期間獲得專業且持續的照顧，同時讓家屬能夠安心處理日常事務。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">住院期間對病患來說往往是最脆弱的時刻。無論是剛經歷手術的術後病患、需要長期住院治療的慢性病患者，或是年邁體弱的長者住院，都需要有人隨時在旁協助。醫院看護人員不僅負責病患的基本生活照顧，還需要密切觀察病情變化、協助醫療流程、適時回報家屬，是病患、醫護人員與家屬之間的重要橋樑。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在高雄，各大醫療院所如高雄醫學大學附設中和紀念醫院、高雄長庚紀念醫院、市立大同醫院、市立民生醫院、國軍高雄總醫院、義大醫院等，都有宇涵的看護人員正在為病患提供服務。我們熟悉各大醫院的作業流程、病房規定與就醫環境，能夠迅速進入狀況，為病患提供最有效率的照護。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-10">選擇宇涵的醫院看護服務，您不需要擔心看護人員的專業能力或態度問題。我們所有的看護皆經過嚴格篩選與培訓，具備醫院照護的實戰經驗，熟悉病房環境的各種狀況。從病患入院當天起，我們的看護就能立即上手，協助病患適應住院生活，讓治療過程更加順利。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">醫院看護服務內容</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的醫院看護服務涵蓋住院期間的各項需求，確保病患在醫院中也能獲得完整的生活照顧與情感支持。以下是我們的主要服務內容：</p>
+
+          <div class="space-y-6 mb-10">
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">日常生活照顧</h3><p class="text-sm text-[#6d5d50] leading-relaxed">協助病患進食、飲水、翻身、移位、如廁等日常活動，維持身體清潔與舒適。對於行動不便或術後臥床的病患，定時協助變換姿勢，預防褥瘡與肌肉萎縮。</p></div>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">用藥協助與觀察</h3><p class="text-sm text-[#6d5d50] leading-relaxed">提醒並協助病患按時服藥，觀察用藥後的反應與副作用，記錄相關資訊並向家屬與醫護人員回報。確保藥物按時服用、劑量正確。</p></div>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">檢查與回診陪同</h3><p class="text-sm text-[#6d5d50] leading-relaxed">陪同病患前往各項檢查部門（如放射科、檢驗科、復健科等），協助病患上下輪椅或推床，確認檢查時間與流程順暢。</p></div>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">家屬即時回報</h3><p class="text-sm text-[#6d5d50] leading-relaxed">定時向家屬回報病患的身體狀況、進食情形、情緒狀態與醫療進度，讓無法常駐醫院的家屬也能隨時掌握最新狀況。</p></div>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">情緒陪伴與心理支持</h3><p class="text-sm text-[#6d5d50] leading-relaxed">住院期間病患容易感到焦慮、孤獨或沮喪，看護人員透過聊天、聆聽、活動陪伴等方式，給予情緒上的支持與安慰。</p></div>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl flex gap-4 items-start">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
+              <div><h3 class="font-bold text-[#2b221c] mb-2">醫院作業流程協助</h3><p class="text-sm text-[#6d5d50] leading-relaxed">熟悉醫院各項流程，協助辦理住院手續、預約檢查、代領藥品、購買醫療用品等事宜，減輕家屬奔波負擔。</p></div>
+            </div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">適用情境</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的醫院看護服務適用於多種住院情境，以下是常見的需求類型：</p>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">1</span></div><div><strong class="text-[#2b221c]">手術術後住院：</strong><span class="text-[#6d5d50]">剛完成手術的患者需要密集照顧，包括傷口觀察、疼痛管理、生活協助等，醫院看護能夠提供術後關鍵恢復期的專業照顧。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">2</span></div><div><strong class="text-[#2b221c]">長期住院治療：</strong><span class="text-[#6d5d50]">癌症化療、慢性疾病治療、長期復健等需要多次或長期住院的患者，需要持續且穩定的照護支持。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">3</span></div><div><strong class="text-[#2b221c]">急診留觀或轉住院：</strong><span class="text-[#6d5d50]">臨時急診住院的情況，家屬無法立刻趕到醫院，需要緊急派遣看護到場協助。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">4</span></div><div><strong class="text-[#2b221c]">年邁長者住院：</strong><span class="text-[#6d5d50]">年長者住院期間行動不便、理解能力下降，需要專人隨時在旁照顧與協助，避免跌倒等意外發生。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">5</span></div><div><strong class="text-[#2b221c]">家屬工作繁忙：</strong><span class="text-[#6d5d50]">家屬因為工作、照顧小孩或其他因素無法長時間待在醫院，需要專業看護代為照顧住院的家人。</span></div></li>
+          </ul>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務時段與費用</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的醫院看護服務提供靈活的時段選擇，依照病患與家屬的需求進行安排。以下為常見的服務時段與參考費用：</p>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-[#2b221c] text-[#fcfaf6]"><th class="px-6 py-4 font-semibold">服務時段</th><th class="px-6 py-4 font-semibold">說明</th><th class="px-6 py-4 font-semibold">參考費用</th></tr></thead>
+              <tbody class="divide-y divide-[#efe5d5]">
+                <tr class="hover:bg-[#fcfaf6] transition-colors"><td class="px-6 py-4 text-[#2b221c]">日間看護（12小時）</td><td class="px-6 py-4 text-[#6d5d50]">早上8點至晚上8點</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$2,200 - $2,600 /日</td></tr>
+                <tr class="hover:bg-[#fcfaf6] transition-colors"><td class="px-6 py-4 text-[#2b221c]">夜間看護（12小時）</td><td class="px-6 py-4 text-[#6d5d50]">晚上8點至早上8點</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$2,400 - $2,800 /日</td></tr>
+                <tr class="hover:bg-[#fcfaf6] transition-colors"><td class="px-6 py-4 text-[#2b221c]">全天候看護（24小時）</td><td class="px-6 py-4 text-[#6d5d50]">兩班輪替不間斷</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$2,600 - $3,000 /日</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-[#6d5d50] mb-10">* 實際費用依病患狀況、醫院位置及服務內容調整。連續服務多日另有優惠方案。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務流程</h2>
+          <div class="space-y-4 mb-10">
+            <div class="flex gap-4 items-start"><div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div><div><h3 class="font-bold text-[#2b221c]">需求確認</h3><p class="text-sm text-[#6d5d50]">家屬來電告知醫院、病房、病患狀況及預計服務時段。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div><div><h3 class="font-bold text-[#2b221c]">快速媒合</h3><p class="text-sm text-[#6d5d50]">我們在2-4小時內媒合適合的看護人員，確認到場時間。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div><div><h3 class="font-bold text-[#2b221c]">到院服務</h3><p class="text-sm text-[#6d5d50]">看護人員準時到院報到，開始提供專業照護服務。</p></div></div>
+            <div class="flex gap-4 items-start"><div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div><div><h3 class="font-bold text-[#2b221c]">持續關懷</h3><p class="text-sm text-[#6d5d50]">服務期間督導團隊持續追蹤，確保服務品質與病患滿意度。</p></div></div>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="bg-[#fcfaf6] rounded-2xl p-6 sticky top-8">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">其他服務項目</h3>
+            <ul class="space-y-3 mb-8">
+              <li><a href="/services/home-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 居家看護</a></li>
+              <li><a href="/services/elderly-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 長者陪伴</a></li>
+              <li><a href="/services/dementia-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 失智照護</a></li>
+              <li><a href="/services/post-surgery/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 術後照顧</a></li>
+              <li><a href="/services/temporary-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 臨時看護</a></li>
+            </ul>
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">快速聯絡</h3>
+            <a href="tel:0935803258" class="block w-full text-center bg-[#8b621f] text-white py-4 rounded-full font-semibold hover:bg-[#6d4a18] transition-colors mb-3"><span class="text-sm block opacity-80">24小時服務專線</span><span class="text-lg">0935-803-258</span></a>
+            <a href="/contact/" class="block w-full text-center border-2 border-[#8b621f] text-[#8b621f] py-3 rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors">線上諮詢表單</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-4">立即預約醫院看護</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">一通電話，快速派遣專業看護到院。讓病患得到最好的照顧，讓家屬安心放心。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">撥打 0935-803-258</a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors">填寫諮詢表單</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

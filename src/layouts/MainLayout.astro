@@ -1,0 +1,119 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalURL?: string;
+  noindex?: boolean;
+  schemas?: Array<{
+    type: 'LocalBusiness' | 'WebSite' | 'BreadcrumbList' | 'Article' | 'FAQPage' | 'Service';
+    data?: Record<string, any>;
+  }>;
+  transparentNav?: boolean;
+  breadcrumbItems?: Array<{ name: string; url: string }>;
+}
+
+const {
+  title = '宇涵居家照護｜高雄居家看護推薦｜24小時專業到府照護服務',
+  description = '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。新興區、左營區、苓雅區等全高雄地區到府服務，24小時全年無休。',
+  keywords = '高雄居家看護, 高雄居家照護, 高雄看護推薦, 高雄長照服務, 宇涵居家照護',
+  ogImage = 'https://www.yuhan-homecare.com/images/og-image.jpg',
+  ogType = 'website',
+  canonicalURL = Astro.url.href,
+  noindex = false,
+  schemas = [],
+  transparentNav = true,
+  breadcrumbItems,
+} = Astro.props;
+
+const siteUrl = 'https://www.yuhan-homecare.com';
+const canonicalURLStr = String(canonicalURL || '');
+const fullCanonicalURL = canonicalURLStr.startsWith('http') ? canonicalURLStr : `${siteUrl}${canonicalURLStr}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    {/* 基本 Meta Tags */}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {/* Title & Description */}
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="宇涵居家照護" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+
+    {/* Canonical URL */}
+    <link rel="canonical" href={fullCanonicalURL} />
+
+    {/* Favicon */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    {/* 字體 Preconnect */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="宇涵居家照護" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={fullCanonicalURL} />
+    <meta property="og:image" content={fullOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="zh_TW" />
+
+    {/* Twitter Card */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    {/* Theme Color */}
+    <meta name="theme-color" content="#2b221c" />
+    <meta name="msapplication-TileColor" content="#2b221c" />
+
+    {/* Schema.org Structured Data */}
+    {schemas.map((schema) => (
+      <SchemaMarkup type={schema.type} data={schema.data} />
+    ))}
+
+    {/* Breadcrumb Schema */}
+    {breadcrumbItems && breadcrumbItems.length > 0 && (
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={{ items: breadcrumbItems }}
+      />
+    )}
+  </head>
+
+  <body class="bg-[#fcfaf6] text-[#2b221c] antialiased">
+    {/* 導航欄 */}
+    <Navbar transparent={transparentNav} />
+
+    {/* 主內容區 */}
+    <main>
+      <slot />
+    </main>
+
+    {/* 頁腳 */}
+    <Footer />
+  </body>
+</html>

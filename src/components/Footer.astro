@@ -1,0 +1,148 @@
+---
+const companyInfo = {
+  name: '宇涵居家照護',
+  description: '宇涵居家照護提供高雄市專業居家看護服務，從長者陪伴、失智照護到術後照顧，我們用心守護每一位長者與家人的生活品質。',
+  area: '服務地區：高雄市全區',
+};
+
+const serviceLinks = [
+  { label: '居家看護', href: '/services/elderly-care/' },
+  { label: '醫院看護', href: '/services/daily-assistance/' },
+  { label: '長者陪伴', href: '/services/elderly-care/' },
+  { label: '失智照護', href: '/blog/dementia-care-tips/' },
+  { label: '術後照顧', href: '/services/rehabilitation/' },
+  { label: '臨時看護', href: '/services/temporary/' },
+];
+
+const quickLinks = [
+  { label: '關於我們', href: '/about/' },
+  { label: '服務地區', href: '/areas/' },
+  { label: '照護知識', href: '/blog/' },
+  { label: '常見問題', href: '/faq/' },
+];
+
+const contactInfo = {
+  phone: '0935-803-258',
+  phoneLink: 'tel:+886935803258',
+  address: '高雄市新興區五福一路72號7樓',
+  hours: '24小時全年無休',
+  mapLink: 'https://maps.google.com/?q=高雄市新興區五福一路72號',
+};
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#2b221c] text-[#fcfaf6]">
+  {/* Main Footer Content */}
+  <div class="section-container py-16 md:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      {/* Column 1: Company Info */}
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="/" class="inline-flex items-center gap-3 group mb-5">
+          <div class="w-10 h-10 bg-[#8b621f] rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-base tracking-tight" style="font-family: var(--font-serif)">YH</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-lg font-semibold tracking-wide text-[#fcfaf6]" style="font-family: var(--font-serif)">
+              宇涵居家照護
+            </span>
+            <span class="text-[10px] tracking-widest text-[#fcfaf6]/50">
+              YUHAN HOMECARE
+            </span>
+          </div>
+        </a>
+        <p class="text-[#fcfaf6]/70 text-[15px] leading-relaxed mb-4">
+          {companyInfo.description}
+        </p>
+        <p class="text-[#8b621f] text-sm font-medium">
+          {companyInfo.area}
+        </p>
+      </div>
+
+      {/* Column 2: Service Items */}
+      <div>
+        <h3 class="text-lg font-semibold text-[#fcfaf6] mb-5" style="font-family: var(--font-serif)">服務項目</h3>
+        <ul class="space-y-3">
+          {serviceLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-[#fcfaf6]/70 text-[15px] transition-all duration-300 hover:text-[#8b621f] hover:translate-x-1 inline-block"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Column 3: Quick Links */}
+      <div>
+        <h3 class="text-lg font-semibold text-[#fcfaf6] mb-5" style="font-family: var(--font-serif)">快速連結</h3>
+        <ul class="space-y-3">
+          {quickLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-[#fcfaf6]/70 text-[15px] transition-all duration-300 hover:text-[#8b621f] hover:translate-x-1 inline-block"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Column 4: Contact Info */}
+      <div>
+        <h3 class="text-lg font-semibold text-[#fcfaf6] mb-5" style="font-family: var(--font-serif)">聯絡資訊</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <a href={contactInfo.phoneLink} class="text-[#fcfaf6]/90 text-[15px] hover:text-[#8b621f] transition-colors duration-300">
+              {contactInfo.phone}
+            </a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <a href={contactInfo.mapLink} target="_blank" rel="noopener noreferrer" class="text-[#fcfaf6]/70 text-[15px] hover:text-[#8b621f] transition-colors duration-300 leading-relaxed">
+              {contactInfo.address}
+            </a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-[#fcfaf6]/70 text-[15px]">
+              {contactInfo.hours}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* Divider */}
+  <div class="border-t border-[#fcfaf6]/10">
+    <div class="section-container py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-[#fcfaf6]/50 text-sm text-center sm:text-left">
+          &copy; {currentYear} 宇涵居家照護. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="/privacy/" class="text-[#fcfaf6]/50 text-sm hover:text-[#8b621f] transition-colors duration-300">
+            隱私權政策
+          </a>
+          <span class="text-[#fcfaf6]/20">|</span>
+          <a href="/terms/" class="text-[#fcfaf6]/50 text-sm hover:text-[#8b621f] transition-colors duration-300">
+            使用條款
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

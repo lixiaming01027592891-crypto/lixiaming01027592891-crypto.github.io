@@ -1,0 +1,649 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SchemaMarkup from '../components/SchemaMarkup.astro';
+
+// SEO 設定
+const seoTitle = '宇涵居家照護｜高雄居家看護推薦｜24小時專業到府照護服務';
+const seoDescription = '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。新興區、左營區、苓雅區等全高雄地區到府服務，24小時全年無休。';
+const seoKeywords = '高雄居家看護, 高雄居家照護, 高雄看護推薦, 高雄長照服務, 宇涵居家照護, 高雄看護, 居家照護服務';
+
+// 服務項目資料
+const services = [
+  {
+    title: '長者陪伴照護',
+    description: '提供長者日常生活陪伴，包括聊天互動、情緒支持、散步陪同，讓長者感受溫暖關懷。',
+    image: '/images/service-elderly.jpg',
+    href: '/services/elderly-care/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>',
+  },
+  {
+    title: '日常生活協助',
+    description: '協助長者完成日常活動，如進食、盥洗、更衣、移動等，確保長者生活品質與尊嚴。',
+    image: '/images/service-daily.jpg',
+    href: '/services/daily-assistance/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+  },
+  {
+    title: '居家安全觀察',
+    description: '定期觀察長者身體狀況，注意飲食、睡眠、用藥情形，即時發現異常並通報家屬。',
+    image: '/images/service-safety.jpg',
+    href: '/services/safety-monitoring/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+  },
+  {
+    title: '復健與回診陪同',
+    description: '陪同長者進行復健運動、定期回診拿藥，協助與醫療人員溝通，確保醫療建議順利進行。',
+    image: '/images/service-rehab.jpg',
+    href: '/services/rehabilitation/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+  },
+  {
+    title: '家庭照護溝通',
+    description: '與家屬保持密切聯繫，定期回報長者狀況，協助規劃適合的照護方案與調整。',
+    image: '/images/service-communication.jpg',
+    href: '/services/communication/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>',
+  },
+  {
+    title: '短期與彈性支援',
+    description: '提供臨時看護、短期照護服務，彈性配合家庭需求，解決突發照護人力不足的問題。',
+    image: '/images/service-temporary.jpg',
+    href: '/services/temporary/',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>',
+  },
+];
+
+// 客戶見證資料
+const testimonials = [
+  {
+    name: '陳小姐',
+    service: '長者陪伴',
+    content: '家中長輩需要長時間陪伴後，我們找到了宇涵。溝通很細心，也願意配合家庭狀況調整安排，讓我們安心很多。',
+  },
+  {
+    name: '林先生',
+    service: '失智照護',
+    content: '最在意的是照護人員是否有耐心，實際配合後感受到團隊很穩定，也會即時回報家人的狀況。',
+  },
+  {
+    name: '張太太',
+    service: '居家協助',
+    content: '原本擔心家人不習慣外人協助，沒想到互動自然、安排彈性，對我們這種雙薪家庭幫助很大。',
+  },
+];
+
+// 服務地區資料
+const districts = [
+  { name: '新興區', href: '/areas/xinxing/' },
+  { name: '苓雅區', href: '/areas/lingya/' },
+  { name: '左營區', href: '/areas/zuoying/' },
+  { name: '鼓山區', href: '/areas/gushan/' },
+  { name: '三民區', href: '/areas/sanmin/' },
+  { name: '前鎮區', href: '/areas/qianzhen/' },
+  { name: '楠梓區', href: '/areas/nanzi/' },
+  { name: '小港區', href: '/areas/xiaogang/' },
+];
+
+// 最新文章資料
+const blogPosts = [
+  {
+    title: '失智症居家照護注意事項',
+    excerpt: '了解失智症患者的照護重點，打造安全舒適的居家環境，幫助延緩病情發展。',
+    image: '/images/blog-dementia.jpg',
+    href: '/blog/dementia-care-tips/',
+    date: '2024-12-15',
+  },
+  {
+    title: '外籍看護空窗期怎麼辦',
+    excerpt: '外籍看護休假期間或轉換期間，如何安排臨時照護人員，確保長者照護不中斷。',
+    image: '/images/blog-foreign.jpg',
+    href: '/blog/foreign-caregiver-gap/',
+    date: '2024-12-08',
+  },
+  {
+    title: '術後居家照護完整指南',
+    excerpt: '手術後返家照護須知，從傷口照顧、飲食調理到復健運動的完整指引。',
+    image: '/images/blog-postsurgery.jpg',
+    href: '/blog/post-surgery-care/',
+    date: '2024-12-01',
+  },
+];
+
+// Breadcrumb 項目
+const breadcrumbItems = [
+  { name: '首頁', url: 'https://www.yuhan-homecare.com/' },
+];
+---
+
+<MainLayout
+  title={seoTitle}
+  description={seoDescription}
+  keywords={seoKeywords}
+  transparentNav={true}
+  schemas={[
+    { type: 'LocalBusiness', data: {} },
+    { type: 'WebSite', data: {} },
+  ]}
+  breadcrumbItems={breadcrumbItems}
+>
+  {/* ============ HERO BANNER ============ */}
+  <section
+    id="hero"
+    class="relative w-full min-h-[100dvh] flex items-center justify-center overflow-hidden"
+  >
+    {/* 背景圖片 */}
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/hero-banner.jpg"
+        alt="宇涵居家照護 - 高雄專業居家看護服務"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      {/* 暗色漸層覆蓋 */}
+      <div class="absolute inset-0 gradient-overlay" />
+    </div>
+
+    {/* 內容 */}
+    <div class="relative z-10 section-container pt-[100px] pb-16 md:pt-[120px] md:pb-20">
+      <div class="max-w-3xl mx-auto text-center">
+        {/* 特色標籤 */}
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-[#8b621f]/90 text-white text-sm font-medium rounded-full backdrop-blur-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            高雄在地
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/15 text-white text-sm font-medium rounded-full backdrop-blur-sm border border-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+            </svg>
+            24hr全年無休
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-white/15 text-white text-sm font-medium rounded-full backdrop-blur-sm border border-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+            </svg>
+            一對一客製照護
+          </span>
+        </div>
+
+        {/* 主標題 */}
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#fcfaf6] leading-tight mb-6"
+          style="font-family: var(--font-serif)"
+        >
+          用心陪伴每一天，<br class="hidden sm:block" />讓家人在熟悉的家中安心生活
+        </h1>
+
+        {/* 副標題 */}
+        <p class="text-[#fcfaf6]/85 text-base sm:text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          宇涵居家照護提供高雄市專業到府照護服務，從居家看護、醫院看護到術後照顧，我們用心守護您的家人。
+        </p>
+
+        {/* CTA 按鈕 */}
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="tel:+886935803258"
+            class="btn-primary w-full sm:w-auto text-base"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            立即來電諮詢
+          </a>
+          <a
+            href="#services"
+            class="btn-secondary border-[#fcfaf6]/30 text-[#fcfaf6] hover:bg-[#fcfaf6] hover:text-[#2b221c] w-full sm:w-auto text-base"
+          >
+            了解服務內容
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* 底部漸層過渡 */}
+    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fcfaf6] to-transparent z-10" />
+  </section>
+
+  {/* ============ 統計區 ============ */}
+  <section class="w-full py-14 md:py-18 bg-[#fcfaf6]">
+    <div class="section-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+        {/* 統計項目 1 */}
+        <div class="flex flex-col items-center text-center px-6 py-8 bg-white rounded-2xl shadow-sm border border-[#efe5d5]/50">
+          <span
+            class="text-4xl md:text-5xl font-bold text-[#8b621f] mb-2"
+            style="font-family: var(--font-serif)"
+          >
+            10+
+          </span>
+          <span class="text-[#6d5d50] text-base font-medium">年照護經驗</span>
+          <p class="text-[#6d5d50]/70 text-sm mt-2">累積豐富的專業照護知識與實務經驗</p>
+        </div>
+
+        {/* 統計項目 2 */}
+        <div class="flex flex-col items-center text-center px-6 py-8 bg-white rounded-2xl shadow-sm border border-[#efe5d5]/50">
+          <span
+            class="text-4xl md:text-5xl font-bold text-[#8b621f] mb-2"
+            style="font-family: var(--font-serif)"
+          >
+            500+
+          </span>
+          <span class="text-[#6d5d50] text-base font-medium">服務家庭</span>
+          <p class="text-[#6d5d50]/70 text-sm mt-2">深受高雄在地家庭信賴與推薦</p>
+        </div>
+
+        {/* 統計項目 3 */}
+        <div class="flex flex-col items-center text-center px-6 py-8 bg-white rounded-2xl shadow-sm border border-[#efe5d5]/50">
+          <span
+            class="text-4xl md:text-5xl font-bold text-[#8b621f] mb-2"
+            style="font-family: var(--font-serif)"
+          >
+            24hr
+          </span>
+          <span class="text-[#6d5d50] text-base font-medium">全年無休服務</span>
+          <p class="text-[#6d5d50]/70 text-sm mt-2">隨時為您安排適合的照護方案</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {/* ============ 服務項目 ============ */}
+  <section id="services" class="w-full py-16 md:py-24 bg-[#efe5d5]/30">
+    <div class="section-container">
+      {/* 區塊標題 */}
+      <div class="text-center mb-12 md:mb-16">
+        <h2
+          class="section-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#2b221c]"
+          style="font-family: var(--font-serif)"
+        >
+          完整的高雄居家照護服務
+        </h2>
+        <p class="text-[#6d5d50] text-base md:text-lg mt-4 max-w-2xl mx-auto">
+          從日常陪伴到專業照護，我們提供全方位的居家照護服務，滿足不同家庭的需求
+        </p>
+      </div>
+
+      {/* 服務卡片網格 */}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {services.map((service, index) => (
+          <a
+            href={service.href}
+            class="group card bg-white rounded-2xl overflow-hidden border border-[#efe5d5]/50 hover:border-[#8b621f]/20"
+          >
+            {/* 卡片圖片 */}
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#2b221c]/60 via-transparent to-transparent" />
+              {/* 圖標 */}
+              <div class="absolute top-4 left-4 w-12 h-12 bg-[#8b621f] rounded-xl flex items-center justify-center text-white shadow-lg">
+                <Fragment set:html={service.icon} />
+              </div>
+            </div>
+
+            {/* 卡片內容 */}
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold text-[#2b221c] mb-2 group-hover:text-[#8b621f] transition-colors duration-300"
+                style="font-family: var(--font-serif)"
+              >
+                {service.title}
+              </h3>
+              <p class="text-[#6d5d50] text-sm leading-relaxed mb-4">
+                {service.description}
+              </p>
+              <span class="inline-flex items-center text-[#8b621f] text-sm font-medium group-hover:gap-2 transition-all duration-300">
+                了解更多
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============ 關於我們簡介 ============ */}
+  <section class="w-full py-16 md:py-24 bg-[#fcfaf6]">
+    <div class="section-container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        {/* 左側：文字內容 */}
+        <div class="order-2 lg:order-1">
+          <span class="inline-block text-[#8b621f] text-sm font-medium tracking-wider uppercase mb-3">
+            ABOUT US
+          </span>
+          <h2
+            class="section-title-left section-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#2b221c] mb-6"
+            style="font-family: var(--font-serif)"
+          >
+            用心照護每一個家庭
+          </h2>
+          <div class="space-y-4 text-[#6d5d50] leading-relaxed mb-8">
+            <p>
+              宇涵居家照護深耕高雄多年，我們相信每位長者都應該在熟悉的家中安享晚年。我們的照護團隊秉持「視如己親」的理念，以專業與愛心，為每個家庭提供貼心的照護服務。
+            </p>
+            <p>
+              我們重視與家屬的溝通與信任建立，每一位照護人員都經過嚴格篩選與專業培訓，確保能夠提供優質的照護品質。從初次諮詢到照護執行，我們全程陪伴，讓您無後顧之憂。
+            </p>
+          </div>
+
+          {/* 服務承諾 */}
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3 p-4 bg-[#efe5d5]/40 rounded-xl">
+              <div class="w-10 h-10 bg-[#8b621f] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-[#2b221c] text-[15px]">嚴格篩選</h4>
+                <p class="text-[#6d5d50] text-sm">每位照護人員均經過背景查核與專業培訓</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-[#efe5d5]/40 rounded-xl">
+              <div class="w-10 h-10 bg-[#8b621f] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-[#2b221c] text-[15px]">即時回報</h4>
+                <p class="text-[#6d5d50] text-sm">照護狀況即時回報，讓家屬安心掌握</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-[#efe5d5]/40 rounded-xl">
+              <div class="w-10 h-10 bg-[#8b621f] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-[#2b221c] text-[15px]">彈性安排</h4>
+                <p class="text-[#6d5d50] text-sm">依照家庭需求彈性調整照護時間與內容</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-[#efe5d5]/40 rounded-xl">
+              <div class="w-10 h-10 bg-[#8b621f] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-[#2b221c] text-[15px]">全程陪伴</h4>
+                <p class="text-[#6d5d50] text-sm">從諮詢到照護結束，專人全程服務</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="/about/" class="btn-primary">
+            了解更多關於我們
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        {/* 右側：圖片 */}
+        <div class="order-1 lg:order-2">
+          <div class="relative">
+            <img
+              src="/images/about-team.jpg"
+              alt="宇涵居家照護團隊"
+              class="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+            {/* 裝飾元素 */}
+            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-[#8b621f]/10 rounded-2xl -z-10" />
+            <div class="absolute -top-4 -right-4 w-16 h-16 bg-[#efe5d5] rounded-2xl -z-10" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {/* ============ 客戶見證 ============ */}
+  <section id="reviews" class="w-full py-16 md:py-24 bg-[#efe5d5]/30">
+    <div class="section-container">
+      {/* 區塊標題 */}
+      <div class="text-center mb-12 md:mb-16">
+        <h2
+          class="section-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#2b221c]"
+          style="font-family: var(--font-serif)"
+        >
+          家屬怎麼說
+        </h2>
+        <p class="text-[#6d5d50] text-base md:text-lg mt-4 max-w-2xl mx-auto">
+          來自高雄在地家庭的真實回饋，讓我們持續進步的動力
+        </p>
+      </div>
+
+      {/* 見證卡片 */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#efe5d5]/50 flex flex-col">
+            {/* 引號裝飾 */}
+            <div class="text-[#8b621f]/20 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+
+            {/* 內容 */}
+            <p class="text-[#2b221c]/85 leading-relaxed flex-grow mb-6">
+              {testimonial.content}
+            </p>
+
+            {/* 作者資訊 */}
+            <div class="flex items-center gap-3 pt-4 border-t border-[#efe5d5]/60">
+              <div class="w-12 h-12 bg-[#8b621f]/10 rounded-full flex items-center justify-center">
+                <span class="text-[#8b621f] font-semibold text-lg">
+                  {testimonial.name[0]}
+                </span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-[#2b221c] text-[15px]">{testimonial.name}</h4>
+                <p class="text-[#6d5d50] text-sm">{testimonial.service}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Google 評價連結 */}
+      <div class="text-center mt-10">
+        <a
+          href="https://g.co/kgs/example"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#2b221c] font-medium rounded-xl border border-[#efe5d5] transition-all duration-300 hover:bg-[#fcfaf6] hover:shadow-md hover:border-[#8b621f]/20"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z" />
+          </svg>
+          查看 Google 評價
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  {/* ============ 服務地區快速連結 ============ */}
+  <section class="w-full py-16 md:py-24 bg-[#fcfaf6]">
+    <div class="section-container">
+      {/* 區塊標題 */}
+      <div class="text-center mb-12 md:mb-16">
+        <h2
+          class="section-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#2b221c]"
+          style="font-family: var(--font-serif)"
+        >
+          全高雄市到府服務
+        </h2>
+        <p class="text-[#6d5d50] text-base md:text-lg mt-4 max-w-2xl mx-auto">
+          覆蓋高雄市各行政區，讓優質照護服務送到您家中
+        </p>
+      </div>
+
+      {/* 地區按鈕網格 */}
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-5">
+        {districts.map((district) => (
+          <a
+            href={district.href}
+            class="group flex flex-col items-center justify-center p-6 lg:p-8 bg-white rounded-2xl border border-[#efe5d5]/50 transition-all duration-300 hover:border-[#8b621f]/30 hover:shadow-lg hover:shadow-[#8b621f]/5 hover:-translate-y-1"
+          >
+            <div class="w-14 h-14 bg-[#efe5d5]/50 rounded-xl flex items-center justify-center text-[#8b621f] mb-3 transition-all duration-300 group-hover:bg-[#8b621f] group-hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <span class="text-[#2b221c] font-semibold text-base group-hover:text-[#8b621f] transition-colors duration-300">
+              {district.name}
+            </span>
+            <span class="text-[#6d5d50] text-xs mt-1">居家看護</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============ 最新文章 ============ */}
+  <section class="w-full py-16 md:py-24 bg-[#efe5d5]/30">
+    <div class="section-container">
+      {/* 區塊標題 */}
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 md:mb-16">
+        <div>
+          <h2
+            class="section-title-left section-title text-2xl sm:text-3xl md:text-4xl font-bold text-[#2b221c]"
+            style="font-family: var(--font-serif)"
+          >
+            照護知識分享
+          </h2>
+          <p class="text-[#6d5d50] text-base mt-4">
+            專業照護知識與實用資訊，幫助您更好地照顧家人
+          </p>
+        </div>
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1.5 text-[#8b621f] font-medium hover:gap-2.5 transition-all duration-300 text-[15px]"
+        >
+          查看更多文章
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      {/* 文章卡片 */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {blogPosts.map((post) => (
+          <a href={post.href} class="group card bg-white rounded-2xl overflow-hidden">
+            {/* 文章圖片 */}
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+
+            {/* 文章內容 */}
+            <div class="p-6">
+              <time class="text-[#6d5d50] text-sm">{post.date}</time>
+              <h3
+                class="text-lg font-semibold text-[#2b221c] mt-2 mb-3 group-hover:text-[#8b621f] transition-colors duration-300 line-clamp-2"
+                style="font-family: var(--font-serif)"
+              >
+                {post.title}
+              </h3>
+              <p class="text-[#6d5d50] text-sm leading-relaxed line-clamp-2">
+                {post.excerpt}
+              </p>
+              <span class="inline-flex items-center text-[#8b621f] text-sm font-medium mt-4 group-hover:gap-2 transition-all duration-300">
+                閱讀全文
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ============ CTA 區塊 ============ */}
+  <section id="contact" class="w-full py-16 md:py-24 bg-[#2b221c]">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto text-center">
+        {/* 標題 */}
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#fcfaf6] mb-4"
+          style="font-family: var(--font-serif)"
+        >
+          正在找高雄居家看護嗎？
+        </h2>
+        <p class="text-[#fcfaf6]/70 text-base md:text-lg mb-10">
+          現在就安排適合家人的居家照護方案
+        </p>
+
+        {/* 聯絡資訊 */}
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-10 text-[#fcfaf6]/80">
+          <a href="tel:+886935803258" class="flex items-center gap-2 hover:text-[#8b621f] transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            <span class="text-lg font-medium">0935-803-258</span>
+          </a>
+          <a href="https://maps.google.com/?q=高雄市新興區五福一路72號" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[#8b621f] transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>高雄市新興區五福一路72號7樓</span>
+          </a>
+        </div>
+
+        <p class="text-[#fcfaf6]/50 text-sm mb-10">
+          服務時間：週一至週日 24小時服務
+        </p>
+
+        {/* CTA 按鈕 */}
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="tel:+886935803258"
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-[#8b621f] text-white text-lg font-medium rounded-xl transition-all duration-300 hover:bg-[#6d4f1a] hover:shadow-lg hover:shadow-[#8b621f]/20 hover:-translate-y-0.5"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+            </svg>
+            立即來電
+          </a>
+          <a
+            href="https://maps.google.com/?q=高雄市新興區五福一路72號"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-transparent text-[#fcfaf6] text-lg font-medium rounded-xl border-2 border-[#fcfaf6]/30 transition-all duration-300 hover:bg-[#fcfaf6] hover:text-[#2b221c] hover:border-[#fcfaf6]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            查看Google地圖
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

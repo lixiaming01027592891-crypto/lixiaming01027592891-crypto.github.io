@@ -1,0 +1,127 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "高雄長者陪伴照護｜老人居家照顧服務";
+const description = "專業長者陪伴服務，為獨居長者、行動不便長輩提供溫暖陪伴與生活協助，減少孤獨感，提升生活品質。";
+const canonicalURL = new URL("/services/elderly-care/", Astro.site);
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "高雄長者陪伴照護",
+      "description": "為獨居長者、行動不便長輩提供溫暖陪伴與生活協助的專業服務",
+      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
+      "areaServed": {"@type": "City", "name": "高雄市"},
+      "serviceType": "長者陪伴照護",
+      "url": "https://yuhanhomecare.com/services/elderly-care/"
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li><a href="/services/" class="hover:text-[#8b621f] transition-colors">服務項目</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">長者陪伴</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">高雄長者陪伴照護</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">溫暖陪伴，讓長者不再孤單，享受有品質的晚年生活</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <img src="/images/service-elderly.jpg" alt="高雄長者陪伴照護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">長者陪伴的重要性</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在台灣高齡化社會快速來臨的今天，越來越多的長者面臨獨居或缺乏陪伴的困境。根據統計，台灣獨居老人人口逐年攀升，許多長者的子女因為工作、家庭等原因無法時刻陪伴在旁。長期缺乏陪伴與社交互動，不僅容易讓長者感到孤獨與沮喪，更可能對身心健康造成負面影響，甚至加速認知功能退化與身體機能衰退。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">研究顯示，擁有良好社交關係與陪伴的長者，在生活滿意度、心理健康、認知功能等方面都明顯優於長期獨居的長者。陪伴不僅僅是有人在身邊而已，更重要的是透過互動、交流、活動參與，讓長者感受到被關心、被重視，維持積極正向的生活態度。這就是宇涵提供長者陪伴服務的初衷——不只是照顧長者的身體需求，更關心他們的心理與情感需求。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的長者陪伴服務並非單純的「有人陪著」，而是由經過專業訓練的照護人員，針對每位長者的個性、興趣、身體狀況與需求，設計專屬的陪伴計畫。我們的陪伴人員擅長與長者建立信任關係，透過傾聽、聊天、共同活動等方式，成為長者生活中的好朋友與好夥伴。無論是一起散步、下棋、看電視、做手工藝，或是單純聊聊天，我們都會用心規劃每一次的陪伴時光。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-10">對於家屬而言，長者陪伴服務也提供了重要的喘息機會。許多家庭是由一位主要照顧者（通常是配偶或媳婦）負責長者的日常照顧，長期下來容易產生照顧者疲憊與身心壓力。透過宇涵的陪伴服務，家屬可以暫時放下照顧的責任，處理自己的事务、休息充電，或是單純擁有一點屬於自己的時間。這樣的喘息對於維持家庭照顧的永續性至關重要。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務內容</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的長者陪伴服務內容豐富多元，涵蓋長者生活的各個面向。我們根據長者的需求與喜好，提供以下幾類陪伴服務：</p>
+          <div class="space-y-6 mb-10">
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">情感陪伴與社交互動</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">透過聊天、傾聽、分享生活點滴，建立親近的關係，減輕長者的孤獨感與焦慮情緒。陪伴人員會主動關心長者的心情，適時給予鼓勵與支持。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div><h3 class="font-bold text-[#2b221c]">散步與戶外活動</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">陪伴長者到附近公園散步、曬曬太陽、呼吸新鮮空氣，進行輕度運動以維持體能與活動身體以維持循環，同時轉換心情。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">休閒活動與娛樂</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">根據長者興趣，一起進行喜歡的活動，如看電視、聽音樂、下棋、打牌、閱讀、做手工藝等，讓長者的生活充滿樂趣與意義。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg></div><h3 class="font-bold text-[#2b221c]">認知刺激活動</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">透過益智遊戲、回憶討論、照片整理、簡單運算等活動，刺激長者的認知功能，延緩記憶力衰退，維持大腦活力。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">生活協助</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">在陪伴同時，協助長者處理簡單的日常事務，如採買日常用品、陪同就醫取藥、整理家務、準備餐點等。</p></div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center"><svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></div><h3 class="font-bold text-[#2b221c]">安全照顧</h3></div><p class="text-sm text-[#6d5d50] leading-relaxed">陪伴期間留意長者的安全狀況，預防跌倒、走失等意外發生，並在緊急情況時做出適當處理與聯繫家屬。</p></div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">適合對象</h2>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">1</span></div><div><strong class="text-[#2b221c]">獨居長者：</strong><span class="text-[#6d5d50]">獨自居住且缺乏日常陪伴的長者，需要有人定期到府關心與陪伴。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">2</span></div><div><strong class="text-[#2b221c]">行動不便長者：</strong><span class="text-[#6d5d50]">行動能力受限但仍希望外出活動的長者，需要陪伴人員協助外出。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">3</span></div><div><strong class="text-[#2b221c]">輕度認知衰退長者：</strong><span class="text-[#6d5d50]">出現輕度記憶力減退或認知功能下降的長者，透過陪伴活動延緩退化。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">4</span></div><div><strong class="text-[#2b221c]">需要喘息的家屬：</strong><span class="text-[#6d5d50]">家屬需要短暫休息、處理個人事務時，臨時需要人手陪伴長者。</span></div></li>
+            <li class="flex items-start gap-3"><div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1"><span class="text-white text-xs font-bold">5</span></div><div><strong class="text-[#2b221c]">剛失去伴侶的長者：</strong><span class="text-[#6d5d50]">面臨喪偶悲傷的長者，需要情感支持與陪伴，協助度過低潮時期。</span></div></li>
+          </ul>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">常見問題</h2>
+          <div class="space-y-4 mb-10">
+            <div class="border border-[#efe5d5] rounded-xl p-6"><h3 class="font-bold text-[#2b221c] mb-2">Q: 長者陪伴服務一天需要幾小時？</h3><p class="text-sm text-[#6d5d50]">我們提供彈性的服務時數，最低可從每次3小時起，也可以安排全日8小時的陪伴。依照長者的需求與家屬的預算，可以選擇每週一次、兩次或每日陪伴的頻率。</p></div>
+            <div class="border border-[#efe5d5] rounded-xl p-6"><h3 class="font-bold text-[#2b221c] mb-2">Q: 陪伴人員會固定嗎？</h3><p class="text-sm text-[#6d5d50]">為了讓長者能與陪伴人員建立穩定的信任關係，我們會盡量安排固定的人選。但如果原本的人員請假或無法前往，我們也會安排合適的替代人選。</p></div>
+            <div class="border border-[#efe5d5] rounded-xl p-6"><h3 class="font-bold text-[#2b221c] mb-2">Q: 陪伴服務的費用如何計算？</h3><p class="text-sm text-[#6d5d50]">費用依照服務時數計算，通常以每小時200-250元計費，4小時起算。長期合約或固定時段安排另有優惠。詳細費用歡迎來電諮詢。</p></div>
+            <div class="border border-[#efe5d5] rounded-xl p-6"><h3 class="font-bold text-[#2b221c] mb-2">Q: 如果長者不習慣陌生人怎麼辦？</h3><p class="text-sm text-[#6d5d50]">我們的陪伴人員都經過專業訓練，擅長與長者建立關係。通常經過1-2次的互動後，長者就會逐漸適應。我們也會先與家屬了解長者的個性與喜好，安排適合的人選。</p></div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">費用參考</h2>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-[#2b221c] text-[#fcfaf6]"><th class="px-6 py-4 font-semibold">服務方案</th><th class="px-6 py-4 font-semibold">時數</th><th class="px-6 py-4 font-semibold">參考費用</th></tr></thead>
+              <tbody class="divide-y divide-[#efe5d5]">
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">半日陪伴</td><td class="px-6 py-4 text-[#6d5d50]">4小時</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$800 - $1,000 /次</td></tr>
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">日間陪伴</td><td class="px-6 py-4 text-[#6d5d50]">8小時</td><td class="px-6 py-4 text-[#8b621f] font-semibold">$1,600 - $2,000 /日</td></tr>
+                <tr class="hover:bg-[#fcfaf6]"><td class="px-6 py-4 text-[#2b221c]">長期陪伴（包月）</td><td class="px-6 py-4 text-[#6d5d50]">每週5天×8小時</td><td class="px-6 py-4 text-[#8b621f] font-semibold">另議優惠方案</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-[#6d5d50]">* 實際費用依服務內容與頻率調整。</p>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="bg-[#fcfaf6] rounded-2xl p-6 sticky top-8">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">其他服務項目</h3>
+            <ul class="space-y-3 mb-8">
+              <li><a href="/services/home-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 居家看護</a></li>
+              <li><a href="/services/hospital-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 醫院看護</a></li>
+              <li><a href="/services/dementia-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 失智照護</a></li>
+              <li><a href="/services/post-surgery/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 術後照顧</a></li>
+              <li><a href="/services/temporary-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 臨時看護</a></li>
+            </ul>
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">快速聯絡</h3>
+            <a href="tel:0935803258" class="block w-full text-center bg-[#8b621f] text-white py-4 rounded-full font-semibold hover:bg-[#6d4a18] transition-colors mb-3"><span class="text-sm block opacity-80">24小時服務專線</span><span class="text-lg">0935-803-258</span></a>
+            <a href="/contact/" class="block w-full text-center border-2 border-[#8b621f] text-[#8b621f] py-3 rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors">線上諮詢表單</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-4">讓愛與陪伴不缺席</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">立即聯絡宇涵，為您的家人安排溫暖的長者陪伴服務。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">撥打 0935-803-258</a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors">填寫諮詢表單</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

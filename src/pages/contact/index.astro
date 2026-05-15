@@ -1,0 +1,228 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "聯絡我們｜高雄居家看護諮詢｜宇涵 0935-803-258";
+const description = "聯絡宇涵居家照護，免費諮詢高雄居家看護服務。電話：0935-803-258，地址：高雄市三民區覺民路370號。我們隨時為您服務！";
+const canonicalURL = new URL("/contact/", Astro.site);
+
+const contactInfo = {
+  phone: "0935-803-258",
+  telLink: "tel:0935803258",
+  address: "高雄市三民區覺民路370號",
+  hours: "週一至週日 08:00 - 20:00",
+  email: "service@yuhanhomecare.com"
+};
+
+const serviceTypes = [
+  { value: "home-care", label: "居家看護" },
+  { value: "hospital-care", label: "醫院看護" },
+  { value: "elderly-care", label: "長者陪伴" },
+  { value: "dementia-care", label: "失智照護" },
+  { value: "post-surgery", label: "術後照顧" },
+  { value: "temporary-care", label: "臨時看護" },
+  { value: "other", label: "其他需求" }
+];
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "聯絡宇涵居家照護",
+      "description": "高雄居家看護諮詢聯絡資訊",
+      "url": "https://yuhanhomecare.com/contact/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "宇涵居家照護",
+        "telephone": "0935-803-258",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "覺民路370號",
+          "addressLocality": "三民區",
+          "addressRegion": "高雄市",
+          "addressCountry": "TW"
+        },
+        "openingHours": "Mo-Su 08:00-20:00"
+      }
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">聯絡我們</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">聯絡我們</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">有任何照護需求或疑問？歡迎隨時與我們聯繫</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要內容 -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <!-- 左側：聯絡資訊 -->
+        <div class="lg:col-span-2">
+          <div class="bg-[#fcfaf6] rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-[#2b221c] mb-6">聯絡資訊</h2>
+            
+            <!-- 電話 -->
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div>
+                <p class="text-sm text-[#6d5d50] mb-1">24小時服務專線</p>
+                <a href={contactInfo.telLink} class="text-lg font-bold text-[#8b621f] hover:underline">{contactInfo.phone}</a>
+              </div>
+            </div>
+
+            <!-- 地址 -->
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <p class="text-sm text-[#6d5d50] mb-1">地址</p>
+                <p class="font-medium text-[#2b221c]">{contactInfo.address}</p>
+              </div>
+            </div>
+
+            <!-- 服務時間 -->
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <p class="text-sm text-[#6d5d50] mb-1">服務時間</p>
+                <p class="font-medium text-[#2b221c]">{contactInfo.hours}</p>
+                <p class="text-xs text-[#6d5d50] mt-1">急件需求可24小時聯繫</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start gap-4 mb-8">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <p class="text-sm text-[#6d5d50] mb-1">電子郵件</p>
+                <p class="font-medium text-[#2b221c]">{contactInfo.email}</p>
+              </div>
+            </div>
+
+            <!-- 快速諮詢按鈕 -->
+            <div class="border-t border-[#efe5d5] pt-6">
+              <h3 class="text-sm font-semibold text-[#2b221c] mb-3">快速聯繫</h3>
+              <a href={contactInfo.telLink} class="block w-full text-center bg-[#8b621f] text-white py-4 rounded-full font-semibold hover:bg-[#6d4a18] transition-colors mb-3">
+                <span class="text-lg">立即撥打 {contactInfo.phone}</span>
+              </a>
+              <a href="https://line.me/ti/p/@yuhanhomecare" target="_blank" rel="noopener noreferrer" class="block w-full text-center border-2 border-[#8b621f] text-[#8b621f] py-3 rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors">
+                LINE 線上諮詢
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側：聯絡表單 + 地圖 -->
+        <div class="lg:col-span-3">
+          <!-- 聯絡表單 -->
+          <div class="bg-[#fcfaf6] rounded-2xl p-8 mb-8">
+            <h2 class="text-xl font-bold text-[#2b221c] mb-2">線上諮詢表單</h2>
+            <p class="text-sm text-[#6d5d50] mb-6">填寫以下表單，我們會盡快與您聯繫</p>
+            <form action="/api/contact" method="POST" class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-[#2b221c] mb-2">姓名 <span class="text-[#8b621f]">*</span></label>
+                  <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl border border-[#efe5d5] bg-white text-[#2b221c] placeholder-[#6d5d50] focus:outline-none focus:ring-2 focus:ring-[#8b621f] focus:border-transparent transition-all" placeholder="請輸入您的姓名" />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-[#2b221c] mb-2">聯絡電話 <span class="text-[#8b621f]">*</span></label>
+                  <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-[#efe5d5] bg-white text-[#2b221c] placeholder-[#6d5d50] focus:outline-none focus:ring-2 focus:ring-[#8b621f] focus:border-transparent transition-all" placeholder="例如：0912-345-678" />
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-[#2b221c] mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl border border-[#efe5d5] bg-white text-[#2b221c] placeholder-[#6d5d50] focus:outline-none focus:ring-2 focus:ring-[#8b621f] focus:border-transparent transition-all" placeholder="example@email.com" />
+              </div>
+              <div>
+                <label for="service-type" class="block text-sm font-medium text-[#2b221c] mb-2">需求類型</label>
+                <select id="service-type" name="serviceType" class="w-full px-4 py-3 rounded-xl border border-[#efe5d5] bg-white text-[#2b221c] focus:outline-none focus:ring-2 focus:ring-[#8b621f] focus:border-transparent transition-all">
+                  <option value="">請選擇需求類型</option>
+                  {serviceTypes.map(type => (
+                    <option value={type.value}>{type.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-[#2b221c] mb-2">需求說明</label>
+                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-[#efe5d5] bg-white text-[#2b221c] placeholder-[#6d5d50] focus:outline-none focus:ring-2 focus:ring-[#8b621f] focus:border-transparent transition-all resize-none" placeholder="請簡單說明您的照護需求，例如：被照護者年齡、身體狀況、希望服務的時間等..."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-[#8b621f] text-white py-4 rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">
+                送出諮詢
+              </button>
+              <p class="text-xs text-[#6d5d50] text-center">送出表單後，我們會在24小時內與您聯繫。急件請直接撥打服務專線。</p>
+            </form>
+          </div>
+
+          <!-- Google 地圖 -->
+          <div class="bg-[#fcfaf6] rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-[#2b221c] mb-4">服務地點</h2>
+            <div class="rounded-xl overflow-hidden border border-[#efe5d5]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.0!2d120.315!3d22.64!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM4JzI0LjAiTiAxMjDCsDE4JzU0LjAiRQ!5e0!3m2!1szh-TW!2stw!4v1"
+                width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="宇涵居家照護位置地圖"
+              ></iframe>
+            </div>
+            <p class="text-sm text-[#6d5d50] mt-3">地址：{contactInfo.address}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服務承諾 -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-8">我們的承諾</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+          <div class="w-16 h-16 bg-[#8b621f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#fcfaf6] mb-2">24小時快速回應</h3>
+          <p class="text-sm text-[#efe5d5]">急件需求數小時內安排人員到場</p>
+        </div>
+        <div>
+          <div class="w-16 h-16 bg-[#8b621f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#fcfaf6] mb-2">免費到府評估</h3>
+          <p class="text-sm text-[#efe5d5]">專員免費到府了解需求與規劃方案</p>
+        </div>
+        <div>
+          <div class="w-16 h-16 bg-[#8b621f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-[#fcfaf6] mb-2">無條件更換保證</h3>
+          <p class="text-sm text-[#efe5d5]">不滿意看護人員可無條件更換</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,193 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '醫院看護vs居家看護：如何選擇適合？',
+  description: '醫院看護與居家看護比較指南。從照護內容、費用、環境、家屬負擔等面向，深入比較兩者優缺點，幫助您做出適合的選擇。',
+  image: 'https://www.yuhan-homecare.com.tw/images/blog-hospital.jpg',
+  datePublished: '2025-01-05T08:00:00+08:00',
+  author: { '@type': 'Organization', name: '宇涵居家照護' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://www.yuhan-homecare.com.tw/images/logo.png' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/blog/hospital-vs-home' },
+};
+---
+
+<MainLayout
+  title="醫院看護vs居家看護：如何選擇適合？｜宇涵"
+  description="醫院看護與居家看護完整比較：照護內容、費用分析、適合情境、優缺點比較。幫助您做出適合家人的照護選擇。"
+  keywords="醫院看護,居家看護,醫院看護費用,居家看護費用,醫院看護vs居家看護,住院看護,到府看護,看護選擇"
+  schema={schema}
+>
+  <article>
+    <section class="relative bg-[#2b221c] py-16 lg:py-24">
+      <div class="absolute inset-0 opacity-15">
+        <img src="/images/blog-hospital.jpg" alt="醫院看護與居家看護比較" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="麵包屑" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
+            <li><a href="/" class="hover:text-[#8b621f]">首頁</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li><a href="/blog" class="hover:text-[#8b621f]">照護知識</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li class="text-[#fcfaf6]">醫院vs居家</li>
+          </ol>
+        </nav>
+        <span class="inline-block bg-[#8b621f] text-white text-xs px-3 py-1 rounded-full mb-4">照護資訊</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fcfaf6] mb-4 leading-tight">醫院看護與居家看護比較指南</h1>
+        <div class="flex items-center text-[#efe5d5] text-sm space-x-4">
+          <span>2025-01-05</span><span>10 分鐘閱讀</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-[#fcfaf6] py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-[#6d5d50] leading-relaxed mb-8">
+            當家人因為疾病或手術需要照護時，許多家庭會面臨一個重要的抉擇：留在醫院聘請看護，還是出院回家接受居家看護？這兩種選擇各有其優缺點，沒有絕對的好壞，關鍵在於了解兩者的差異，並根據患者的狀況、家庭條件與經濟能力做出適合的決定。本文將從多個面向深入比較醫院看護與居家看護，幫助您做出明智的選擇。
+          </p>
+
+          <!-- 照護環境比較 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">照護環境比較</h2>
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">醫院看護的環境特點</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            醫院看護的最大優勢在於醫療資源就在身邊。當患者需要緊急醫療處置時，醫師與護理師可以立即到場。醫院的設備完善，對於需要持續監測生命徵象、頻繁傷口敷料更換（依醫囑）、或使用特殊醫療設備的患者來說，醫院環境是最安全的選擇。
+          </p>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">然而，醫院環境也有其缺點。病房空間有限，隱私較差，患者可能需要與其他病患同住一間病房。醫院的作息固定（量血壓、發藥、打針），患者的休息品質可能受到影響。長期住院還可能增加院內感染的風險。</p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">居家看護的環境特點</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            居家看護讓患者在最熟悉的環境中接受照護。家是自己的城堡，熟悉的空間、熟悉的氣味、熟悉的家人，這些都能帶給患者極大的安全感與舒適感。在家中，患者可以按照自己的習慣作息，不必遷就醫院的規定。
+          </p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">居家看護的另一個優勢是減少感染風險。醫院雖然有完善的感染控制措施，但因為病患密集，交叉感染的風險仍然存在。在家中的環境相對單純，感染風險較低。缺點是當發生緊急狀況時，需要前往醫院才能獲得醫療處置。</p>
+
+          <!-- 照護內容比較 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">照護內容比較</h2>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-[#8b621f] text-white"><th class="text-left p-3 rounded-tl-lg">照護項目</th><th class="text-left p-3">醫院看護</th><th class="text-left p-3 rounded-tr-lg">居家看護</th></tr></thead>
+              <tbody class="text-[#6d5d50]">
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">生活照顧</td><td class="p-3">基本生活協助</td><td class="p-3">全方位生活照顧</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">照護服務</td><td class="p-3">由醫護人員執行</td><td class="p-3">看護執行基礎醫療護理</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">傷口觀察與清潔照護</td><td class="p-3">專業護理師執行</td><td class="p-3">有經驗看護可執行</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">緊急處理</td><td class="p-3">可立即獲得醫療</td><td class="p-3">需送醫處理</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold rounded-bl-lg">心理支持</td><td class="p-3">較少</td><td class="p-3">家人陪伴，心理支持佳</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 費用比較 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">費用比較分析</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">費用是許多家庭在選擇時的重要考量因素。以下是醫院看護與居家看護的費用比較：</p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">醫院看護費用</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">醫院看護的費用通常包含以下項目：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-2">
+            <li>病房費用（健保病房免費，自費病房另計）</li>
+            <li>護理費用（包含在住院費用中）</li>
+            <li>一對一看護費用（每日約2,800-4,500元，視醫院與看護資歷而定）</li>
+            <li>藥品與醫療耗材費用（部分需自費）</li>
+            <li>伙食費（每日約200-300元）</li>
+          </ul>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在醫院聘請一對一看護，每日總花費（含看護費、伙食費）約在3,000-5,000元之間。如果需要長期住院，這筆費用累積下來相當可觀。</p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">居家看護費用</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">居家看護的費用結構如下：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-2">
+            <li>居家看護服務費（每日約2,500-4,500元，視服務內容與時數而定）</li>
+            <li>無額外病房費用（在家照護）</li>
+            <li>伙食費自行準備（較醫院便宜且可依個人喜好調整）</li>
+            <li>若配合長照2.0服務，可獲得部分費用補助</li>
+          </ul>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">整體來說，居家看護的總花費通常低於醫院看護，尤其對於長期照護的需求而言。此外，患者在家中的生活品質通常較好，這是無法用金錢衡量的價值。</p>
+
+          <!-- 適合情境 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">適合情境分析</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-white rounded-xl p-6 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-3 flex items-center"><span class="w-6 h-6 bg-[#8b621f] text-white rounded-full flex items-center justify-center mr-2 text-xs">醫</span>適合醫院看護的情況</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-2">
+                <li>• 病情不穩定，需要密切監測</li>
+                <li>• 術後恢復期（1-3天內）</li>
+                <li>• 需要頻繁的醫療處置</li>
+                <li>• 需要特殊的醫療設備</li>
+                <li>• 家中無人可照顧</li>
+                <li>• 住家環境不適合照護</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-xl p-6 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#2b221c] mb-3 flex items-center"><span class="w-6 h-6 bg-[#8b621f] text-white rounded-full flex items-center justify-center mr-2 text-xs">家</span>適合居家看護的情況</h4>
+              <ul class="text-sm text-[#6d5d50] space-y-2">
+                <li>• 病情穩定，醫師同意出院</li>
+                <li>• 需要長期照護</li>
+                <li>• 患者強烈希望回家</li>
+                <li>• 家中有人可以部分協助</li>
+                <li>• 住家環境安全適合</li>
+                <li>• 考量長期費用負擔</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 如何決定 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">如何做出決定</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">在做出決定之前，建議家庭從以下幾個面向評估：</p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">評估患者的醫療需求</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            首先，與主治醫師充分溝通，了解患者的病情是否適合出院回家。醫師會根據患者的生命徵象穩定性、傷口恢復狀況、是否需要特殊醫療處置等因素，給予專業建議。如果醫師認為患者可以出院，那麼居家看護就是可行的選項。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">評估家庭的照護能力</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            居家看護並不代表完全不需要家人參與。即使有專業看護到府服務，家人仍然需要承擔監督與協調的角色。評估家庭中是否有成員可以負責聯繫看護、處理緊急狀況、以及提供情感支持。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">評估經濟負擔</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            比較醫院看護與居家看護的長期費用。對於需要數週甚至數月的照護來說，居家看護的總花費通常較低。同時，確認是否可以申請長照2.0補助來降低費用負擔。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">評估住家環境</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">
+            確認住家環境是否適合照護，包括是否有足夠的空間、是否經過無障礙與安全改造（防滑、扶手等）、以及是否方便就醫（距離醫院的遠近）。
+          </p>
+
+          <!-- 總結建議 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">總結建議</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            醫院看護與居家看護並非對立的選擇，而是可以根據患者的恢復進度靈活轉換。許多患者會在術後先在醫院休養幾天，待病情穩定後轉為居家看護。這樣的安排既能確保術初期的安全，又能在恢復期享受家中的舒適環境。
+          </p>
+          <p class="text-[#6d5d50] leading-relaxed mb-8">
+            宇涵居家照護擁有豐富的醫院到居家銜接經驗，我們的看護人員能夠配合醫院的出院計畫，確保患者返家後的照護品質不打折扣。如果您正在考慮從醫院轉為居家看護，歡迎與我們聯繫，我們將提供專業的評估與建議。
+          </p>
+
+          <!-- CTA -->
+          <div class="bg-[#8b621f]/10 rounded-xl p-6 mb-10 border border-[#8b621f]/20">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">考慮轉為居家看護？</h3>
+            <p class="text-[#6d5d50] mb-4">宇涵居家照護提供從醫院到居家的無縫銜接服務，讓患者安心返家。</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:0978788886" class="inline-flex items-center justify-center px-6 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                0978-788-886
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#8b621f] text-[#8b621f] font-semibold rounded-lg hover:bg-[#8b621f]/10 transition-colors">免費諮詢表單</a>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <a href="/blog/post-surgery-care" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-postsurgery.jpg" alt="術後照護" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">術後居家照護指南</h4><p class="text-sm text-[#6d5d50]">出院後注意事項...</p></div>
+            </a>
+            <a href="/blog/guide/pricing" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-packages.jpg" alt="看護費用" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">居家看護費用指南</h4><p class="text-sm text-[#6d5d50]">2025年完整價格說明...</p></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

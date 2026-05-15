@@ -1,0 +1,207 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "關於宇涵｜高雄居家看護團隊介紹｜專業照護服務理念";
+const description = "了解宇涵居家照護的服務理念與專業團隊。我們以用心、專業、安心為宗旨，提供高雄市優質居家看護服務。";
+const canonicalURL = new URL("/about/", Astro.site);
+
+const philosophyItems = [
+  {
+    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+    title: "用心傾聽",
+    desc: "我們相信每位長者都有獨特的需求與故事。宇涵團隊耐心傾聽家屬與被照護者的心聲，從生活習慣、飲食偏好到情感需求，細緻了解每一個細節，量身打造適合的照護方案。"
+  },
+  {
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    title: "專業照護",
+    desc: "所有看護人員皆持有專業證照，並定期接受在職訓練。我們熟悉長期照護、術後復健、失智照護等專業領域，確保每一次服務都達到醫療級的照護標準。"
+  },
+  {
+    icon: "M5 13l4 4L19 7",
+    title: "安心託付",
+    desc: "宇涵嚴格把關人員品格與專業能力，提供完整的背景審查與健康檢查。透過即時回報系統，家屬隨時掌握照護狀況，讓您安心託付最摯愛的家人。"
+  }
+];
+
+const commitments = [
+  { icon: "M12 14l9-5-9-5-9 5 9 5z\nM12 14l6.16-3.422A12.083 12.083 0 0112 21.5a12.083 12.083 0 01-6.16-10.922L12 14z", title: "專業證照", desc: "所有看護皆持有合法照護證照" },
+  { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", title: "背景審查", desc: "嚴格人員背景調查與健康檢查" },
+  { icon: "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9", title: "即時回報", desc: "照護狀況即時通知家屬" },
+  { icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z", title: "彈性安排", desc: "依需求調整服務時間與內容" },
+  { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", title: "24小時支援", desc: "全天候客服與緊急支援服務" },
+  { icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01", title: "品質監督", desc: "定期考核與服務品質追蹤" }
+];
+
+const steps = [
+  { step: "01", title: "需求諮詢", desc: "撥打專線或線上諮詢，說明照護需求與期望" },
+  { step: "02", title: "評估規劃", desc: "專員到府評估，制定個人化照護計畫" },
+  { step: "03", title: "媒合派遣", desc: "媒合適合的看護人員，安排到府服務" },
+  { step: "04", title: "持續追蹤", desc: "定期回訪與品質監督，確保照護品質" }
+];
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "關於宇涵居家照護",
+      "description": "了解宇涵居家照護的服務理念與專業團隊",
+      "url": "https://yuhanhomecare.com/about/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "宇涵居家照護",
+        "description": "專業居家看護服務機構",
+        "areaServed": "高雄市"
+      }
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">關於我們</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">關於宇涵居家照護</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">用心守護每一位長者的居家生活品質</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 公司理念 -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b221c] mb-4">我們的理念</h2>
+        <p class="text-[#6d5d50] max-w-2xl mx-auto">宇涵以三大核心理念為基石，為每一位長者與家庭提供最溫暖的照護服務</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {philosophyItems.map(item => (
+          <div class="bg-[#fcfaf6] rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300">
+            <div class="w-16 h-16 bg-[#8b621f] bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.icon}></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">{item.title}</h3>
+            <p class="text-[#6d5d50] leading-relaxed text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 服務承諾 -->
+  <section class="py-16 lg:py-20 bg-[#fcfaf6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b221c] mb-4">六大服務承諾</h2>
+        <p class="text-[#6d5d50] max-w-2xl mx-auto">我們以最高標準要求自己，讓家屬完全放心</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {commitments.map(item => (
+          <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={item.icon}></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-[#2b221c] mb-1">{item.title}</h3>
+                <p class="text-sm text-[#6d5d50]">{item.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 服務流程 -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b221c] mb-4">服務流程</h2>
+        <p class="text-[#6d5d50] max-w-2xl mx-auto">簡單四步驟，即刻享有專業照護服務</p>
+      </div>
+      <div class="relative">
+        <!-- 連接線 (桌面版) -->
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-[#efe5d5] -translate-y-1/2 z-0"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {steps.map((item, index) => (
+            <div class="text-center">
+              <div class="w-20 h-20 bg-[#8b621f] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <span class="text-2xl font-bold text-white">{item.step}</span>
+              </div>
+              <h3 class="text-lg font-bold text-[#2b221c] mb-2">{item.title}</h3>
+              <p class="text-sm text-[#6d5d50]">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 團隊介紹 -->
+  <section class="py-16 lg:py-20 bg-[#fcfaf6]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img 
+            src="/images/about-team.jpg" 
+            alt="宇涵居家照護專業團隊" 
+            class="rounded-2xl shadow-lg w-full h-auto object-cover"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+        </div>
+        <div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2b221c] mb-6">專業照護團隊</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">宇涵居家照護擁有一支經驗豐富、充滿熱忱的專業照護團隊。每位成員皆經過嚴格篩選與完整培訓，具備豐富的臨床照護經驗與專業知識。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">我們的團隊成員來自護理、長期照護、復健等多元專業背景，能夠針對不同病症與需求提供個人化的照護方案。無論是失智症長者、術後病患或是需要長期照護的長輩，我們都能給予最適切的照顧。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在宇涵，我們不只是提供照護服務，更希望成為每個家庭值得信赖的照護夥伴，陪伴您與家人度過每一天。</p>
+          <ul class="space-y-2 text-[#2b221c]">
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#8b621f] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              平均每位看護具備5年以上照護經驗
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#8b621f] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              定期舉辦專業進修與教育訓練
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#8b621f] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              完整的背景審查與健康檢查
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#fcfaf6] mb-4">立即聯絡我們</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">無論您有任何照護需求或疑問，宇涵團隊隨時為您提供專業諮詢。讓我們一起為您的家人規劃適合的照護方案。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors duration-300 shadow-lg">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          0935-803-258
+        </a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold text-lg hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors duration-300">
+          線上諮詢
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

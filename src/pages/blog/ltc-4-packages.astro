@@ -1,0 +1,199 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: '長照四包錢完整說明｜補助額度與申請資格',
+  description: '長照四包錢完整說明。介紹長照2.0四包錢的內容、給付項目、申請資格、申請流程與注意事項，幫助您善用政府資源。',
+  image: 'https://www.yuhan-homecare.com.tw/images/blog-packages.jpg',
+  datePublished: '2024-12-20T08:00:00+08:00',
+  author: { '@type': 'Organization', name: '宇涵居家照護' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://www.yuhan-homecare.com.tw/images/logo.png' } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/blog/ltc-4-packages' },
+};
+---
+
+<MainLayout
+  title="長照四包錢完整說明｜補助額度與申請資格｜宇涵"
+  description="長照四包錢完整說明：介紹長照2.0四包錢的內容、給付項目、申請資格、申請流程與注意事項，幫助您善用政府長照資源。"
+  keywords="長照四包錢,長照2.0,長照申請,長照補助,居家服務,喘息服務,長照給付,長照申請資格,長照申請流程"
+  schema={schema}
+>
+  <article>
+    <section class="relative bg-[#2b221c] py-16 lg:py-24">
+      <div class="absolute inset-0 opacity-15">
+        <img src="/images/blog-packages.jpg" alt="長照四包錢說明" class="w-full h-full object-cover" loading="eager" />
+      </div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav aria-label="麵包屑" class="mb-6">
+          <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
+            <li><a href="/" class="hover:text-[#8b621f]">首頁</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li><a href="/blog" class="hover:text-[#8b621f]">照護知識</a></li><li><span class="text-[#efe5d5]/40">/</span></li>
+            <li class="text-[#fcfaf6]">長照四包錢</li>
+          </ol>
+        </nav>
+        <span class="inline-block bg-[#8b621f] text-white text-xs px-3 py-1 rounded-full mb-4">政府資源</span>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#fcfaf6] mb-4 leading-tight">長照四包錢補助完整說明</h1>
+        <div class="flex items-center text-[#efe5d5] text-sm space-x-4">
+          <span>2024-12-20</span><span>13 分鐘閱讀</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-[#fcfaf6] py-12 lg:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-lg text-[#6d5d50] leading-relaxed mb-8">
+            台灣自2017年起推動長期照顧服務2.0計畫（簡稱長照2.0），提供四大類服務，被民間俗稱為「長照四包錢」。這四包錢涵蓋了從日常生活照顧到照護服務的各種需求，對許多需要長期照顧的家庭來說，是重要的經濟支持。本文將完整說明長照四包錢的內容、申請資格、申請流程與注意事項。
+          </p>
+
+          <!-- 四包錢介紹 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">長照四包錢是什麼</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            「長照四包錢」是對長照2.0四大類服務的形象稱呼，分別對應不同的照顧需求。這四包錢並非真的發給現金，而是以「照顧及專業服務」的形式提供，依照失能等級給予不同的服務額度。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">第一包：照顧及專業服務</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-2">這是四包錢中最核心的一包，提供日常生活與專業照護服務服務：</p>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-4 space-y-1">
+            <li><strong class="text-[#2b221c]">居家服務</strong>：居服員到府提供身體照顧與家務協助</li>
+            <li><strong class="text-[#2b221c]">日間照顧</strong>：將被照顧者送至日照中心</li>
+            <li><strong class="text-[#2b221c]">家庭托顧</strong>：由受過訓練的照顧者在自家提供照顧</li>
+            <li><strong class="text-[#2b221c]">專業服務</strong>：護理師、物理治療師、職能治療師等專業人員到府服務</li>
+            <li><strong class="text-[#2b221c]">醫療居家照護</strong>：醫師、護理師等提供的醫療性居家照護</li>
+          </ul>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">第二包：交通接送服務</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            提供被照顧者往返醫療院所或日照中心的交通接送服務，解決行動不便者就醫的交通困難。可以使用長照專車或計程車。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">第三包：輔具服務</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">
+            提供輔具的評估、購買或租借補助，包括行動輔具（輪椅、助行器）、生活輔具（洗澡椅、便盆椅）、與預防壓傷輔具（氣墊床）等。
+          </p>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-3">第四包：喘息服務</h3>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">
+            提供家庭照顧者暫時休息的機會，讓專業人員暫時接手照顧工作。分為居家喘息、機構喘息與社區喘息三種形式。
+          </p>
+
+          <!-- 給付內容 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">失能等級與給付額度</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">長照2.0依據巴氏量表評估失能程度，分為1-8級。第2級以上可獲得服務。以下是各等級的給付額度（2025年資料）：</p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm border-collapse">
+              <thead><tr class="bg-[#8b621f] text-white">
+                <th class="text-left p-3 rounded-tl-lg">失能等級</th>
+                <th class="text-left p-3">照顧及專業服務<br/>每月額度</th>
+                <th class="text-left p-3">喘息服務<br/>每年額度</th>
+                <th class="text-left p-3 rounded-tr-lg">備註</th>
+              </tr></thead>
+              <tbody class="text-[#6d5d50]">
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第2級</td><td class="p-3">約10,020元</td><td class="p-3">14天</td><td class="p-3">輕度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第3級</td><td class="p-3">約15,460元</td><td class="p-3">21天</td><td class="p-3">輕度失能</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第4級</td><td class="p-3">約18,580元</td><td class="p-3">21天</td><td class="p-3">中度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第5級</td><td class="p-3">約24,080元</td><td class="p-3">28天</td><td class="p-3">中度失能</td></tr>
+                <tr class="bg-white border-b border-[#efe5d5]"><td class="p-3 font-semibold">第6級</td><td class="p-3">約28,070元</td><td class="p-3">28天</td><td class="p-3">重度失能</td></tr>
+                <tr class="bg-[#efe5d5]/20 border-b border-[#efe5d5]"><td class="p-3 font-semibold">第7級</td><td class="p-3">約32,070元</td><td class="p-3">35天</td><td class="p-3">重度失能</td></tr>
+                <tr class="bg-white"><td class="p-3 font-semibold rounded-bl-lg">第8級</td><td class="p-3">約36,180元</td><td class="p-3">35天</td><td class="p-3 rounded-br-lg">重度失能</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[#6d5d50] leading-relaxed mb-6 text-sm">註：實際給付額度依各縣市規定可能略有差異，低收入戶與中低收入戶另有補助加成。</p>
+
+          <!-- 申請資格 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">申請資格</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-4">長照2.0的服務對象主要分為四大類：</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#8b621f] mb-2">第1類：65歲以上老人</h4>
+              <p class="text-sm text-[#6d5d50]">經巴氏量表評估為失能者（日常生活活動能力ADL有依賴）。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#8b621f] mb-2">第2類：55歲以上原住民</h4>
+              <p class="text-sm text-[#6d5d50]">經評估為失能者，申請年齡放寬至55歲。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#8b621f] mb-2">第3類：50歲以上失智者</h4>
+              <p class="text-sm text-[#6d5d50]">經醫師確診為失智症，不論失能程度均可申請。</p>
+            </div>
+            <div class="bg-white rounded-xl p-5 border border-[#efe5d5]">
+              <h4 class="font-bold text-[#8b621f] mb-2">第4類：身心障礙者</h4>
+              <p class="text-sm text-[#6d5d50]">領有身心障礙手冊/證明，且經評估為失能者。</p>
+            </div>
+          </div>
+
+          <!-- 申請流程 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">申請流程（5步驟）</h2>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+            <div class="bg-white rounded-xl p-4 border border-[#efe5d5] text-center">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">1</div>
+              <h4 class="font-bold text-[#2b221c] text-sm mb-1">提出申請</h4>
+              <p class="text-xs text-[#6d5d50]">撥打1966或至各區公所長期照顧管理專區申請</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-[#efe5d5] text-center">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">2</div>
+              <h4 class="font-bold text-[#2b221c] text-sm mb-1">到府評估</h4>
+              <p class="text-xs text-[#6d5d50]">照管專員到家中進行失能評估（巴氏量表）</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-[#efe5d5] text-center">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">3</div>
+              <h4 class="font-bold text-[#2b221c] text-sm mb-1">確認等級</h4>
+              <p class="text-xs text-[#6d5d50]">依評估結果確認失能等級與給付額度</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-[#efe5d5] text-center">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">4</div>
+              <h4 class="font-bold text-[#2b221c] text-sm mb-1">擬定計畫</h4>
+              <p class="text-xs text-[#6d5d50]">與照管專員討論並擬定照顧計畫</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 border border-[#efe5d5] text-center">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center mx-auto mb-2 font-bold">5</div>
+              <h4 class="font-bold text-[#2b221c] text-sm mb-1">開始服務</h4>
+              <p class="text-xs text-[#6d5d50]">聯繫特約服務單位，開始使用長照服務</p>
+            </div>
+          </div>
+
+          <!-- 注意事項 -->
+          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">申請注意事項</h2>
+          <ul class="list-disc list-inside text-[#6d5d50] leading-relaxed mb-8 space-y-2">
+            <li>申請時需備妥<strong class="text-[#2b221c]">身分證、戶口名簿、身心障礙證明（如有）</strong>等文件。</li>
+            <li>評估後約需1-2週確認失能等級，請耐心等待。</li>
+            <li>長照給付額度為每月上限，未使用完的部分不會累積至下月。</li>
+            <li>使用服務時需支付部分負擔，一般戶約負擔16%，低收入戶全免，中低收入戶負擔5%。</li>
+            <li>照顧計畫每半年需重新評估一次。</li>
+            <li>如果對評估結果不滿意，可以申請複評。</li>
+            <li>各縣市的特約服務單位不同，可向照管專員查詢。</li>
+          </ul>
+
+          <!-- CTA -->
+          <div class="bg-[#8b621f]/10 rounded-xl p-6 mb-10 border border-[#8b621f]/20">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-3">需要長照申請協助？</h3>
+            <p class="text-[#6d5d50] mb-4">宇涵居家照護可以協助您了解長照申請流程，並提供專業的居家照護服務。</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:0978788886" class="inline-flex items-center justify-center px-6 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                0978-788-886
+              </a>
+              <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 border border-[#8b621f] text-[#8b621f] font-semibold rounded-lg hover:bg-[#8b621f]/10 transition-colors">免費諮詢表單</a>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+            <a href="/blog/respite-service" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-respite.jpg" alt="喘息服務" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">喘息服務申請指南</h4><p class="text-sm text-[#6d5d50]">讓照顧者獲得休息時間...</p></div>
+            </a>
+            <a href="/blog/foreign-caregiver-gap" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
+              <img src="/images/blog-foreign.jpg" alt="外籍看護空窗期" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">外籍看護空窗期怎麼辦</h4><p class="text-sm text-[#6d5d50]">替代方案全解析...</p></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</MainLayout>

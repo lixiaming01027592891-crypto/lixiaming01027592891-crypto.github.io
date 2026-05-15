@@ -1,0 +1,315 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "高雄居家看護服務｜24小時到府照護｜宇涵居家照護";
+const description = "宇涵提供高雄專業居家看護服務，24小時到府照護、長期照護、失能照顧，讓長者在家也能享有專業照護品質。";
+const canonicalURL = new URL("/services/home-care/", Astro.site);
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "高雄居家看護服務",
+      "description": "24小時到府居家看護服務，包含生活照顧、身體清潔、膳食準備、復健協助等專業照護",
+      "provider": {
+        "@type": "Organization",
+        "name": "宇涵居家照護",
+        "address": {"@type": "PostalAddress", "addressLocality": "高雄市", "addressRegion": "台灣"}
+      },
+      "areaServed": {"@type": "City", "name": "高雄市"},
+      "serviceType": "居家看護",
+      "url": "https://yuhanhomecare.com/services/home-care/"
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li><a href="/services/" class="hover:text-[#8b621f] transition-colors">服務項目</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">居家看護</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">高雄居家看護服務</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">專業到府照護，讓長者在家中也能享有安心、舒適、有尊嚴的照護生活</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要內容區 -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- 左側主內容 -->
+        <div class="lg:col-span-2">
+          <img src="/images/hero-banner.jpg" alt="高雄居家看護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是居家看護？</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">居家看護是一種專業的照護服務模式，由受過專業訓練的看護人員前往被照護者的家中，提供全方位的生活照顧與健康協助。相較於將長者送往安養機構，居家看護能讓長者在熟悉的家庭環境中繼續生活，維持原有的生活習慣與社交網絡，對於長者的身心健康都有正面的影響。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵居家照護專注於提供高雄地區優質的居家看護服務。我們深知每個家庭的需求都不相同，每位長者的身體狀況、生活習慣、個性喜好也各有差異。因此，我們堅持以個人化的方式規劃照護方案，從初次諮詢開始，就仔細聆聽家屬與被照護者的需求，針對不同病症、失能程度、生活習慣量身打造適合的照護計畫。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在台灣高齡化社會快速發展的今天，越來越多家庭面臨長輩照護的挑戰。子女可能因為工作繁忙無法全天候陪伴，或是家屬本身缺乏專業照護知識與技巧，面對長輩的醫療需求、飲食調理、行動協助等問題時感到力不從心。居家看護服務正是為了解決這些問題而存在，讓專業的照護人員到府協助，減輕家屬的照護負擔，同時確保長者獲得專業、安全、有品質的照顧。</p>
+          <p class="text-[#6d5d50] leading-relaxed mb-10">宇涵居家照護服務涵蓋生活起居協助、身體清潔照顧、飲食營養管理、用藥提醒、陪同就醫、復健協助等多個面向。我們的看護人員皆經過嚴格篩選與專業培訓，具備豐富的臨床照護經驗，能夠應對各種照護情境。無論是需要短期術後照護、長期失能照顧，或是慢性病管理，宇涵都能為您提供適合的解決方案。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">居家看護服務內容</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的居家看護服務內容涵蓋長者日常生活的各個層面，我們將服務項目細分為以下幾大類別，確保每一位被照護者都能獲得完整且細心的照顧：</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">生活起居協助</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">協助長者穿衣、盥洗、如廁、移動、上下床等日常活動，確保基本生活需求得到滿足。</p>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">身體清潔照顧</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">協助洗澡、洗頭、口腔清潔、梳妝整理，維持個人衛生與舒適，預防皮膚感染等問題。</p>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">翻身拍背</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">定時為臥床長者翻身、拍背，預防褥瘡發生，活動身體以維持循環與呼吸道健康。</p>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">陪同就醫</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">陪伴長者前往醫院回診、檢查、領藥，協助就醫流程與醫護溝通。</p>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">復健協助</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">協助長者進行復健運動、被動關節活動，依照醫囑進行居家復健訓練。</p>
+            </div>
+            <div class="bg-[#fcfaf6] p-6 rounded-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#8b621f] bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="font-bold text-[#2b221c]">用藥管理</h3>
+              </div>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">提醒長者按時服藥、記錄用藥狀況、觀察服藥後反應，確保用藥安全。</p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務對象</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的居家看護服務適用於多種不同的照護需求對象。我們根據被照護者的身體狀況、病症類型、失能程度等因素，安排適合的照護人員與服務方案。以下是常見的服務對象類型：</p>
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white text-xs font-bold">1</span>
+              </div>
+              <div>
+                <strong class="text-[#2b221c]">年長長者：</strong>
+                <span class="text-[#6d5d50]">因年齡增長導致行動不便、日常生活需要協助的長者。可能是輕度的生活協助需求，也可能是全天候的密集照顧。</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white text-xs font-bold">2</span>
+              </div>
+              <div>
+                <strong class="text-[#2b221c]">術後病患：</strong>
+                <span class="text-[#6d5d50]">手術出院後返家休養的病患，需要傷口照護、生活協助、復健陪伴等服務，直到身體恢復自理能力。</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white text-xs font-bold">3</span>
+              </div>
+              <div>
+                <strong class="text-[#2b221c]">失能或半失能者：</strong>
+                <span class="text-[#6d5d50]">因疾病、意外或老化導致身體功能喪失或部分喪失，無法獨立完成日常生活活動者，如中風後遺症、帕金森氏症等。</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white text-xs font-bold">4</span>
+              </div>
+              <div>
+                <strong class="text-[#2b221c]">慢性病患：</strong>
+                <span class="text-[#6d5d50]">罹患糖尿病、高血壓、心臟病、腎臟病等慢性疾病，需要長期服藥管理、飲食控制與定期回診的長者。</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-[#8b621f] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white text-xs font-bold">5</span>
+              </div>
+              <div>
+                <strong class="text-[#2b221c]">失智症患者：</strong>
+                <span class="text-[#6d5d50]">患有阿茲海默症或其他類型失智症的長者，需要專業的認知照護、情緒安撫與安全防護。</span>
+              </div>
+            </li>
+          </ul>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務時段選擇</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵提供彈性的服務時段選擇，讓家屬可以依照家庭狀況與預算進行最合適的安排。我們主要的服務時段分為以下幾種：</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div class="border border-[#efe5d5] rounded-xl p-6 hover:border-[#8b621f] transition-colors">
+              <h3 class="font-bold text-[#2b221c] mb-2">日間照護（12小時）</h3>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">通常為早上8點至晚上8點，適合家屬白天需要上班、無法陪伴長者的家庭。看護人員負責長者一整天的起居照顧、飲食準備、陪同活動等。</p>
+            </div>
+            <div class="border border-[#efe5d5] rounded-xl p-6 hover:border-[#8b621f] transition-colors">
+              <h3 class="font-bold text-[#2b221c] mb-2">全天候照護（24小時）</h3>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">24小時不間斷的照護服務，適合失能程度較高、夜間也需要照顧的長者。兩位看護人員輪班或一位看護搭配家屬輪替。</p>
+            </div>
+            <div class="border border-[#efe5d5] rounded-xl p-6 hover:border-[#8b621f] transition-colors">
+              <h3 class="font-bold text-[#2b221c] mb-2">彈性時段</h3>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">根據家庭需求客製化服務時段，例如只需白天半天、或是周末特別協助等。時間安排上具有高度彈性。</p>
+            </div>
+            <div class="border border-[#efe5d5] rounded-xl p-6 hover:border-[#8b621f] transition-colors">
+              <h3 class="font-bold text-[#2b221c] mb-2">臨時性服務</h3>
+              <p class="text-sm text-[#6d5d50] leading-relaxed">針對臨時性需求，如家屬外出、原看護休假、節慶期間等，提供短期的照護支援服務。</p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">服務地區</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵居家照護的服務範圍涵蓋整個高雄市行政區域，無論您住在哪個區域，我們都能安排專業的看護人員前往服務。我們服務的地區包括：</p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-10">
+            {["楠梓區","左營區","鼓山區","三民區","苓雅區","新興區","前金區","鹽埕區","前鎮區","旗津區","小港區","鳳山區","鳥松區","仁武區","大樹區","大寮區","林園區","岡山區","橋頭區","路竹區","燕巢區","其他區域"].map(district => (
+              <div class="bg-[#fcfaf6] text-center py-2 rounded-lg text-sm text-[#2b221c] font-medium">{district}</div>
+            ))}
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">費用說明</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">宇涵的居家看護服務費用依照服務時段、被照護者的失能程度以及所需的專業技能而有所不同。我們秉持透明公開的定價原則，在服務開始前會與家屬詳細說明費用結構，不收取任何隱藏費用。以下為費用參考範圍：</p>
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-[#2b221c] text-[#fcfaf6]">
+                  <th class="px-6 py-4 font-semibold">服務時段</th>
+                  <th class="px-6 py-4 font-semibold">失能程度</th>
+                  <th class="px-6 py-4 font-semibold">參考費用</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#efe5d5]">
+                <tr class="hover:bg-[#fcfaf6] transition-colors">
+                  <td class="px-6 py-4 text-[#2b221c]">日間照護（12小時）</td>
+                  <td class="px-6 py-4 text-[#6d5d50]">輕度失能</td>
+                  <td class="px-6 py-4 text-[#8b621f] font-semibold">$2,200 - $2,500 /日</td>
+                </tr>
+                <tr class="hover:bg-[#fcfaf6] transition-colors">
+                  <td class="px-6 py-4 text-[#2b221c]">日間照護（12小時）</td>
+                  <td class="px-6 py-4 text-[#6d5d50]">中度失能</td>
+                  <td class="px-6 py-4 text-[#8b621f] font-semibold">$2,500 - $2,800 /日</td>
+                </tr>
+                <tr class="hover:bg-[#fcfaf6] transition-colors">
+                  <td class="px-6 py-4 text-[#2b221c]">全天候照護（24小時）</td>
+                  <td class="px-6 py-4 text-[#6d5d50]">輕度失能</td>
+                  <td class="px-6 py-4 text-[#8b621f] font-semibold">$2,400 - $2,700 /日</td>
+                </tr>
+                <tr class="hover:bg-[#fcfaf6] transition-colors">
+                  <td class="px-6 py-4 text-[#2b221c]">全天候照護（24小時）</td>
+                  <td class="px-6 py-4 text-[#6d5d50]">重度失能</td>
+                  <td class="px-6 py-4 text-[#8b621f] font-semibold">$2,700 - $3,200 /日</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-[#6d5d50] mb-10">* 實際費用將依照個案狀況進行評估後報價。符合長照2.0補助資格者，可向各縣市長期照顧管理中心申請補助。</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">為什麼選擇宇涵居家看護？</h2>
+          <p class="text-[#6d5d50] leading-relaxed mb-6">在高雄眾多居家看護服務中，宇涵始終堅持以最高標準要求自己。我們深知選擇居家看護是一個家庭重要的決定，關乎著至親的生活品質與安全。以下是眾多家庭選擇宇涵的原因：</p>
+          <div class="space-y-4 mb-10">
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">✓</div>
+              <div>
+                <h3 class="font-bold text-[#2b221c] mb-1">嚴格的人員篩選機制</h3>
+                <p class="text-[#6d5d50] leading-relaxed text-sm">每位看護人員都需通過身份驗證、背景調查、健康檢查與專業技能考核，確保進入您家中的人員值得信賴。我們只錄取具備專業證照且經驗豐富的照護人員。</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">✓</div>
+              <div>
+                <h3 class="font-bold text-[#2b221c] mb-1">完善的教育訓練體系</h3>
+                <p class="text-[#6d5d50] leading-relaxed text-sm">除了基本證照要求，宇涵定期舉辦在職訓練課程，內容涵蓋失智照護、術後照護、緊急狀況處理等專業領域，確保看護人員的知識與技能與時俱進。</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">✓</div>
+              <div>
+                <h3 class="font-bold text-[#2b221c] mb-1">即時溝通回報機制</h3>
+                <p class="text-[#6d5d50] leading-relaxed text-sm">我們建立完善的回報系統，看護人員每日記錄被照護者的身體狀況、飲食情形、用藥狀況等資訊，讓家屬即使不在身邊也能掌握長者的狀況。</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">✓</div>
+              <div>
+                <h3 class="font-bold text-[#2b221c] mb-1">彈性且快速的服務安排</h3>
+                <p class="text-[#6d5d50] leading-relaxed text-sm">我們了解照護需求往往是緊急且無法預期的。宇涵具備龐大的看護人力資料庫，能夠在最短時間內媒合適合的人選到府服務。</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-10 h-10 bg-[#8b621f] text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg">✓</div>
+              <div>
+                <h3 class="font-bold text-[#2b221c] mb-1">專業督導團隊支持</h3>
+                <p class="text-[#6d5d50] leading-relaxed text-sm">宇涵設有專業督導團隊，定期到府進行服務品質查核，並在看護人員遇到困難時提供專業指導與支援，確保照護品質始終如一。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側邊欄 -->
+        <aside class="lg:col-span-1">
+          <div class="bg-[#fcfaf6] rounded-2xl p-6 sticky top-8">
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">其他服務項目</h3>
+            <ul class="space-y-3 mb-8">
+              <li><a href="/services/hospital-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 醫院看護</a></li>
+              <li><a href="/services/elderly-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 長者陪伴</a></li>
+              <li><a href="/services/dementia-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 失智照護</a></li>
+              <li><a href="/services/post-surgery/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 術後照顧</a></li>
+              <li><a href="/services/temporary-care/" class="flex items-center gap-2 text-[#6d5d50] hover:text-[#8b621f] transition-colors"><span class="text-[#8b621f]">→</span> 臨時看護</a></li>
+            </ul>
+
+            <h3 class="text-xl font-bold text-[#2b221c] mb-4">快速聯絡</h3>
+            <a href="tel:0935803258" class="block w-full text-center bg-[#8b621f] text-white py-4 rounded-full font-semibold hover:bg-[#6d4a18] transition-colors mb-3">
+              <span class="text-sm block opacity-80">24小時服務專線</span>
+              <span class="text-lg">0935-803-258</span>
+            </a>
+            <a href="/contact/" class="block w-full text-center border-2 border-[#8b621f] text-[#8b621f] py-3 rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors">
+              線上諮詢表單
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-4">立即預約居家看護服務</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">讓宇涵的專業團隊為您的家人提供貼心的照護，一通電話，我們即刻為您安排。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">撥打 0935-803-258</a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors">填寫諮詢表單</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

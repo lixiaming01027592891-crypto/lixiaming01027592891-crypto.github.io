@@ -1,0 +1,255 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const districts = [
+  {
+    name: '新興區',
+    path: '/areas/xinxing',
+    image: '/images/area-xinxing.jpg',
+    description: '高雄市中心精華地段，宇涵居家照護所在地。鄰近高雄醫學大學附設醫院、市立聯合醫院，提供即時到府看護服務。',
+    highlights: ['交通便利', '醫療資源豐富', '宇涵所在地'],
+  },
+  {
+    name: '苓雅區',
+    path: '/areas/lingya',
+    image: '/images/area-lingya.jpg',
+    description: '高雄文化商業重鎮，擁有苓雅市場及多家醫療院所，適合長者居家生活與照護。',
+    highlights: ['文化設施完善', '商業機能佳', '交通便捷'],
+  },
+  {
+    name: '左營區',
+    path: '/areas/zuoying',
+    image: '/images/area-zuoying.jpg',
+    description: '北高雄最大住宅區，擁有榮總、國軍左營醫院等優質醫療資源，適合長期照護需求。',
+    highlights: ['醫療資源頂尖', '居住環境優質', '公園綠地多'],
+  },
+  {
+    name: '鼓山區',
+    path: '/areas/gushan',
+    image: '/images/area-gushan.jpg',
+    description: '依山傍海的優質居住環境，鄰近高雄醫學大學、市立聯合醫院，適合長者休養。',
+    highlights: ['海景山景環繞', '生活機能完善', '文藝氛圍濃厚'],
+  },
+  {
+    name: '三民區',
+    path: '/areas/sanmin',
+    image: '/images/area-sanmin.jpg',
+    description: '高雄人口最多的行政區，擁有高醫、長庚等醫療機構，宇涵提供快速到府照護服務。',
+    highlights: ['人口最多', '醫療機構林立', '交通網絡發達'],
+  },
+  {
+    name: '前鎮區',
+    path: '/areas/cianjhen',
+    image: '/images/area-cianjhen.jpg',
+    description: '南高雄工商重鎮，鄰近小港醫院、前鎮區衛生所，宇涵提供24小時專業看護派遣。',
+    highlights: ['工商發達', '醫療服務完善', '近港口生活圈'],
+  },
+  {
+    name: '楠梓區',
+    path: '/areas/nanzih',
+    image: '/images/area-nanzih.jpg',
+    description: '北高雄發展迅速的住宅區，擁有國軍高雄總醫院左營分院、楠梓區衛生所等醫療資源。',
+    highlights: ['學術風氣盛', '住宅環境佳', '醫療資源充足'],
+  },
+  {
+    name: '小港區',
+    path: '/areas/siaogang',
+    image: '/images/area-siaogang.jpg',
+    description: '南高雄重要工業住宅區，擁有小港醫院、高雄市立小港醫院，宇涵提供專業到府看護服務。',
+    highlights: ['近高雄國際機場', '工業住宅並重', '醫療可近性高'],
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: '高雄居家看護服務地區總覽｜宇涵居家照護',
+  description: '宇涵居家照護服務範圍涵蓋高雄市新興區、苓雅區、左營區、鼓山區、三民區、前鎮區、楠梓區、小港區，提供專業24小時到府看護服務。',
+  url: 'https://www.yuhan-homecare.com.tw/areas',
+  publisher: {
+    '@type': 'Organization',
+    name: '宇涵居家照護',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.yuhan-homecare.com.tw/images/logo.png',
+    },
+  },
+};
+---
+
+<MainLayout
+  title="服務地區｜高雄各區居家看護服務｜宇涵"
+  description="宇涵居家照護服務涵蓋高雄市八大行政區：新興區、苓雅區、左營區、鼓山區、三民區、前鎮區、楠梓區、小港區。提供24小時專業到府看護、居家照顧服務。"
+  keywords="高雄居家看護,新興區居家看護,苓雅區看護,左營區看護,鼓山區看護,三民區看護,前鎮區看護,楠梓區看護,小港區看護,高雄到府照顧"
+  schema={schema}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-[#2b221c] py-20 lg:py-28">
+    <div class="absolute inset-0 opacity-20">
+      <img
+        src="/images/hero-areas.jpg"
+        alt="高雄市區俯瞰"
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <nav aria-label="麵包屑" class="mb-6">
+        <ol class="flex justify-center items-center space-x-2 text-sm text-[#efe5d5]/80">
+          <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+          <li><span class="text-[#efe5d5]/40">/</span></li>
+          <li class="text-[#fcfaf6]">服務地區</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fcfaf6] mb-6 tracking-tight">
+        高雄居家看護服務地區
+      </h1>
+      <p class="text-lg md:text-xl text-[#efe5d5] max-w-3xl mx-auto leading-relaxed">
+        宇涵居家照護服務涵蓋高雄市八大行政區，從市區到郊區，我們的專業看護團隊隨時為您提供到府照護服務。無論您身在何處，一通電話，我們即刻安排。
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Coverage Overview -->
+  <section class="bg-[#fcfaf6] py-12 border-b border-[#efe5d5]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4">
+          <div class="text-3xl md:text-4xl font-bold text-[#8b621f] mb-2">8</div>
+          <p class="text-[#6d5d50]">服務行政區</p>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl md:text-4xl font-bold text-[#8b621f] mb-2">30 min</div>
+          <p class="text-[#6d5d50]">最快抵達時間</p>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl md:text-4xl font-bold text-[#8b621f] mb-2">24H</div>
+          <p class="text-[#6d5d50]">全天候服務</p>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl md:text-4xl font-bold text-[#8b621f] mb-2">100%</div>
+          <p class="text-[#6d5d50]">到府服務承諾</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- District Cards Grid -->
+  <section class="bg-[#fcfaf6] py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2b221c] mb-4">選擇您的服務地區</h2>
+        <p class="text-[#6d5d50] max-w-2xl mx-auto">
+          點擊下方卡片查看各區詳細服務內容、附近醫院資訊及交通方式
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {districts.map((district, index) => (
+          <a
+            href={district.path}
+            class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#efe5d5] hover:border-[#8b621f]/30"
+            data-aos="fade-up"
+            data-aos-delay={index * 50}
+          >
+            <div class="relative h-44 overflow-hidden">
+              <img
+                src={district.image}
+                alt={`高雄${district.name}街景`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-[#2b221c]/30 group-hover:bg-[#2b221c]/20 transition-colors" />
+              <div class="absolute bottom-3 left-3">
+                <span class="bg-[#8b621f] text-white text-xs px-3 py-1 rounded-full">查看服務</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="text-xl font-bold text-[#2b221c] mb-2 group-hover:text-[#8b621f] transition-colors">
+                {district.name}
+              </h3>
+              <p class="text-sm text-[#6d5d50] leading-relaxed mb-3 line-clamp-3">
+                {district.description}
+              </p>
+              <div class="flex flex-wrap gap-1.5">
+                {district.highlights.map((tag) => (
+                  <span class="text-xs bg-[#efe5d5] text-[#6d5d50] px-2 py-0.5 rounded">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Yuhan Section -->
+  <section class="bg-[#efe5d5]/30 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#2b221c] mb-4">為什麼選擇宇涵？</h2>
+        <p class="text-[#6d5d50] max-w-2xl mx-auto">
+          深耕高雄在地多年，我們比誰都了解這片土地上的照護需求
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#8b621f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#2b221c] mb-2">在地深耕</h3>
+          <p class="text-[#6d5d50]">扎根高雄新興區，熟悉各區醫療資源與交通動線，快速調度適合的看護人員到府服務。</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#8b621f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#2b221c] mb-2">快速派遣</h3>
+          <p class="text-[#6d5d50]">24小時接聽來電，最快30分鐘內安排看護人員到府。緊急需求也能即時回應，讓家屬安心。</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#8b621f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#2b221c] mb-2">專業把關</h3>
+          <p class="text-[#6d5d50]">所有看護均經過嚴格篩選與培訓，持有專業證照，定期進行技能考核與在職教育。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[#2b221c] py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#fcfaf6] mb-4">需要到府看護服務？</h2>
+      <p class="text-[#efe5d5] text-lg mb-8">
+        無論您在高雄哪個區域，一通電話，我們即刻為您安排適合的專業看護人員。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:0978788886"
+          class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors text-lg"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          0978-788-886
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] font-semibold rounded-lg hover:bg-[#fcfaf6]/10 transition-colors text-lg"
+        >
+          免費諮詢表單
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

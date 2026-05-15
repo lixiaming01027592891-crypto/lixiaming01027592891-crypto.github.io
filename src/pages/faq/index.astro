@@ -1,0 +1,291 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "常見問題｜高雄居家看護FAQ｜宇涵";
+const description = "解答您對居家看護服務的所有疑問，包含服務內容、費用計算、申請流程、品質保障等常見問題。";
+const canonicalURL = new URL("/faq/", Astro.site);
+
+const categories = [
+  {
+    name: "服務相關",
+    items: [
+      {
+        q: "宇涵的居家看護服務包含哪些內容？",
+        a: "宇涵的居家看護服務內容涵蓋生活起居協助（穿衣、盥洗、如廁、移動等）、身體清潔照顧（洗澡、洗頭、口腔清潔）、翻身拍背（預防褥瘡）、陪同就醫（回診、領藥）、復健協助（關節活動、行走訓練）、用藥管理（提醒服藥、記錄用藥狀況）、膳食準備（依飲食需求備餐）等。我們會依照被照護者的需求量身規劃服務內容。"
+      },
+      {
+        q: "服務時段可以如何安排？",
+        a: "我們提供多種彈性的服務時段選擇：日間照護（通常8:00-20:00）、夜間照護（20:00-8:00）、全天候24小時照護、彈性時段（可依家庭需求調整）。臨時看護最低以4小時起計，長期服務另有優惠方案。您可以依照家庭狀況與預算選擇適合的時段安排。"
+      },
+      {
+        q: "臨時需要調度或改時間可以嗎？",
+        a: "可以。我們了解照護需求經常有變動，因此提供彈性的調度服務。若需要臨時調整服務時間或日期，請盡早通知我們，我們會盡力協助安排。臨時調度的部分請注意，若為急單（2小時內需人員到場），可能會產生額外的急件費用。"
+      },
+      {
+        q: "服務地區包含哪些區域？",
+        a: "宇涵的服務範圍涵蓋整個高雄市行政區域，包含楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、前鎮區、旗津區、小港區、鳳山區、鳥松區、仁武區、大樹區、大寮區、林園區、岡山區、橋頭區、路竹區、燕巢區等。若您不確定所在地區是否在服務範圍內，歡迎來電詢問。"
+      },
+      {
+        q: "看護人員都有專業證照嗎？",
+        a: "是的，宇涵所有的看護人員都持有合法的照護相關證照，包含照顧服務員技術士證、護理人員證書或相關專業證照。此外，每位看護都需通過我們的嚴格篩選，包括背景審查、健康檢查、專業技能考核，並接受定期的在職教育訓練，以確保服務品質。"
+      }
+    ]
+  },
+  {
+    name: "費用相關",
+    items: [
+      {
+        q: "居家看護的費用如何計算？",
+        a: "費用依照服務時段、失能程度及服務內容計算。日間照護（12小時）參考費用約為$2,200-2,800/日；24小時全天候照護約為$2,400-3,200/日；臨時看護以每小時$200-250計費（4小時起）。實際費用會在到府評估後提供詳細報價。我們秉持公開透明的定價原則，不收取任何隱藏費用。"
+      },
+      {
+        q: "可以申請長照補助嗎？",
+        a: "可以。若被照護者經過長期照顧管理中心評估為失能者，可以申請長照2.0的照顧服務補助。宇涵可以協助您了解補助申請流程，並配合補助額度安排服務。補助金額依照失能等級而有所不同，最高每月可獲得數千元的補助。建議您先向各區長期照顧管理中心申請失能評估。"
+      },
+      {
+        q: "付款方式有哪些？",
+        a: "我們提供多種付款方式，包括現金付款、銀行轉帳、匯款等。長期服務的客戶可選擇每週或每月付款。我們會提供完整的收據憑證，方便您進行長照補助申請或稅務申報。如需開立統一編號收據，請於付款前告知我們。"
+      },
+      {
+        q: "可以開立收據或發票嗎？",
+        a: "可以，我們會提供正式的收據憑證。若需要統一編號收據（三聯式發票），請於簽約或付款前告知，我們將在收款後為您開立。收據可用於長照補助申請、稅務列舉扣除等用途。"
+      }
+    ]
+  },
+  {
+    name: "申請流程",
+    items: [
+      {
+        q: "如何預約宇涵的居家看護服務？",
+        a: "您可以透過以下方式預約服務：(1) 撥打24小時服務專線 0935-803-258；(2) 填寫網站上的線上諮詢表單；(3) 透過LINE官方帳號聯繫我們。接到您的需求後，我們會安排專員與您聯繫，了解詳細需求並安排到府評估。"
+      },
+      {
+        q: "提出需求後多久可以派人？",
+        a: "一般情況下，從完成評估到派遣人員到府約需1-3個工作天。若為緊急需求，我們提供急件派遣服務，最快可在數小時內安排人員到場（急件可能產生額外費用）。建議您盡早提出需求，以便我們有充裕時間媒合適合的看護人選。"
+      },
+      {
+        q: "有試用期嗎？如果不滿意可以更換看護嗎？",
+        a: "有的，我們提供試用期服務。如果您覺得安排的看護人員不適合，可以在試用期間提出更換需求。我們會盡快安排另一位看護人員接手，直到您滿意為止。我們希望每個家庭都能找到適合的照護夥伴。"
+      }
+    ]
+  },
+  {
+    name: "品質保障",
+    items: [
+      {
+        q: "宇涵如何篩選看護人員？",
+        a: "宇涵對看護人員的篩選非常嚴格。所有應徵者必須通過以下審查：(1) 身份驗證與證照查核；(2) 完整背景調查（含良民證）；(3) 近期健康檢查報告（含傳染病篩檢）；(4) 專業技能實作考核；(5) 個性與態度面試。錄取後還需完成公司的職前訓練課程，才能開始為客戶服務。"
+      },
+      {
+        q: "如果不滿意可以更換看護嗎？",
+        a: "當然可以。若您對目前安排的看護人員有任何不滿意的地方，請隨時與我們聯繫。我們會了解問題所在，並安排更合適的人選接手。我們希望每個家庭都能得到滿意的服務，不會因為人員問題而影響照護品質。"
+      },
+      {
+        q: "有申訴管道嗎？如何反應問題？",
+        a: "我們非常重視每一位客戶的意見。若您有任何問題或建議，可以透過以下管道反應：(1) 直接聯繫您的服務專員；(2) 撥打客服專線 0935-803-258；(3) 透過LINE官方帳號留言。我們會在24小時內回覆您的訊息，並積極處理您的問題。對於重大申訴案件，我們設有專責督導負責調查與處理。"
+      }
+    ]
+  }
+];
+
+// Flatten all FAQ items for JSON-LD
+const allFaqs = categories.flatMap(cat => cat.items);
+---
+
+<MainLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "宇涵的居家看護服務包含哪些內容？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "宇涵的居家看護服務內容涵蓋生活起居協助（穿衣、盥洗、如廁、移動等）、身體清潔照顧（洗澡、洗頭、口腔清潔）、翻身拍背（預防褥瘡）、陪同就醫（回診、領藥）、復健協助（關節活動、行走訓練）、用藥管理（提醒服藥、記錄用藥狀況）、膳食準備（依飲食需求備餐）等。我們會依照被照護者的需求量身規劃服務內容。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "服務時段可以如何安排？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我們提供多種彈性的服務時段選擇：日間照護（通常8:00-20:00）、夜間照護（20:00-8:00）、全天候24小時照護、彈性時段（可依家庭需求調整）。臨時看護最低以4小時起計，長期服務另有優惠方案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "臨時需要調度或改時間可以嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。我們了解照護需求經常有變動，因此提供彈性的調度服務。若為急單（2小時內需人員到場），可能會產生額外的急件費用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "服務地區包含哪些區域？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "宇涵的服務範圍涵蓋整個高雄市行政區域，包含楠梓區、左營區、鼓山區、三民區、苓雅區、新興區、前金區、鹽埕區、前鎮區、旗津區、小港區、鳳山區、鳥松區、仁武區、大樹區、大寮區、林園區、岡山區、橋頭區、路竹區、燕巢區等。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "看護人員都有專業證照嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是的，宇涵所有的看護人員都持有合法的照護相關證照，包含照顧服務員技術士證、護理人員證書或相關專業證照，並通過背景審查、健康檢查與專業技能考核。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "居家看護的費用如何計算？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "費用依照服務時段、失能程度及服務內容計算。日間照護（12小時）參考費用約為$2,200-2,800/日；24小時全天候照護約為$2,400-3,200/日；臨時看護以每小時$200-250計費（4小時起）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以申請長照補助嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。若被照護者經過長期照顧管理中心評估為失能者，可以申請長照2.0的照顧服務補助。宇涵可以協助您了解補助申請流程。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "付款方式有哪些？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "我們提供現金付款、銀行轉帳、匯款等方式。長期服務的客戶可選擇每週或每月付款，並提供完整的收據憑證。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以開立收據或發票嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，我們會提供正式的收據憑證。若需要統一編號收據（三聯式發票），請於簽約或付款前告知。收據可用於長照補助申請、稅務列舉扣除等用途。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何預約宇涵的居家看護服務？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "您可以撥打24小時服務專線 0935-803-258、填寫網站上的線上諮詢表單，或透過LINE官方帳號聯繫我們。接到您的需求後，我們會安排專員與您聯繫，了解詳細需求並安排到府評估。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "提出需求後多久可以派人？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般情況下，從完成評估到派遣人員到府約需1-3個工作天。若為緊急需求，最快可在數小時內安排人員到場（急件可能產生額外費用）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "有試用期嗎？如果不滿意可以更換看護嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有的，我們提供試用期服務。如果您覺得安排的看護人員不適合，可以在試用期間提出更換需求。我們會盡快安排另一位看護人員接手，直到您滿意為止。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "宇涵如何篩選看護人員？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "所有應徵者必須通過身份驗證與證照查核、完整背景調查（含良民證）、近期健康檢查報告、專業技能實作考核、個性與態度面試。錄取後還需完成職前訓練課程才能開始服務。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如果不滿意可以更換看護嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "當然可以。若您對目前安排的看護人員有任何不滿意的地方，請隨時與我們聯繫。我們會了解問題所在，並安排更合適的人選接手。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "有申訴管道嗎？如何反應問題？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "若您有任何問題或建議，可以直接聯繫您的服務專員、撥打客服專線 0935-803-258，或透過LINE官方帳號留言。我們會在24小時內回覆您的訊息，並積極處理您的問題。"
+          }
+        }
+      ]
+    }
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-[#fcfaf6] overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="max-w-3xl">
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="flex text-sm text-[#6d5d50]">
+            <li><a href="/" class="hover:text-[#8b621f] transition-colors">首頁</a></li>
+            <li class="mx-2">/</li>
+            <li class="text-[#2b221c] font-medium" aria-current="page">常見問題</li>
+          </ol>
+        </nav>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">常見問題</h1>
+        <p class="text-lg sm:text-xl text-[#6d5d50] leading-relaxed">解答您對居家看護服務的所有疑問</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ 分類 -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {categories.map((cat, catIdx) => (
+        <div class={catIdx > 0 ? "mt-14" : ""}>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-1 h-8 bg-[#8b621f] rounded-full"></div>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#2b221c]">{cat.name}</h2>
+          </div>
+          <div class="space-y-4">
+            {cat.items.map((item, idx) => (
+              <details class="group bg-[#fcfaf6] rounded-xl border border-[#efe5d5] overflow-hidden cursor-pointer">
+                <summary class="flex items-center justify-between p-5 sm:p-6 list-none">
+                  <div class="flex items-center gap-3 pr-4">
+                    <span class="text-[#8b621f] font-bold text-sm">Q</span>
+                    <span class="font-medium text-[#2b221c]">{item.q}</span>
+                  </div>
+                  <svg class="w-5 h-5 text-[#8b621f] flex-shrink-0 group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                  <div class="border-t border-[#efe5d5] pt-4 pl-8">
+                    <p class="text-[#6d5d50] leading-relaxed">{item.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-[#2b221c]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#fcfaf6] mb-4">還有其他問題？</h2>
+      <p class="text-[#efe5d5] mb-8 leading-relaxed">歡迎直接與我們聯繫，宇涵專員將為您提供詳細的解答與諮詢服務。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0935803258" class="inline-flex items-center justify-center px-8 py-4 bg-[#8b621f] text-white rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          0935-803-258
+        </a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-[#efe5d5] text-[#fcfaf6] rounded-full font-semibold hover:bg-[#efe5d5] hover:text-[#2b221c] transition-colors">
+          聯絡我們
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
