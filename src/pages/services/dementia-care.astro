@@ -1,24 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import dementiaImage from '../../assets/images/blog-dementia.jpg';
 
 const title = "高雄失智症居家照護｜專業失智照顧服務";
 const description = "宇涵提供專業失智症居家照護服務，運用實證照護技巧，穩定長者情緒、延緩退化，為失智長者打造安全舒適的居家生活環境。";
 const canonicalURL = new URL("/services/dementia-care/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄失智症居家照護",
+  "description": "專業失智症照護，運用實證照護技巧，穩定長者情緒、延緩退化，提供安全的生活環境",
+  "provider": { "@type": "Organization", "name": "宇涵居家照護" },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "失智症照護",
+  "url": new URL("/services/dementia-care/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄失智症居家照護",
-      "description": "專業失智症照護，運用實證照護技巧，穩定長者情緒、延緩退化，提供安全的生活環境",
-      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "失智症照護",
-      "url": "https://yuhanhomecare.com/services/dementia-care/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <section class="relative bg-[#fcfaf6] overflow-hidden">
     <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
@@ -43,7 +45,7 @@ const canonicalURL = new URL("/services/dementia-care/", Astro.site);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <img src="/images/blog-dementia.jpg" alt="高雄失智症居家照護" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={dementiaImage} alt="高雄失智症居家照護" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">認識失智症</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">失智症是一種進行性退化的腦部疾病，主要影響患者的記憶力、思考能力、判斷力與日常生活功能。常見的失智症類型包括阿茲海默症（佔所有病例的60-70%）、血管性失智症、路易氏體失智症、額顳葉型失智症等。隨著病情發展，患者會逐漸喪失獨立生活的能力，需要越來越多的照護支持。</p>

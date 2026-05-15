@@ -1,24 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import postSurgeryImage from '../../assets/images/blog-postsurgery.jpg';
 
 const title = "高雄術後居家照護｜出院後照顧服務";
 const description = "專業術後居家照護，協助傷口觀察與清潔照護、用藥提醒、復健協助，幫助患者安心休養，安心在家休養。";
 const canonicalURL = new URL("/services/post-surgery/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄術後居家照護",
+  "description": "手術後返家照護，協助傷口觀察與清潔照護、用藥提醒、復健協助，幫助患者安心休養",
+  "provider": { "@type": "Organization", "name": "宇涵居家照護" },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "術後照顧",
+  "url": new URL("/services/post-surgery/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄術後居家照護",
-      "description": "手術後返家照護，協助傷口觀察與清潔照護、用藥提醒、復健協助，幫助患者安心休養",
-      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "術後照顧",
-      "url": "https://yuhanhomecare.com/services/post-surgery/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <section class="relative bg-[#fcfaf6] overflow-hidden">
     <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
@@ -43,7 +45,7 @@ const canonicalURL = new URL("/services/post-surgery/", Astro.site);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <img src="/images/blog-postsurgery.jpg" alt="高雄術後居家照護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={postSurgeryImage} alt="高雄術後居家照護服務" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">術後照護的重要性</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">手術後的恢復期是整個治療過程中極為關鍵的階段。患者在經歷手術後，身體處於虛弱狀態，可能面臨傷口疼痛、行動不便、飲食限制、用藥管理等多方面的挑戰。這個時期如果沒有得到適當的照顧，不僅可能影響傷口癒合速度，甚至可能造成併發症，延長恢復時間或影響手術效果。</p>

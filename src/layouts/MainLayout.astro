@@ -24,7 +24,7 @@ const {
   title = '宇涵居家照護｜高雄居家看護推薦｜24小時專業到府照護服務',
   description = '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。新興區、左營區、苓雅區等全高雄地區到府服務，24小時全年無休。',
   keywords = '高雄居家看護, 高雄居家照護, 高雄看護推薦, 高雄長照服務, 宇涵居家照護',
-  ogImage = 'https://www.yuhan-homecare.com/images/og-image.jpg',
+  ogImage = '/images/og-image.jpg',
   ogType = 'website',
   canonicalURL = Astro.url.href,
   noindex = false,
@@ -33,7 +33,7 @@ const {
   breadcrumbItems,
 } = Astro.props;
 
-const siteUrl = 'https://www.yuhan-homecare.com';
+const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 const canonicalURLStr = String(canonicalURL || '');
 const fullCanonicalURL = canonicalURLStr.startsWith('http') ? canonicalURLStr : `${siteUrl}${canonicalURLStr}`;
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
@@ -59,7 +59,6 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
 
     {/* Favicon */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     {/* 字體 Preconnect */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,6 +101,9 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
         data={{ items: breadcrumbItems }}
       />
     )}
+
+    {/* 由各頁面注入的額外 head 內容（如 JSON-LD schema） */}
+    <slot name="head" />
   </head>
 
   <body class="bg-[#fcfaf6] text-[#2b221c] antialiased">

@@ -1,0 +1,33 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = '找不到頁面｜宇涵居家照護';
+const description = '您要查看的頁面不存在或已移除，請回到首頁繼續瀏覽宇涵居家照護的服務內容。';
+---
+
+<MainLayout title={title} description={description} noindex={true} transparentNav={false}>
+  <section class="bg-[#fcfaf6] min-h-[70vh] flex items-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <p class="text-[#8b621f] font-semibold mb-4 tracking-widest">404</p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">找不到您要的頁面</h1>
+      <p class="text-lg text-[#6d5d50] leading-relaxed mb-10">
+        頁面可能已搬移或不存在，您可以從以下入口繼續瀏覽，或撥打電話與我們聯繫。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+        <a href="/" class="inline-flex items-center justify-center px-8 py-3 bg-[#8b621f] text-white rounded-full font-semibold hover:bg-[#6d4a18] transition-colors duration-300 shadow-lg">
+          回到首頁
+        </a>
+        <a href="/services/" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#8b621f] text-[#8b621f] rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors duration-300">
+          服務項目
+        </a>
+        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#2b221c] text-[#2b221c] rounded-full font-semibold hover:bg-[#2b221c] hover:text-white transition-colors duration-300">
+          聯絡我們
+        </a>
+      </div>
+      <p class="text-sm text-[#6d5d50]">
+        24小時諮詢專線：
+        <a href="tel:0935803258" class="text-[#8b621f] font-semibold hover:underline">0935-803-258</a>
+      </p>
+    </div>
+  </section>
+</MainLayout>
