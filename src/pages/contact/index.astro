@@ -22,31 +22,31 @@ const serviceTypes = [
   { value: "temporary-care", label: "臨時看護" },
   { value: "other", label: "其他需求" }
 ];
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "聯絡宇涵居家照護",
+  "description": "高雄居家看護諮詢聯絡資訊",
+  "url": new URL("/contact/", Astro.site).toString(),
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "telephone": "0935-803-258",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "覺民路370號",
+      "addressLocality": "三民區",
+      "addressRegion": "高雄市",
+      "addressCountry": "TW"
+    },
+    "openingHours": "Mo-Su 08:00-20:00"
+  }
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "聯絡宇涵居家照護",
-      "description": "高雄居家看護諮詢聯絡資訊",
-      "url": "https://yuhanhomecare.com/contact/",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "宇涵居家照護",
-        "telephone": "0935-803-258",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "覺民路370號",
-          "addressLocality": "三民區",
-          "addressRegion": "高雄市",
-          "addressCountry": "TW"
-        },
-        "openingHours": "Mo-Su 08:00-20:00"
-      }
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(contactSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -139,7 +139,7 @@ const serviceTypes = [
           <div class="bg-[#fcfaf6] rounded-2xl p-8 mb-8">
             <h2 class="text-xl font-bold text-[#2b221c] mb-2">線上諮詢表單</h2>
             <p class="text-sm text-[#6d5d50] mb-6">填寫以下表單，我們會盡快與您聯繫</p>
-            <form action="/api/contact" method="POST" class="space-y-5">
+            <form id="contact-form" data-email={contactInfo.email} class="space-y-5">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label for="name" class="block text-sm font-medium text-[#2b221c] mb-2">姓名 <span class="text-[#8b621f]">*</span></label>
@@ -170,8 +170,41 @@ const serviceTypes = [
               <button type="submit" class="w-full bg-[#8b621f] text-white py-4 rounded-full font-semibold text-lg hover:bg-[#6d4a18] transition-colors shadow-lg">
                 送出諮詢
               </button>
-              <p class="text-xs text-[#6d5d50] text-center">送出表單後，我們會在24小時內與您聯繫。急件請直接撥打服務專線。</p>
+              <p class="text-xs text-[#6d5d50] text-center">送出後將開啟您的郵件 App 並預填內容，我們會在24小時內回覆。急件請直接撥打服務專線。</p>
             </form>
+            <script is:inline>
+              (() => {
+                const form = document.getElementById('contact-form');
+                if (!form) return;
+                form.addEventListener('submit', (event) => {
+                  event.preventDefault();
+                  const data = new FormData(form);
+                  const name = (data.get('name') || '').toString().trim();
+                  const phone = (data.get('phone') || '').toString().trim();
+                  const email = (data.get('email') || '').toString().trim();
+                  const serviceType = (data.get('serviceType') || '').toString().trim();
+                  const message = (data.get('message') || '').toString().trim();
+                  const labelMap = {
+                    'home-care': '居家看護', 'hospital-care': '醫院看護', 'elderly-care': '長者陪伴',
+                    'dementia-care': '失智照護', 'post-surgery': '術後照顧', 'temporary-care': '臨時看護', 'other': '其他需求'
+                  };
+                  const serviceLabel = labelMap[serviceType] || serviceType || '未指定';
+                  const subject = `居家照護諮詢｜${name || '匿名'}｜${serviceLabel}`;
+                  const bodyLines = [
+                    `姓名：${name}`,
+                    `聯絡電話：${phone}`,
+                    `Email：${email}`,
+                    `需求類型：${serviceLabel}`,
+                    '',
+                    '需求說明：',
+                    message,
+                  ];
+                  const recipient = form.getAttribute('data-email') || '';
+                  const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+                  window.location.href = mailto;
+                });
+              })();
+            </script>
           </div>
 
           <!-- Google 地圖 -->
