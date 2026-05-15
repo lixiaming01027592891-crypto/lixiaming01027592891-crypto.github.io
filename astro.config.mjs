@@ -5,8 +5,4 @@ export default defineConfig({
   site: 'https://yuhanhomecare.com',
   integrations: [tailwind()],
   output: 'static',
-  build: {
-    format: 'directory',
-  },
-  compressHTML: true,
 });
