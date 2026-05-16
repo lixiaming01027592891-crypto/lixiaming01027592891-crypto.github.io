@@ -1,27 +1,31 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import blogDementia from '../../assets/images/blog-dementia.jpg';
+import blogFall from '../../assets/images/blog-fall.jpg';
+import blogBurnout from '../../assets/images/blog-burnout.jpg';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: '失智症居家照護完整指南｜高雄專業照護建議',
   description: '失智症居家照護完整指南，涵蓋失智症定義、類型、階段，日常生活照護技巧、溝通方法、安全管理與照護者自我照顧。由宇涵居家照護專業團隊撰寫。',
-  image: 'https://www.yuhan-homecare.com.tw/images/blog-dementia.jpg',
+  image: new URL('/images/blog-dementia.jpg', Astro.site).toString(),
   datePublished: '2025-01-15T08:00:00+08:00',
   dateModified: '2025-01-15T08:00:00+08:00',
   author: {
     '@type': 'Organization',
     name: '宇涵居家照護',
-    url: 'https://www.yuhan-homecare.com.tw',
+    url: new URL('/', Astro.site).toString(),
   },
   publisher: {
     '@type': 'Organization',
     name: '宇涵居家照護',
-    logo: { '@type': 'ImageObject', url: 'https://www.yuhan-homecare.com.tw/images/logo.png' },
+    logo: { '@type': 'ImageObject', url: new URL('/images/logo.png', Astro.site).toString() },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://www.yuhan-homecare.com.tw/blog/dementia-care-tips',
+    '@id': new URL('/blog/dementia-care-tips', Astro.site).toString(),
   },
 };
 ---
@@ -36,7 +40,7 @@ const schema = {
     <!-- Hero -->
     <section class="relative bg-[#2b221c] py-16 lg:py-24">
       <div class="absolute inset-0 opacity-15">
-        <img src="/images/blog-dementia.jpg" alt="失智症居家照護" class="w-full h-full object-cover" loading="eager" />
+        <Image src={blogDementia} alt="失智症居家照護" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-full object-cover" loading="eager" />
       </div>
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="麵包屑" class="mb-6">
@@ -259,11 +263,11 @@ const schema = {
           <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <a href="/blog/fall-prevention" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-fall.jpg" alt="防跌改造" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogFall} alt="防跌改造" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f] transition-colors">長者居家防跌改造指南</h4><p class="text-sm text-[#6d5d50]">無障礙環境建議...</p></div>
             </a>
             <a href="/blog/family-caregiver-burnout" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-burnout.jpg" alt="照顧者倦怠" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogBurnout} alt="照顧者倦怠" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f] transition-colors">照顧者倦怠怎麼辦？</h4><p class="text-sm text-[#6d5d50]">家屬身心調適指南...</p></div>
             </a>
           </div>

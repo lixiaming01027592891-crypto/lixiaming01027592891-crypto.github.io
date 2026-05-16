@@ -1,30 +1,30 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "媽媽出院後的第一個禮拜，我是怎麼撐過來的｜高雄居家看護與臨時支援安排心得",
+  "description": "分享如何安排居家看護與臨時支援，讓術後照顧更順利的經驗。",
+  "image": new URL("/images/blog-night-care-v2-1.jpg", Astro.site).toString(),
+  "author": {"@type": "Organization", "name": "宇涵居家照護"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "logo": {"@type": "ImageObject", "url": new URL("/logo.svg", Astro.site).toString()}
+  },
+  "datePublished": "2025-05-16",
+  "dateModified": "2025-05-16"
+};
 ---
 
 <MainLayout
   title="媽媽出院後的第一個禮拜，我是怎麼撐過來的｜高雄居家看護與臨時支援安排心得"
   description="家人出院後的過渡期，往往是家屬最手忙腳亂的階段。分享我們如何安排高雄居家看護與臨時支援，讓術後照顧更順利的真實經驗。"
   keywords="高雄居家看護, 高雄臨時看護"
-  canonicalURL="https://yuhanhomecare.com/blog/night-care/"
+  canonicalURL={new URL("/blog/night-care/", Astro.site).toString()}
 >
-  <script type="application/ld+json" slot="schema">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "媽媽出院後的第一個禮拜，我是怎麼撐過來的｜高雄居家看護與臨時支援安排心得",
-    "description": "分享如何安排居家看護與臨時支援，讓術後照顧更順利的經驗。",
-    "image": "https://yuhanhomecare.com/images/blog-night-care-v2-1.jpg",
-    "author": {"@type": "Organization", "name": "宇涵居家照護"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "宇涵居家照護",
-      "logo": {"@type": "ImageObject", "url": "https://yuhanhomecare.com/logo.svg"}
-    },
-    "datePublished": "2025-05-16",
-    "dateModified": "2025-05-16"
-  }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
 
   <section class="relative h-[45vh] min-h-[320px] flex items-end overflow-hidden">
     <img src="/images/blog-night-care-v2-1.jpg" alt="看護人員在溫馨的客廳為長輩準備餐食" class="absolute inset-0 w-full h-full object-cover" loading="eager" />

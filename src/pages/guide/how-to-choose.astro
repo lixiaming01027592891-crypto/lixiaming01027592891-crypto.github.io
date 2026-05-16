@@ -6,11 +6,11 @@ const schema = {
   '@type': 'Article',
   headline: '如何選擇居家看護｜5個重要指標評估',
   description: '如何選擇居家看護？5個重要評估指標：專業證照、服務經驗、溝通能力、彈性安排、評價口碑。面試建議問題與宇涵的優勢。',
-  image: 'https://www.yuhan-homecare.com.tw/images/guide-choose.jpg',
+  image: new URL('/images/guide-choose.jpg', Astro.site).toString(),
   datePublished: '2025-01-01T08:00:00+08:00',
   author: { '@type': 'Organization', name: '宇涵居家照護' },
   publisher: { '@type': 'Organization', name: '宇涵居家照護' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/guide/how-to-choose' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL('/guide/how-to-choose', Astro.site).toString() },
 };
 ---
 

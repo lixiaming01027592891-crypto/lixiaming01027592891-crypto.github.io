@@ -1,6 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../layouts/MainLayout.astro';
 import SchemaMarkup from '../components/SchemaMarkup.astro';
+import heroBanner from '../assets/images/hero-banner.jpg';
+import aboutTeam from '../assets/images/about-team.jpg';
+import serviceElderly from '../assets/images/service-elderly.jpg';
+import serviceDaily from '../assets/images/service-daily.jpg';
+import serviceSafety from '../assets/images/service-safety.jpg';
+import serviceRehab from '../assets/images/service-rehab.jpg';
+import serviceCommunication from '../assets/images/service-communication.jpg';
+import serviceTemporary from '../assets/images/service-temporary.jpg';
+import blogDementia from '../assets/images/blog-dementia.jpg';
+import blogForeign from '../assets/images/blog-foreign.jpg';
+import blogPostsurgery from '../assets/images/blog-postsurgery.jpg';
 
 // SEO 設定
 const seoTitle = '宇涵居家照護｜高雄居家看護推薦｜24小時專業到府照護服務';
@@ -12,42 +24,42 @@ const services = [
   {
     title: '長者陪伴照護',
     description: '提供長者日常生活陪伴，包括聊天互動、情緒支持、散步陪同，讓長者感受溫暖關懷。',
-    image: '/images/service-elderly.jpg',
+    image: serviceElderly,
     href: '/services/elderly-care/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>',
   },
   {
     title: '日常生活協助',
     description: '協助長者完成日常活動，如進食、盥洗、更衣、移動等，確保長者生活品質與尊嚴。',
-    image: '/images/service-daily.jpg',
+    image: serviceDaily,
     href: '/services/daily-assistance/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
   },
   {
     title: '居家安全觀察',
     description: '定期觀察長者身體狀況，注意飲食、睡眠、用藥情形，即時發現異常並通報家屬。',
-    image: '/images/service-safety.jpg',
+    image: serviceSafety,
     href: '/services/safety-monitoring/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
   },
   {
     title: '復健與回診陪同',
     description: '陪同長者進行復健運動、定期回診拿藥，協助與醫療人員溝通，確保醫療建議順利進行。',
-    image: '/images/service-rehab.jpg',
+    image: serviceRehab,
     href: '/services/rehabilitation/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
   },
   {
     title: '家庭照護溝通',
     description: '與家屬保持密切聯繫，定期回報長者狀況，協助規劃適合的照護方案與調整。',
-    image: '/images/service-communication.jpg',
+    image: serviceCommunication,
     href: '/services/communication/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" /></svg>',
   },
   {
     title: '短期與彈性支援',
     description: '提供臨時看護、短期照護服務，彈性配合家庭需求，解決突發照護人力不足的問題。',
-    image: '/images/service-temporary.jpg',
+    image: serviceTemporary,
     href: '/services/temporary/',
     icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>',
   },
@@ -89,21 +101,21 @@ const blogPosts = [
   {
     title: '失智症居家照護注意事項',
     excerpt: '了解失智症患者的照護重點，打造安全舒適的居家環境，幫助延緩病情發展。',
-    image: '/images/blog-dementia.jpg',
+    image: blogDementia,
     href: '/blog/dementia-care-tips/',
     date: '2024-12-15',
   },
   {
     title: '外籍看護空窗期怎麼辦',
     excerpt: '外籍看護休假期間或轉換期間，如何安排臨時照護人員，確保長者照護不中斷。',
-    image: '/images/blog-foreign.jpg',
+    image: blogForeign,
     href: '/blog/foreign-caregiver-gap/',
     date: '2024-12-08',
   },
   {
     title: '術後居家照護完整指南',
     excerpt: '手術後返家照護須知，從傷口照顧、飲食調理到復健運動的完整指引。',
-    image: '/images/blog-postsurgery.jpg',
+    image: blogPostsurgery,
     href: '/blog/post-surgery-care/',
     date: '2024-12-01',
   },
@@ -111,7 +123,7 @@ const blogPosts = [
 
 // Breadcrumb 項目
 const breadcrumbItems = [
-  { name: '首頁', url: 'https://www.yuhan-homecare.com/' },
+  { name: '首頁', url: new URL('/', Astro.site).toString() },
 ];
 ---
 
@@ -133,9 +145,11 @@ const breadcrumbItems = [
   >
     {/* 背景圖片 */}
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/hero-banner.jpg"
+      <Image
+        src={heroBanner}
         alt="宇涵居家照護 - 高雄專業居家看護服務"
+        widths={[400, 800, 1200]}
+        sizes="(max-width: 768px) 100vw, 800px"
         class="w-full h-full object-cover object-center"
         loading="eager"
       />
@@ -275,9 +289,11 @@ const breadcrumbItems = [
           >
             {/* 卡片圖片 */}
             <div class="relative aspect-[4/3] overflow-hidden">
-              <img
+              <Image
                 src={service.image}
                 alt={service.title}
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 768px) 100vw, 800px"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -395,9 +411,11 @@ const breadcrumbItems = [
         {/* 右側：圖片 */}
         <div class="order-1 lg:order-2">
           <div class="relative">
-            <img
-              src="/images/about-team.jpg"
+            <Image
+              src={aboutTeam}
               alt="宇涵居家照護團隊"
+              widths={[400, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 800px"
               class="w-full h-auto rounded-2xl shadow-lg object-cover aspect-[4/3]"
               loading="lazy"
             />
@@ -552,9 +570,11 @@ const breadcrumbItems = [
           <a href={post.href} class="group card bg-white rounded-2xl overflow-hidden">
             {/* 文章圖片 */}
             <div class="relative aspect-[16/10] overflow-hidden">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 768px) 100vw, 800px"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
