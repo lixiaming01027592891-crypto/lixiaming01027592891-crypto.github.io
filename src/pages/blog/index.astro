@@ -144,19 +144,19 @@ const schema = {
   '@type': 'Blog',
   name: '宇涵居家照護部落格',
   description: '高雄居家看護專欄，提供失智症照護、術後照護、長照申請、防跌改造等專業照護知識。',
-  url: 'https://www.yuhan-homecare.com.tw/blog',
+  url: 'https://yuhanhomecare.com.tw/blog',
   publisher: {
     '@type': 'Organization',
     name: '宇涵居家照護',
-    logo: { '@type': 'ImageObject', url: 'https://www.yuhan-homecare.com.tw/images/logo.png' },
+    logo: { '@type': 'ImageObject', url: 'https://yuhanhomecare.com.tw/images/logo.png' },
   },
   blogPost: articles.map((a) => ({
     '@type': 'BlogPosting',
     headline: a.title,
     description: a.excerpt,
-    url: `https://www.yuhan-homecare.com.tw${a.slug}`,
+    url: `https://yuhanhomecare.com.tw${a.slug}`,
     datePublished: a.date,
-    image: `https://www.yuhan-homecare.com.tw${a.image}`,
+    image: `https://yuhanhomecare.com.tw${a.image}`,
   })),
 };
 ---
