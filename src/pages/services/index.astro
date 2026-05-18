@@ -1,5 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import heroBanner from '../../assets/images/hero-banner.jpg';
+import serviceRehab from '../../assets/images/service-rehab.jpg';
+import serviceElderly from '../../assets/images/service-elderly.jpg';
+import blogDementia from '../../assets/images/blog-dementia.jpg';
+import blogPostsurgery from '../../assets/images/blog-postsurgery.jpg';
+import serviceTemporary from '../../assets/images/service-temporary.jpg';
 
 const title = "服務項目｜高雄居家看護、醫院看護、長期照護服務內容";
 const description = "宇涵提供完整的居家看護服務，包括長者陪伴、日常生活協助、失智照護、術後照顧、醫院看護及臨時看護派遣。";
@@ -9,69 +16,67 @@ const services = [
   {
     title: "居家看護",
     href: "/services/home-care/",
-    image: "/images/hero-banner.jpg",
+    image: heroBanner,
     desc: "專業到府照護服務，協助長者日常生活起居、飲食照顧、身體清潔等，讓長者在家也能享有專業照護。",
     tags: ["24小時", "日間照護", "長期照護"]
   },
   {
     title: "醫院看護",
     href: "/services/hospital-care/",
-    image: "/images/service-rehab.jpg",
+    image: serviceRehab,
     desc: "醫院病房看護派遣，陪伴住院病患、協助就醫流程、照顧日常生活需求，減輕家屬負擔。",
     tags: ["病房陪伴", "手術照護", "24小時輪班"]
   },
   {
     title: "長者陪伴",
     href: "/services/elderly-care/",
-    image: "/images/service-elderly.jpg",
+    image: serviceElderly,
     desc: "為獨居或需要陪伴的長者提供溫暖陪伴服務，包含散步、聊天、活動協助，減少孤獨感。",
     tags: ["日間陪伴", "活動協助", "情感支持"]
   },
   {
     title: "失智照護",
     href: "/services/dementia-care/",
-    image: "/images/blog-dementia.jpg",
+    image: blogDementia,
     desc: "專業失智症照護，運用實證照護技巧，穩定長者情緒、延緩退化，提供安全的生活環境。",
     tags: ["專業訓練", "情緒安撫", "認知活動"]
   },
   {
     title: "術後照顧",
     href: "/services/post-surgery/",
-    image: "/images/blog-postsurgery.jpg",
+    image: blogPostsurgery,
     desc: "手術後返家照護，協助傷口觀察與清潔照護、用藥提醒、復健協助，幫助患者安心休養。",
     tags: ["傷口觀察與清潔照護", "復健協助", "用藥管理"]
   },
   {
     title: "臨時看護",
     href: "/services/temporary-care/",
-    image: "/images/service-temporary.jpg",
+    image: serviceTemporary,
     desc: "彈性短期看護派遣，適合家屬臨時有事、看護休假或急需求的情境，快速媒合到府。",
     tags: ["即時派遣", "短期服務", "彈性時間"]
   }
 ];
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "宇涵服務項目",
+  "description": "高雄居家看護、醫院看護、長期照護等完整服務內容",
+  "url": new URL("/services/", Astro.site).toString(),
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": services.map((service, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": service.title,
+      "url": new URL(service.href, Astro.site).toString()
+    }))
+  }
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "宇涵服務項目",
-      "description": "高雄居家看護、醫院看護、長期照護等完整服務內容",
-      "url": "https://yuhanhomecare.com/services/",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "居家看護", "url": "https://yuhanhomecare.com/services/home-care/"},
-          {"@type": "ListItem", "position": 2, "name": "醫院看護", "url": "https://yuhanhomecare.com/services/hospital-care/"},
-          {"@type": "ListItem", "position": 3, "name": "長者陪伴", "url": "https://yuhanhomecare.com/services/elderly-care/"},
-          {"@type": "ListItem", "position": 4, "name": "失智照護", "url": "https://yuhanhomecare.com/services/dementia-care/"},
-          {"@type": "ListItem", "position": 5, "name": "術後照顧", "url": "https://yuhanhomecare.com/services/post-surgery/"},
-          {"@type": "ListItem", "position": 6, "name": "臨時看護", "url": "https://yuhanhomecare.com/services/temporary-care/"}
-        ]
-      }
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(servicesSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -102,13 +107,13 @@ const services = [
         {services.map(service => (
           <a href={service.href} class="group bg-[#fcfaf6] rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300 block">
             <div class="relative overflow-hidden">
-              <img 
-                src={service.image} 
+              <Image
+                src={service.image}
                 alt={`${service.title}服務`}
+                widths={[300, 600, 900]}
+                sizes="(max-width: 768px) 100vw, 600px"
                 class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
-                width="600"
-                height="224"
               />
               <div class="absolute top-4 right-4 bg-[#8b621f] text-white text-sm px-3 py-1 rounded-full font-medium">了解更多 →</div>
             </div>

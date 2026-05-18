@@ -1,24 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import elderlyImage from '../../assets/images/service-elderly.jpg';
 
 const title = "高雄長者陪伴照護｜老人居家照顧服務";
 const description = "專業長者陪伴服務，為獨居長者、行動不便長輩提供溫暖陪伴與生活協助，減少孤獨感，提升生活品質。";
 const canonicalURL = new URL("/services/elderly-care/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄長者陪伴照護",
+  "description": "為獨居長者、行動不便長輩提供溫暖陪伴與生活協助的專業服務",
+  "provider": { "@type": "Organization", "name": "宇涵居家照護" },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "長者陪伴照護",
+  "url": new URL("/services/elderly-care/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄長者陪伴照護",
-      "description": "為獨居長者、行動不便長輩提供溫暖陪伴與生活協助的專業服務",
-      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "長者陪伴照護",
-      "url": "https://yuhanhomecare.com/services/elderly-care/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -44,7 +46,7 @@ const canonicalURL = new URL("/services/elderly-care/", Astro.site);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <img src="/images/service-elderly.jpg" alt="高雄長者陪伴照護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={elderlyImage} alt="高雄長者陪伴照護服務" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">長者陪伴的重要性</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">在台灣高齡化社會快速來臨的今天，越來越多的長者面臨獨居或缺乏陪伴的困境。根據統計，台灣獨居老人人口逐年攀升，許多長者的子女因為工作、家庭等原因無法時刻陪伴在旁。長期缺乏陪伴與社交互動，不僅容易讓長者感到孤獨與沮喪，更可能對身心健康造成負面影響，甚至加速認知功能退化與身體機能衰退。</p>

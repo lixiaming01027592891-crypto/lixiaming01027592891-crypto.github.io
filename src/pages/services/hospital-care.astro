@@ -1,24 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import hospitalImage from '../../assets/images/service-rehab.jpg';
 
 const title = "高雄醫院看護｜24小時病房照護派遣｜宇涵";
 const description = "宇涵提供高雄地區醫院看護派遣服務，24小時病房陪伴、術後照護、急診陪伴，專業看護讓家屬安心。";
 const canonicalURL = new URL("/services/hospital-care/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄醫院看護服務",
+  "description": "24小時醫院病房看護派遣，陪伴住院病患、協助就醫流程、照顧日常生活需求",
+  "provider": { "@type": "Organization", "name": "宇涵居家照護" },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "醫院看護",
+  "url": new URL("/services/hospital-care/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄醫院看護服務",
-      "description": "24小時醫院病房看護派遣，陪伴住院病患、協助就醫流程、照顧日常生活需求",
-      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "醫院看護",
-      "url": "https://yuhanhomecare.com/services/hospital-care/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -44,7 +46,7 @@ const canonicalURL = new URL("/services/hospital-care/", Astro.site);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <img src="/images/service-rehab.jpg" alt="高雄醫院看護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={hospitalImage} alt="高雄醫院看護服務" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是醫院看護服務？</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">醫院看護服務是指在病患住院期間，由專業看護人員前往醫院病房，全天候陪伴與照顧病患的服務。當家人因為工作、家庭或其他因素無法長時間待在醫院陪伴時，醫院看護就成為最可靠的選擇。宇涵提供的醫院看護派遣服務，能讓病患在住院期間獲得專業且持續的照顧，同時讓家屬能夠安心處理日常事務。</p>

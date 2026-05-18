@@ -1,16 +1,21 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import blogPostsurgery from '../../assets/images/blog-postsurgery.jpg';
+import blogTempCare1 from '../../assets/images/blog-temp-care-1.jpg';
+import blogTempCare2 from '../../assets/images/blog-temp-care-2.jpg';
+import blogHospital from '../../assets/images/blog-hospital.jpg';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: '從醫院返家照護的銜接經驗：臨時看護能幫上什麼忙｜高雄臨時看護',
   description: '從醫院返家照護的銜接經驗分享，了解高雄臨時看護在出院過渡期如何協助長輩適應居家環境、管理藥物與日常照護，幫助家屬順利完成醫院到居家的照護轉換。',
-  image: 'https://yuhanhomecare.com.tw/images/blog-temp-care-1.jpg',
+  image: new URL('/images/blog-temp-care-1.jpg', Astro.site).toString(),
   datePublished: '2025-01-21T08:00:00+08:00',
   author: { '@type': 'Organization', name: '宇涵居家照護' },
-  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://yuhanhomecare.com.tw/images/logo.png' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://yuhanhomecare.com.tw/blog/temp-care-hospital-home' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: new URL('/images/logo.png', Astro.site).toString() } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL('/blog/temp-care-hospital-home', Astro.site).toString() },
 };
 ---
 
@@ -23,7 +28,7 @@ const schema = {
   <article>
     <section class="relative bg-[#2b221c] py-16 lg:py-24">
       <div class="absolute inset-0 opacity-15">
-        <img src="/images/blog-postsurgery.jpg" alt="醫院返家照護銜接" class="w-full h-full object-cover" loading="eager" />
+        <Image src={blogPostsurgery} alt="醫院返家照護銜接" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-full object-cover" loading="eager" />
       </div>
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="麵包屑" class="mb-6">
@@ -51,7 +56,7 @@ const schema = {
             這其實是很多家庭都會面臨的「過渡期」難題。醫院的照護環境和居家完全不同，長輩剛回家時，家屬往往手忙腳亂，既要適應醫師交代的注意事項，又要處理日常的生活起居，如果主要照顧者剛好無法請假，臨時看護的支援就顯得格外重要。從醫療院所返回家中，不只是地點的改變，更代表照護責任從醫護團隊轉移到家屬身上，這中間如果有專業協助銜接，能讓整個過渡過程平順許多。以下從實際經驗出發，分享醫院返家照護銜接過程中，臨時看護可以扮演的角色與家屬該留意的重點。
           </p>
 
-          <img src="/images/blog-temp-care-1.jpg" alt="家屬在醫院陪同長輩辦理出院手續" class="w-full rounded-xl mb-8" loading="lazy" />
+          <Image src={blogTempCare1} alt="家屬在醫院陪同長輩辦理出院手續" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full rounded-xl mb-8" loading="lazy" />
 
           <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">出院前三天就該開始準備</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-4">許多家屬以為出院當天才開始安排就好，但經驗告訴我們，出院前三到五天開始準備會從容許多。這段時間可以先和醫師或個管師確認返家後的照護重點：母親目前需要協助的程度到哪裡？行動上是否需要輔具？飲食上有沒有特殊限制？每天要服用哪些藥物、什麼時間吃？回診的時間與科別是什麼？如果家中有原本就負責照顧的成員，也要一起參與這段討論，確保每個人都清楚後續的安排。</p>
@@ -64,7 +69,7 @@ const schema = {
           <p class="text-[#6d5d50] leading-relaxed mb-4">回到家的第一個下午與晚上特別關鍵。長輩從醫院回到熟悉的環境，情緒上通常會比較放鬆，但身體上可能反而顯得疲憊。這時候看護人員可以協助長輩盥洗、更換衣物、準備適合的餐點，並且觀察她的精神狀況與體力恢復情形。有些長輩回家後會因為環境改變而出現短暫的混亂或不適應，這都是正常的，只需要耐心陪伴即可。看護人員也可以協助長輩在床上或沙發上找到最舒適的休息姿勢。</p>
           <p class="text-[#6d5d50] leading-relaxed mb-6">藥物管理也是返家當天的重點。住院期間的用藥可能與之前有調整，看護人員可以協助把藥物依服用時間分裝好，貼上標籤，並且設定提醒。如果長輩本身有多重用藥的情況，建議把藥袋、藥單都整理好，放在固定位置，方便後續查對。看護人員也可以協助觀察服藥後有無不適反應，並且提醒家屬在回診時與醫師確認。這些看似細微的工作，對於剛出院的長輩來說卻是影響恢復進度的重要環節。</p>
 
-          <img src="/images/blog-temp-care-2.jpg" alt="看護人員在居家環境協助長輩日常照護" class="w-full rounded-xl mb-8" loading="lazy" />
+          <Image src={blogTempCare2} alt="看護人員在居家環境協助長輩日常照護" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full rounded-xl mb-8" loading="lazy" />
 
           <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">臨時看護在過渡期能做的具體事項</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-4">臨時看護的價值，不只是「有人在旁邊」，而是在這段過渡期提供有條理的協助。在日常生活方面，看護人員可以依據長輩目前的體力與食慾，準備適合的餐點與點心。剛出院的長輩通常胃口不好，食物要清淡好消化，分量可以先少一點，採少量多餐的方式。看護人員也可以觀察長輩對不同食物的接受度，記錄下來給家屬參考，這樣後續家屬接手時也能延續適合的飲食模式。</p>
@@ -95,7 +100,7 @@ const schema = {
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">高雄看護中心怎麼選？</h4><p class="text-sm text-[#6d5d50]">家屬實際走訪前該知道的幾件事...</p></div>
             </a>
             <a href="/blog/hospital-vs-home" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-hospital.jpg" alt="醫院與居家看護" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogHospital} alt="醫院與居家看護" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">醫院看護 vs 居家看護</h4><p class="text-sm text-[#6d5d50]">費用與照護品質比較...</p></div>
             </a>
           </div>

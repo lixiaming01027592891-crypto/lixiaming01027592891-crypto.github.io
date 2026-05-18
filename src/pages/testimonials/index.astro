@@ -56,28 +56,28 @@ const stats = [
   { number: "4.9", label: "平均評分" },
   { number: "5年", label: "平均照護經驗" }
 ];
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "ReviewPage",
+  "name": "宇涵客戶見證",
+  "description": "高雄居家看護推薦評價",
+  "url": new URL("/testimonials/", Astro.site).toString(),
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500",
+      "bestRating": "5"
+    }
+  }
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "ReviewPage",
-      "name": "宇涵客戶見證",
-      "description": "高雄居家看護推薦評價",
-      "url": "https://yuhanhomecare.com/testimonials/",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "宇涵居家照護",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "500",
-          "bestRating": "5"
-        }
-      }
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(reviewSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">

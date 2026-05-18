@@ -1,24 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import temporaryImage from '../../assets/images/service-temporary.jpg';
 
 const title = "高雄臨時看護派遣｜短期急需求看護";
 const description = "宇涵提供彈性臨時看護派遣服務，快速媒合專業看護到府，適合家屬臨時有事、看護休假或急需求的情境。";
 const canonicalURL = new URL("/services/temporary-care/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄臨時看護派遣",
+  "description": "彈性臨時看護派遣，快速媒合專業看護到府，適合短期急需求情境",
+  "provider": { "@type": "Organization", "name": "宇涵居家照護" },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "臨時看護派遣",
+  "url": new URL("/services/temporary-care/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄臨時看護派遣",
-      "description": "彈性臨時看護派遣，快速媒合專業看護到府，適合短期急需求情境",
-      "provider": {"@type": "Organization", "name": "宇涵居家照護"},
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "臨時看護派遣",
-      "url": "https://yuhanhomecare.com/services/temporary-care/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <section class="relative bg-[#fcfaf6] overflow-hidden">
     <div class="absolute top-0 right-0 w-1/2 h-full bg-[#efe5d5] opacity-30 rounded-bl-[100px]"></div>
@@ -43,7 +45,7 @@ const canonicalURL = new URL("/services/temporary-care/", Astro.site);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div class="lg:col-span-2">
-          <img src="/images/service-temporary.jpg" alt="高雄臨時看護派遣服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={temporaryImage} alt="高雄臨時看護派遣服務" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是臨時看護派遣？</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">臨時看護派遣是一種彈性的看護人力支援服務，針對家庭臨時性的照護需求，快速提供專業看護人員到府服務。不同於長期的居家看護合約，臨時看護的服務時間更具彈性，可以是一次性的服務、短期的替補，或是按小時計費的臨時支援。</p>

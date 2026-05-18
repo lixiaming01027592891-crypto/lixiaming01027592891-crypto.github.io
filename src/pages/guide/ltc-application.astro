@@ -6,11 +6,11 @@ const schema = {
   '@type': 'Article',
   headline: '高雄長照申請懶人包｜長照2.0申請流程',
   description: '高雄長照2.0申請流程懶人包。長照2.0介紹、申請資格、申請流程5步驟、失能等級與給付額度、準備文件與常見問題。',
-  image: 'https://www.yuhan-homecare.com.tw/images/guide-ltc.jpg',
+  image: new URL('/images/guide-ltc.jpg', Astro.site).toString(),
   datePublished: '2025-01-01T08:00:00+08:00',
   author: { '@type': 'Organization', name: '宇涵居家照護' },
   publisher: { '@type': 'Organization', name: '宇涵居家照護' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.yuhan-homecare.com.tw/guide/ltc-application' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL('/guide/ltc-application', Astro.site).toString() },
 };
 ---
 

@@ -1,28 +1,30 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import heroBanner from '../../assets/images/hero-banner.jpg';
 
 const title = "高雄居家看護服務｜24小時到府照護｜宇涵居家照護";
 const description = "宇涵提供高雄專業居家看護服務，24小時到府照護、長期照護、失能照顧，讓長者在家也能享有專業照護品質。";
 const canonicalURL = new URL("/services/home-care/", Astro.site);
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "高雄居家看護服務",
+  "description": "24小時到府居家看護服務，包含生活照顧、身體清潔、膳食準備、復健協助等專業照護",
+  "provider": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "address": { "@type": "PostalAddress", "addressLocality": "高雄市", "addressRegion": "台灣" }
+  },
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "serviceType": "居家看護",
+  "url": new URL("/services/home-care/", Astro.site).toString()
+};
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "高雄居家看護服務",
-      "description": "24小時到府居家看護服務，包含生活照顧、身體清潔、膳食準備、復健協助等專業照護",
-      "provider": {
-        "@type": "Organization",
-        "name": "宇涵居家照護",
-        "address": {"@type": "PostalAddress", "addressLocality": "高雄市", "addressRegion": "台灣"}
-      },
-      "areaServed": {"@type": "City", "name": "高雄市"},
-      "serviceType": "居家看護",
-      "url": "https://yuhanhomecare.com/services/home-care/"
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -50,7 +52,7 @@ const canonicalURL = new URL("/services/home-care/", Astro.site);
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <!-- 左側主內容 -->
         <div class="lg:col-span-2">
-          <img src="/images/hero-banner.jpg" alt="高雄居家看護服務" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" width="800" height="320" />
+          <Image src={heroBanner} alt="高雄居家看護服務" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-80 object-cover rounded-2xl mb-10 shadow-md" loading="lazy" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-[#2b221c] mb-6">什麼是居家看護？</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-6">居家看護是一種專業的照護服務模式，由受過專業訓練的看護人員前往被照護者的家中，提供全方位的生活照顧與健康協助。相較於將長者送往安養機構，居家看護能讓長者在熟悉的家庭環境中繼續生活，維持原有的生活習慣與社交網絡，對於長者的身心健康都有正面的影響。</p>

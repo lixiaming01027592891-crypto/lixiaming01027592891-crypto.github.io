@@ -1,16 +1,21 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import blogChoosingCenter1 from '../../assets/images/blog-choosing-center-1.jpg';
+import blogChoosingCenter2 from '../../assets/images/blog-choosing-center-2.jpg';
+import blogPostsurgery from '../../assets/images/blog-postsurgery.jpg';
+import blogHospital from '../../assets/images/blog-hospital.jpg';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: '高雄看護中心怎麼選？家屬實際走訪前該知道的幾件事｜高雄看護中心推薦',
   description: '如何選擇高雄看護中心？從需求釐清、實地走訪觀察重點到簽約前注意事項，提供家屬選擇看護中心的實用建議與評估方向，幫助您找到適合的照護服務。',
-  image: 'https://yuhanhomecare.com.tw/images/blog-choosing-center-1.jpg',
+  image: new URL('/images/blog-choosing-center-1.jpg', Astro.site).toString(),
   datePublished: '2025-01-20T08:00:00+08:00',
   author: { '@type': 'Organization', name: '宇涵居家照護' },
-  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://yuhanhomecare.com.tw/images/logo.png' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://yuhanhomecare.com.tw/blog/choosing-care-center' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: new URL('/images/logo.png', Astro.site).toString() } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL('/blog/choosing-care-center', Astro.site).toString() },
 };
 ---
 
@@ -23,7 +28,7 @@ const schema = {
   <article>
     <section class="relative bg-[#2b221c] py-16 lg:py-24">
       <div class="absolute inset-0 opacity-15">
-        <img src="/images/blog-choosing-center-1.jpg" alt="高雄看護中心選擇指南" class="w-full h-full object-cover" loading="eager" />
+        <Image src={blogChoosingCenter1} alt="高雄看護中心選擇指南" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-full object-cover" loading="eager" />
       </div>
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="麵包屑" class="mb-6">
@@ -51,7 +56,7 @@ const schema = {
             像林阿姨這樣的情況，在高雄其實很常見。當家人因為手術、慢性病或年紀漸長需要額外協助時，許多家庭會開始接觸看護中心。但選擇的過程往往讓人感到無所適從，因為每個家庭的狀況不同，適合的服務模式也不一樣。有些家屬是朋友介紹來的，有些則是自己在網路上搜尋高雄看護中心推薦資訊。不管來源是什麼，最終都需要回歸到自己的需求上。以下分享一些實際的考量面向，幫助家屬在聯繫看護中心之前，先釐清真正需要什麼樣的協助。
           </p>
 
-          <img src="/images/blog-choosing-center-1.jpg" alt="家屬與看護人員討論照護需求" class="w-full rounded-xl mb-8" loading="lazy" />
+          <Image src={blogChoosingCenter1} alt="家屬與看護人員討論照護需求" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full rounded-xl mb-8" loading="lazy" />
 
           <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">先釐清需求，再找服務</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-4">在聯繫任何看護中心之前，建議家屬先花點時間整理家人的實際狀況。需要協助的內容是什麼？是單純的生活陪伴，還是需要協助翻身、移位、備餐等較為體力性的工作？家人目前的行動能力如何？能否自行如廁、洗澡、進食？認知功能是否正常，還是有失智或記憶退化的跡象？這些細節會直接影響到所需要的服務類型與照護人員的專長方向。</p>
@@ -65,7 +70,7 @@ const schema = {
           <p class="text-[#6d5d50] leading-relaxed mb-4">其次是「人員的說明」。家屬可以主動詢問：看護人員是否有相關證照或受訓經歷？中心有沒有提供在職訓練？如果看護人員臨時無法到班，有沒有替代人力機制？這些問題看似瑣碎，卻是實際服務中經常遇到的情況。一間運作成熟的高雄看護中心，應該能清楚說明他們的人員管理與備援機制，而不是給出模糊的答案。</p>
           <p class="text-[#6d5d50] leading-relaxed mb-6">再來是「合約與收費的透明度」。專業的看護中心會清楚說明收費項目，包括服務費、人力派遣費、是否有額外的管理費或假日加給。有些中心會收取一次性的媒合費，有些則是按天或按月計費。家屬要確認自己了解所有可能產生的費用，避免後續有爭議。合約內容也要仔細閱讀，特別是關於終止服務、更換人員、請假扣款等條款。</p>
 
-          <img src="/images/blog-choosing-center-2.jpg" alt="看護人員與長者在家中互動" class="w-full rounded-xl mb-8" loading="lazy" />
+          <Image src={blogChoosingCenter2} alt="看護人員與長者在家中互動" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full rounded-xl mb-8" loading="lazy" />
 
           <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4 mt-12">簽約前務必確認的細節</h2>
           <p class="text-[#6d5d50] leading-relaxed mb-4">經過幾番比較後，如果決定與某間看護中心合作，簽約前還有一些細節需要特別留意。首先是「服務內容的定義」。合約中應該清楚載明看護人員的工作範圍，包括哪些事情會做、哪些不會做。例如，有些看護可以協助備餐與餵食，但不會處理需要特殊製作的醫療飲食；有些可以協助洗澡與更衣，但需要家屬在場。這些邊界定義得越清楚，後續越不容易產生誤會或期待落差。</p>
@@ -92,11 +97,11 @@ const schema = {
           <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <a href="/blog/temp-care-hospital-home" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-postsurgery.jpg" alt="臨時看護" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogPostsurgery} alt="臨時看護" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">從醫院返家照護的銜接經驗</h4><p class="text-sm text-[#6d5d50]">臨時看護能幫上什麼忙...</p></div>
             </a>
             <a href="/blog/finding-caregiver" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-hospital.jpg" alt="找看護" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogHospital} alt="找看護" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">如何找到適合的看護？</h4><p class="text-sm text-[#6d5d50]">完整搜尋與評估指南...</p></div>
             </a>
           </div>

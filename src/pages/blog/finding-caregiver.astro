@@ -1,30 +1,30 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "父親出院回家後，那些醫院不會教你的照護細節｜高雄醫院居家看護與照護中心安排心得",
+  "description": "分享出院前後需要注意的準備工作，以及如何安排居家看護服務。",
+  "image": new URL("/images/blog-finding-caregiver-1.jpg", Astro.site).toString(),
+  "author": {"@type": "Organization", "name": "宇涵居家照護"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "logo": {"@type": "ImageObject", "url": new URL("/logo.svg", Astro.site).toString()}
+  },
+  "datePublished": "2025-05-15",
+  "dateModified": "2025-05-15"
+};
 ---
 
 <MainLayout
   title="父親出院回家後，那些醫院不會教你的照護細節｜高雄醫院居家看護與照護中心安排心得"
   description="從醫院回到家的照護過渡期，是許多家庭最手忙腳亂的階段。分享出院前後需要注意的準備工作，以及如何安排高雄醫院居家看護服務與高雄看護中心資源，讓家人安心休養。"
   keywords="高雄醫院居家看護, 高雄看護中心"
-  canonicalURL="https://yuhanhomecare.com/blog/finding-caregiver/"
+  canonicalURL={new URL("/blog/finding-caregiver/", Astro.site).toString()}
 >
-  <script type="application/ld+json" slot="schema">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "父親出院回家後，那些醫院不會教你的照護細節｜高雄醫院居家看護與照護中心安排心得",
-    "description": "分享出院前後需要注意的準備工作，以及如何安排居家看護服務。",
-    "image": "https://yuhanhomecare.com/images/blog-finding-caregiver-1.jpg",
-    "author": {"@type": "Organization", "name": "宇涵居家照護"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "宇涵居家照護",
-      "logo": {"@type": "ImageObject", "url": "https://yuhanhomecare.com/logo.svg"}
-    },
-    "datePublished": "2025-05-15",
-    "dateModified": "2025-05-15"
-  }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
 
   <section class="relative h-[45vh] min-h-[320px] flex items-end overflow-hidden">
     <img src="/images/blog-finding-caregiver-1.jpg" alt="醫院病房中，家屬陪伴即將出院的長輩，護理師在一旁說明注意事項" class="absolute inset-0 w-full h-full object-cover" loading="eager" />

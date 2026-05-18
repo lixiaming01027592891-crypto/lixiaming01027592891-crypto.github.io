@@ -1,9 +1,25 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import aboutTeam from '../../assets/images/about-team.jpg';
 
 const title = "關於宇涵｜高雄居家看護團隊介紹｜專業照護服務理念";
 const description = "了解宇涵居家照護的服務理念與專業團隊。我們以用心、專業、安心為宗旨，提供高雄市優質居家看護服務。";
 const canonicalURL = new URL("/about/", Astro.site);
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "關於宇涵居家照護",
+  "description": "了解宇涵居家照護的服務理念與專業團隊",
+  "url": new URL("/about/", Astro.site).toString(),
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "宇涵居家照護",
+    "description": "專業居家看護服務機構",
+    "areaServed": "高雄市"
+  }
+};
 
 const philosophyItems = [
   {
@@ -41,21 +57,7 @@ const steps = [
 ---
 
 <MainLayout title={title} description={description} canonicalURL={canonicalURL}>
-  <script type="application/ld+json" slot="head">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "關於宇涵居家照護",
-      "description": "了解宇涵居家照護的服務理念與專業團隊",
-      "url": "https://yuhanhomecare.com/about/",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "宇涵居家照護",
-        "description": "專業居家看護服務機構",
-        "areaServed": "高雄市"
-      }
-    }
-  </script>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(aboutSchema)} />
 
   <!-- Hero -->
   <section class="relative bg-[#fcfaf6] overflow-hidden">
@@ -155,13 +157,13 @@ const steps = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <img 
-            src="/images/about-team.jpg" 
-            alt="宇涵居家照護專業團隊" 
+          <Image
+            src={aboutTeam}
+            alt="宇涵居家照護專業團隊"
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 800px"
             class="rounded-2xl shadow-lg w-full h-auto object-cover"
             loading="lazy"
-            width="600"
-            height="400"
           />
         </div>
         <div>

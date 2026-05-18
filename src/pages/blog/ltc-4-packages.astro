@@ -1,16 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import blogPackages from '../../assets/images/blog-packages.jpg';
+import blogRespite from '../../assets/images/blog-respite.jpg';
+import blogForeign from '../../assets/images/blog-foreign.jpg';
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: '長照四包錢完整說明｜補助額度與申請資格',
   description: '長照四包錢完整說明。介紹長照2.0四包錢的內容、給付項目、申請資格、申請流程與注意事項，幫助您善用政府資源。',
-  image: 'https://yuhanhomecare.com.tw/images/blog-packages.jpg',
+  image: new URL('/images/blog-packages.jpg', Astro.site).toString(),
   datePublished: '2024-12-20T08:00:00+08:00',
   author: { '@type': 'Organization', name: '宇涵居家照護' },
-  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: 'https://yuhanhomecare.com.tw/images/logo.png' } },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://yuhanhomecare.com.tw/blog/ltc-4-packages' },
+  publisher: { '@type': 'Organization', name: '宇涵居家照護', logo: { '@type': 'ImageObject', url: new URL('/images/logo.png', Astro.site).toString() } },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL('/blog/ltc-4-packages', Astro.site).toString() },
 };
 ---
 
@@ -23,7 +27,7 @@ const schema = {
   <article>
     <section class="relative bg-[#2b221c] py-16 lg:py-24">
       <div class="absolute inset-0 opacity-15">
-        <img src="/images/blog-packages.jpg" alt="長照四包錢說明" class="w-full h-full object-cover" loading="eager" />
+        <Image src={blogPackages} alt="長照四包錢說明" widths={[400, 800, 1200]} sizes="(max-width: 768px) 100vw, 800px" class="w-full h-full object-cover" loading="eager" />
       </div>
       <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav aria-label="麵包屑" class="mb-6">
@@ -184,11 +188,11 @@ const schema = {
           <h3 class="text-xl font-bold text-[#2b221c] mb-4">相關文章推薦</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
             <a href="/blog/respite-service" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-respite.jpg" alt="喘息服務" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogRespite} alt="喘息服務" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">喘息服務申請指南</h4><p class="text-sm text-[#6d5d50]">讓照顧者獲得休息時間...</p></div>
             </a>
             <a href="/blog/foreign-caregiver-gap" class="flex items-start space-x-4 bg-white rounded-xl p-4 border border-[#efe5d5] hover:border-[#8b621f]/30 transition-colors">
-              <img src="/images/blog-foreign.jpg" alt="外籍看護空窗期" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
+              <Image src={blogForeign} alt="外籍看護空窗期" widths={[80, 160, 240]} sizes="80px" class="w-20 h-20 rounded-lg object-cover flex-shrink-0" loading="lazy" />
               <div><h4 class="font-bold text-[#2b221c] hover:text-[#8b621f]">外籍看護空窗期怎麼辦</h4><p class="text-sm text-[#6d5d50]">替代方案全解析...</p></div>
             </a>
           </div>
