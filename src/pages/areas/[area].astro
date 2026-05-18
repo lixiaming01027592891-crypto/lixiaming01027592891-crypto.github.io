@@ -56,10 +56,13 @@ const breadcrumbItems = [
   schema={schema}
   breadcrumbItems={breadcrumbItems}
 >
-  <section class="relative bg-[#2b221c] py-16 lg:py-24">
-    <div class="absolute inset-0 opacity-20">
-      <img src={area.heroImage} alt={area.heroImageAlt} class="w-full h-full object-cover" loading="eager" />
-    </div>
+  <section class="relative bg-[#2b221c] py-16 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-[#8b621f]/40 via-transparent to-[#2b221c]" aria-hidden="true" />
+    <div
+      class="absolute inset-0 opacity-[0.08]"
+      style="background-image: radial-gradient(circle at 25% 30%, #fcfaf6 1px, transparent 1px), radial-gradient(circle at 75% 70%, #fcfaf6 1px, transparent 1px); background-size: 60px 60px;"
+      aria-hidden="true"
+    />
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav aria-label="麵包屑" class="mb-6">
         <ol class="flex items-center space-x-2 text-sm text-[#efe5d5]/80">
@@ -80,18 +83,11 @@ const breadcrumbItems = [
   </section>
 
   <section class="bg-[#fcfaf6] py-12 lg:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4">{area.introHeading}</h2>
-          {area.introParagraphs.map((para) => (
-            <p class="text-[#6d5d50] leading-relaxed mb-4 last:mb-0">{para}</p>
-          ))}
-        </div>
-        <div class="rounded-2xl overflow-hidden shadow-lg">
-          <img src={area.mainImage} alt={area.mainImageAlt} class="w-full h-full object-cover" loading="lazy" />
-        </div>
-      </div>
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-[#2b221c] mb-4">{area.introHeading}</h2>
+      {area.introParagraphs.map((para) => (
+        <p class="text-[#6d5d50] leading-relaxed mb-4 last:mb-0">{para}</p>
+      ))}
     </div>
   </section>
 

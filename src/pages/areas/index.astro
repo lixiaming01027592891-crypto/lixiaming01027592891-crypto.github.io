@@ -1,61 +1,54 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import { COMPANY } from '../../consts';
 
 const districts = [
   {
     name: '新興區',
     path: '/areas/xinxing/',
-    image: '/images/area-xinxing.jpg',
-    description: '高雄市中心精華地段，宇涵居家照護所在地。鄰近高雄醫學大學附設醫院、市立聯合醫院，提供即時到府看護服務。',
-    highlights: ['交通便利', '醫療資源豐富', '宇涵所在地'],
+    description: '高雄市中心精華地段，鄰近高雄醫學大學附設醫院、市立聯合醫院，提供即時到府看護服務。',
+    highlights: ['交通便利', '醫療資源豐富', '近高醫'],
   },
   {
     name: '苓雅區',
     path: '/areas/lingya/',
-    image: '/images/area-lingya.jpg',
     description: '高雄文化商業重鎮，擁有苓雅市場及多家醫療院所，適合長者居家生活與照護。',
     highlights: ['文化設施完善', '商業機能佳', '交通便捷'],
   },
   {
     name: '左營區',
     path: '/areas/zuoying/',
-    image: '/images/area-zuoying.jpg',
     description: '北高雄最大住宅區，擁有榮總、國軍左營醫院等優質醫療資源，適合長期照護需求。',
     highlights: ['醫療資源頂尖', '居住環境優質', '公園綠地多'],
   },
   {
     name: '鼓山區',
     path: '/areas/gushan/',
-    image: '/images/area-gushan.jpg',
     description: '依山傍海的優質居住環境，鄰近高雄醫學大學、市立聯合醫院，適合長者休養。',
     highlights: ['海景山景環繞', '生活機能完善', '文藝氛圍濃厚'],
   },
   {
     name: '三民區',
     path: '/areas/sanmin/',
-    image: '/images/area-sanmin.jpg',
-    description: '高雄人口最多的行政區，擁有高醫、長庚等醫療機構，宇涵提供快速到府照護服務。',
-    highlights: ['人口最多', '醫療機構林立', '交通網絡發達'],
+    description: '高雄人口最多的行政區，宇涵據點即位於三民區覺民路，擁有高醫、長庚等醫療機構。',
+    highlights: ['宇涵據點', '人口最多', '醫療機構林立'],
   },
   {
     name: '前鎮區',
     path: '/areas/cianjhen/',
-    image: '/images/area-cianjhen.jpg',
     description: '南高雄工商重鎮，鄰近小港醫院、前鎮區衛生所，宇涵提供24小時專業看護派遣。',
     highlights: ['工商發達', '醫療服務完善', '近港口生活圈'],
   },
   {
     name: '楠梓區',
     path: '/areas/nanzih/',
-    image: '/images/area-nanzih.jpg',
     description: '北高雄發展迅速的住宅區，擁有國軍高雄總醫院左營分院、楠梓區衛生所等醫療資源。',
     highlights: ['學術風氣盛', '住宅環境佳', '醫療資源充足'],
   },
   {
     name: '小港區',
     path: '/areas/siaogang/',
-    image: '/images/area-siaogang.jpg',
-    description: '南高雄重要工業住宅區，擁有小港醫院、高雄市立小港醫院，宇涵提供專業到府看護服務。',
+    description: '南高雄重要工業住宅區，擁有市立小港醫院，宇涵提供專業到府看護服務。',
     highlights: ['近高雄國際機場', '工業住宅並重', '醫療可近性高'],
   },
 ];
@@ -63,16 +56,12 @@ const districts = [
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: '高雄居家看護服務地區總覽｜宇涵居家照護',
-  description: '宇涵居家照護服務範圍涵蓋高雄市新興區、苓雅區、左營區、鼓山區、三民區、前鎮區、楠梓區、小港區，提供專業24小時到府看護服務。',
-  url: new URL('/areas', Astro.site).toString(),
+  name: `高雄居家看護服務地區總覽｜${COMPANY.name}`,
+  description: `${COMPANY.name}服務範圍涵蓋高雄市新興區、苓雅區、左營區、鼓山區、三民區、前鎮區、楠梓區、小港區，提供專業24小時到府看護服務。`,
+  url: new URL('/areas/', Astro.site).toString(),
   publisher: {
     '@type': 'Organization',
-    name: '宇涵居家照護',
-    logo: {
-      '@type': 'ImageObject',
-      url: new URL('/images/logo.png', Astro.site).toString(),
-    },
+    name: COMPANY.name,
   },
 };
 ---
@@ -84,15 +73,13 @@ const schema = {
   schema={schema}
 >
   <!-- Hero Section -->
-  <section class="relative bg-[#2b221c] py-20 lg:py-28">
-    <div class="absolute inset-0 opacity-20">
-      <img
-        src="/images/hero-areas.jpg"
-        alt="高雄市區俯瞰"
-        class="w-full h-full object-cover"
-        loading="eager"
-      />
-    </div>
+  <section class="relative bg-[#2b221c] py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-25 bg-gradient-to-br from-[#8b621f]/40 via-transparent to-[#2b221c]" aria-hidden="true" />
+    <div
+      class="absolute inset-0 opacity-[0.08]"
+      style="background-image: radial-gradient(circle at 25% 30%, #fcfaf6 1px, transparent 1px), radial-gradient(circle at 75% 70%, #fcfaf6 1px, transparent 1px); background-size: 60px 60px;"
+      aria-hidden="true"
+    />
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <nav aria-label="麵包屑" class="mb-6">
         <ol class="flex justify-center items-center space-x-2 text-sm text-[#efe5d5]/80">
@@ -151,17 +138,16 @@ const schema = {
             class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#efe5d5] hover:border-[#8b621f]/30"
             data-aos="fade-up"
             data-aos-delay={index * 50}
+            aria-label={`查看高雄${district.name}居家看護服務`}
           >
-            <div class="relative h-44 overflow-hidden">
-              <img
-                src={district.image}
-                alt={`高雄${district.name}街景`}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-[#2b221c]/30 group-hover:bg-[#2b221c]/20 transition-colors" />
+            <div class="relative h-32 overflow-hidden bg-gradient-to-br from-[#2b221c] to-[#8b621f] flex items-center justify-center">
+              <svg class="w-10 h-10 text-[#fcfaf6]/30 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="relative text-2xl font-bold text-[#fcfaf6] tracking-wide" style="font-family: var(--font-serif)">{district.name}</span>
               <div class="absolute bottom-3 left-3">
-                <span class="bg-[#8b621f] text-white text-xs px-3 py-1 rounded-full">查看服務</span>
+                <span class="bg-[#fcfaf6]/90 text-[#2b221c] text-xs px-3 py-1 rounded-full font-medium">查看服務</span>
               </div>
             </div>
             <div class="p-5">
