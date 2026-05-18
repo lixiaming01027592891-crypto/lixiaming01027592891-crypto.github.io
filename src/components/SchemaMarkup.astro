@@ -1,4 +1,6 @@
 ---
+import { COMPANY, SERVICE_AREAS } from '../consts';
+
 export interface Props {
   type: 'LocalBusiness' | 'WebSite' | 'BreadcrumbList' | 'Article' | 'FAQPage' | 'Service';
   data?: Record<string, any>;
@@ -10,27 +12,19 @@ const SITE_URL = Astro.site ? Astro.site.href.replace(/\/$/, '') : '';
 
 // 品牌預設資訊
 const BRAND = {
-  name: '宇涵居家照護',
-  telephone: '+886-935-803-258',
-  phoneDisplay: '0935-803-258',
-  address: {
-    street: '五福一路72號7樓',
-    city: '高雄市',
-    district: '新興區',
-    full: '高雄市新興區五福一路72號7樓',
-  },
+  name: COMPANY.name,
+  telephone: COMPANY.telLink.replace('tel:', ''),
+  phoneDisplay: COMPANY.phone,
+  address: COMPANY.address,
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo.png`,
   image: `${SITE_URL}/images/og-image.jpg`,
-  description: '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。24小時全年無休，用心守護您的家人。',
-  priceRange: '$$',
-  geo: {
-    latitude: 22.6252,
-    longitude: 120.3082,
-  },
-  openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59',
-  areaServed: ['高雄市新興區', '高雄市苓雅區', '高雄市左營區', '高雄市鼓山區', '高雄市三民區', '高雄市前鎮區', '高雄市楠梓區', '高雄市小港區'],
-  sameAs: [],
+  description: COMPANY.description,
+  priceRange: COMPANY.priceRange,
+  geo: COMPANY.geo,
+  openingHours: COMPANY.openingHours,
+  areaServed: SERVICE_AREAS,
+  sameAs: [] as string[],
 };
 
 // 預設 LocalBusiness schema
@@ -62,7 +56,7 @@ const defaultLocalBusiness = {
     opens: '00:00',
     closes: '23:59',
   },
-  areaServed: BRAND.areaServed.map(area => ({
+  areaServed: BRAND.areaServed.map((area) => ({
     '@type': 'City',
     name: area,
   })),

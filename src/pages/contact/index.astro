@@ -1,16 +1,17 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import { COMPANY } from '../../consts';
 
-const title = "聯絡我們｜高雄居家看護諮詢｜宇涵 0935-803-258";
-const description = "聯絡宇涵居家照護，免費諮詢高雄居家看護服務。電話：0935-803-258，地址：高雄市三民區覺民路370號。我們隨時為您服務！";
+const title = `聯絡我們｜高雄居家看護諮詢｜宇涵 ${COMPANY.phone}`;
+const description = `聯絡宇涵居家照護，免費諮詢高雄居家看護服務。電話：${COMPANY.phone}，地址：${COMPANY.address.full}。我們隨時為您服務！`;
 const canonicalURL = new URL("/contact/", Astro.site);
 
 const contactInfo = {
-  phone: "0935-803-258",
-  telLink: "tel:0935803258",
-  address: "高雄市三民區覺民路370號",
-  hours: "週一至週日 08:00 - 20:00",
-  email: "service@yuhanhomecare.com"
+  phone: COMPANY.phone,
+  telLink: COMPANY.telLink,
+  address: COMPANY.address.full,
+  hours: COMPANY.hoursDetail,
+  email: COMPANY.email,
 };
 
 const serviceTypes = [
@@ -26,18 +27,18 @@ const serviceTypes = [
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "聯絡宇涵居家照護",
+  "name": `聯絡${COMPANY.name}`,
   "description": "高雄居家看護諮詢聯絡資訊",
   "url": new URL("/contact/", Astro.site).toString(),
   "mainEntity": {
     "@type": "Organization",
-    "name": "宇涵居家照護",
-    "telephone": "0935-803-258",
+    "name": COMPANY.name,
+    "telephone": COMPANY.phone,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "覺民路370號",
-      "addressLocality": "三民區",
-      "addressRegion": "高雄市",
+      "streetAddress": COMPANY.address.street,
+      "addressLocality": COMPANY.address.district,
+      "addressRegion": COMPANY.address.city,
       "addressCountry": "TW"
     },
     "openingHours": "Mo-Su 08:00-20:00"
@@ -220,6 +221,7 @@ const contactSchema = {
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="宇涵居家照護位置地圖"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
               ></iframe>
             </div>
             <p class="text-sm text-[#6d5d50] mt-3">地址：{contactInfo.address}</p>

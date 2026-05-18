@@ -1,17 +1,13 @@
 ---
-const companyInfo = {
-  name: '宇涵居家照護',
-  description: '宇涵居家照護提供高雄市專業居家看護服務，從長者陪伴、失智照護到術後照顧，我們用心守護每一位長者與家人的生活品質。',
-  area: '服務地區：高雄市全區',
-};
+import { COMPANY, DISCLAIMER } from '../consts';
 
 const serviceLinks = [
-  { label: '居家看護', href: '/services/elderly-care/' },
-  { label: '醫院看護', href: '/services/daily-assistance/' },
+  { label: '居家看護', href: '/services/home-care/' },
+  { label: '醫院看護', href: '/services/hospital-care/' },
   { label: '長者陪伴', href: '/services/elderly-care/' },
-  { label: '失智照護', href: '/blog/dementia-care-tips/' },
-  { label: '術後照顧', href: '/services/rehabilitation/' },
-  { label: '臨時看護', href: '/services/temporary/' },
+  { label: '失智照護', href: '/services/dementia-care/' },
+  { label: '術後照顧', href: '/services/post-surgery/' },
+  { label: '臨時看護', href: '/services/temporary-care/' },
 ];
 
 const quickLinks = [
@@ -20,14 +16,6 @@ const quickLinks = [
   { label: '照護知識', href: '/blog/' },
   { label: '常見問題', href: '/faq/' },
 ];
-
-const contactInfo = {
-  phone: '0935-803-258',
-  phoneLink: 'tel:+886935803258',
-  address: '高雄市新興區五福一路72號7樓',
-  hours: '24小時全年無休',
-  mapLink: 'https://maps.google.com/?q=高雄市新興區五福一路72號',
-};
 
 const currentYear = new Date().getFullYear();
 ---
@@ -44,18 +32,18 @@ const currentYear = new Date().getFullYear();
           </div>
           <div class="flex flex-col">
             <span class="text-lg font-semibold tracking-wide text-[#fcfaf6]" style="font-family: var(--font-serif)">
-              宇涵居家照護
+              {COMPANY.name}
             </span>
             <span class="text-[10px] tracking-widest text-[#fcfaf6]/50">
-              YUHAN HOMECARE
+              {COMPANY.nameEn}
             </span>
           </div>
         </a>
         <p class="text-[#fcfaf6]/70 text-[15px] leading-relaxed mb-4">
-          {companyInfo.description}
+          {COMPANY.description}
         </p>
         <p class="text-[#8b621f] text-sm font-medium">
-          {companyInfo.area}
+          服務地區：高雄市全區
         </p>
       </div>
 
@@ -98,31 +86,40 @@ const currentYear = new Date().getFullYear();
         <h3 class="text-lg font-semibold text-[#fcfaf6] mb-5" style="font-family: var(--font-serif)">聯絡資訊</h3>
         <ul class="space-y-4">
           <li class="flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            <a href={contactInfo.phoneLink} class="text-[#fcfaf6]/90 text-[15px] hover:text-[#8b621f] transition-colors duration-300">
-              {contactInfo.phone}
+            <a href={COMPANY.telLink} class="text-[#fcfaf6]/90 text-[15px] hover:text-[#8b621f] transition-colors duration-300">
+              {COMPANY.phone}
             </a>
           </li>
           <li class="flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
             </svg>
-            <a href={contactInfo.mapLink} target="_blank" rel="noopener noreferrer" class="text-[#fcfaf6]/70 text-[15px] hover:text-[#8b621f] transition-colors duration-300 leading-relaxed">
-              {contactInfo.address}
+            <a href={COMPANY.mapsQuery} target="_blank" rel="noopener noreferrer" class="text-[#fcfaf6]/70 text-[15px] hover:text-[#8b621f] transition-colors duration-300 leading-relaxed">
+              {COMPANY.address.full}
             </a>
           </li>
           <li class="flex items-start gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#8b621f] mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
             </svg>
             <span class="text-[#fcfaf6]/70 text-[15px]">
-              {contactInfo.hours}
+              {COMPANY.hours}
             </span>
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+
+  {/* Medical Disclaimer */}
+  <div class="border-t border-[#fcfaf6]/10">
+    <div class="section-container py-5">
+      <p class="text-[#fcfaf6]/50 text-xs leading-relaxed">
+        <span class="font-semibold text-[#fcfaf6]/70">免責聲明：</span>{DISCLAIMER}
+      </p>
     </div>
   </div>
 
@@ -131,7 +128,7 @@ const currentYear = new Date().getFullYear();
     <div class="section-container py-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-[#fcfaf6]/50 text-sm text-center sm:text-left">
-          &copy; {currentYear} 宇涵居家照護. All rights reserved.
+          &copy; {currentYear} {COMPANY.name}. All rights reserved.
         </p>
         <div class="flex items-center gap-4">
           <a href="/privacy/" class="text-[#fcfaf6]/50 text-sm hover:text-[#8b621f] transition-colors duration-300">
