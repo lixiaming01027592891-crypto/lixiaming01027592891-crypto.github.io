@@ -1,33 +1,102 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-
-const title = '找不到頁面｜宇涵居家照護';
-const description = '您要查看的頁面不存在或已移除，請回到首頁繼續瀏覽宇涵居家照護的服務內容。';
 ---
 
-<MainLayout title={title} description={description} noindex={true} transparentNav={false}>
-  <section class="bg-[#fcfaf6] min-h-[70vh] flex items-center">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-      <p class="text-[#8b621f] font-semibold mb-4 tracking-widest">404</p>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2b221c] mb-4 leading-tight">找不到您要的頁面</h1>
-      <p class="text-lg text-[#6d5d50] leading-relaxed mb-10">
-        頁面可能已搬移或不存在，您可以從以下入口繼續瀏覽，或撥打電話與我們聯繫。
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-        <a href="/" class="inline-flex items-center justify-center px-8 py-3 bg-[#8b621f] text-white rounded-full font-semibold hover:bg-[#6d4a18] transition-colors duration-300 shadow-lg">
-          回到首頁
-        </a>
-        <a href="/services/" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#8b621f] text-[#8b621f] rounded-full font-semibold hover:bg-[#8b621f] hover:text-white transition-colors duration-300">
-          服務項目
-        </a>
-        <a href="/contact/" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#2b221c] text-[#2b221c] rounded-full font-semibold hover:bg-[#2b221c] hover:text-white transition-colors duration-300">
-          聯絡我們
-        </a>
+<MainLayout
+  title="找不到頁面 (404)｜宇涵居家照護"
+  description="您訪問的頁面不存在或已被移除，請返回首頁或查看我們的服務介紹。"
+  noindex={true}
+>
+  <main class="bg-[#fcfaf6]">
+    <!-- Hero -->
+    <section class="relative bg-[#2b221c] py-20 lg:py-28">
+      <div class="absolute inset-0 opacity-10">
+        <img src="/images/service-elderly.jpg" alt="背景" class="w-full h-full object-cover" loading="eager" />
       </div>
-      <p class="text-sm text-[#6d5d50]">
-        24小時諮詢專線：
-        <a href="tel:0935803258" class="text-[#8b621f] font-semibold hover:underline">0935-803-258</a>
-      </p>
-    </div>
-  </section>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#8b621f]/20 mb-6">
+          <svg class="w-10 h-10 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#fcfaf6] mb-4">404</h1>
+        <p class="text-xl md:text-2xl text-[#efe5d5] mb-4">找不到頁面</p>
+        <p class="text-[#efe5d5]/80 max-w-lg mx-auto mb-8">
+          您訪問的頁面可能已被移除、名稱已變更或暫時無法使用。請返回首頁或查看下方的熱門連結。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/" class="inline-flex items-center justify-center px-8 py-3 bg-[#8b621f] text-white font-semibold rounded-lg hover:bg-[#8b621f]/90 transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+            返回首頁
+          </a>
+          <a href="/blog" class="inline-flex items-center justify-center px-8 py-3 border border-[#efe5d5] text-[#efe5d5] font-semibold rounded-lg hover:bg-[#efe5d5]/10 transition-colors">
+            瀏覽照護知識
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Links -->
+    <section class="py-12 lg:py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-[#2b221c] mb-8 text-center">熱門頁面</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="/" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">首頁</h3>
+              <p class="text-sm text-[#6d5d50]">了解更多關於宇涵居家照護</p>
+            </div>
+          </a>
+          <a href="/services" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">服務介紹</h3>
+              <p class="text-sm text-[#6d5d50]">居家看護、醫院看護、術後照護</p>
+            </div>
+          </a>
+          <a href="/blog" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">照護知識</h3>
+              <p class="text-sm text-[#6d5d50]">看護選擇、照護技巧、常見問題</p>
+            </div>
+          </a>
+          <a href="/contact" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">聯繫我們</h3>
+              <p class="text-sm text-[#6d5d50]">免費諮詢、預約看護服務</p>
+            </div>
+          </a>
+          <a href="/faq" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">常見問題</h3>
+              <p class="text-sm text-[#6d5d50]">費用、流程、服務內容解答</p>
+            </div>
+          </a>
+          <a href="/areas" class="flex items-center p-5 bg-white rounded-xl border border-[#efe5d5] hover:border-[#8b621f]/40 transition-all group">
+            <div class="w-12 h-12 rounded-lg bg-[#8b621f]/10 flex items-center justify-center flex-shrink-0 mr-4 group-hover:bg-[#8b621f]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#8b621f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[#2b221c] group-hover:text-[#8b621f] transition-colors">服務地區</h3>
+              <p class="text-sm text-[#6d5d50]">高雄各區看護服務</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </MainLayout>
