@@ -25,7 +25,7 @@ const {
   title = '宇涵居家照護｜高雄居家看護推薦｜24小時專業到府照護服務',
   description = '宇涵居家照護提供高雄市專業居家看護、長者陪伴、失智照護、術後照顧服務。新興區、左營區、苓雅區等全高雄地區到府服務，24小時全年無休。',
   keywords = '高雄居家看護, 高雄居家照護, 高雄看護推薦, 高雄長照服務, 宇涵居家照護',
-  ogImage,
+  ogImage = '/images/hero-banner.jpg',
   ogType = 'website',
   canonicalURL = Astro.url.href,
   noindex = false,
@@ -83,8 +83,8 @@ const rawSchemaList: Array<Record<string, any>> = schema
     <meta property="og:description" content={description} />
     <meta property="og:url" content={fullCanonicalURL} />
     {fullOgImage && <meta property="og:image" content={fullOgImage} />}
-    {fullOgImage && <meta property="og:image:width" content="1200" />}
-    {fullOgImage && <meta property="og:image:height" content="630" />}
+    {fullOgImage && <meta property="og:image:width" content="2752" />}
+    {fullOgImage && <meta property="og:image:height" content="1536" />}
     <meta property="og:locale" content="zh_TW" />
 
     {/* Twitter Card */}
